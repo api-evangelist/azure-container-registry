@@ -1,11 +1,15 @@
 aid: azure-container-registry
 name: Azure Container Registry
 description: >-
-  Azure Container Registry is a managed Docker registry service for storing and managing container images for Azure deployments.
+  Azure Container Registry is a managed Docker registry service based on the open-source Docker Registry for storing and managing private container images and artifacts. It supports automated container image builds, geo-replication, and integrates with Azure Kubernetes Service and other Azure deployment targets.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Containers
+  - Registry
+  - Container Images
+  - Docker
+  - Azure
 url: >-
   https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -15,14 +19,37 @@ apis:
   - aid: azure-container-registry:azure-container-registry
     name: Azure Container Registry
     description: >-
-      Azure Container Registry is a managed Docker registry service for storing and managing container images for Azure deployments.
-    humanURL: https://azure.microsoft.com/
+      Azure Container Registry is a managed Docker registry service for storing and managing private container images and artifacts with support for automated builds, geo-replication, and integration with Azure deployment targets.
+    humanURL: https://azure.microsoft.com/en-us/products/container-registry
     tags:
       - Containers
-    properties: []
+      - Registry
+      - Container Images
+      - Docker
+    properties:
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/azure/container-registry/
+      - type: Getting Started
+        url: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
+      - type: Pricing
+        url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
 common:
   - type: Website
-    url: https://azure.microsoft.com/
+    url: https://azure.microsoft.com/en-us/products/container-registry
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/container-registry/
+  - type: Getting Started
+    url: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
+  - type: GitHub Organization
+    url: https://github.com/Azure
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
+  - type: Blog
+    url: https://azure.microsoft.com/en-us/blog/
+  - type: Status
+    url: https://status.azure.com/
+  - type: Sign Up
+    url: https://azure.microsoft.com/en-us/free/
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
