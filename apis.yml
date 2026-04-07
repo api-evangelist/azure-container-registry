@@ -5,11 +5,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Containers
-  - Registry
-  - Container Images
-  - Docker
   - Azure
+  - Container Images
+  - Containers
+  - Docker
+  - Registry
 url: >-
   https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -22,10 +22,10 @@ apis:
       Azure Container Registry is a managed Docker registry service for storing and managing private container images and artifacts with support for automated builds, geo-replication, and integration with Azure deployment targets.
     humanURL: https://azure.microsoft.com/en-us/products/container-registry
     tags:
-      - Containers
-      - Registry
       - Container Images
+      - Containers
       - Docker
+      - Registry
     properties:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/azure/container-registry/
