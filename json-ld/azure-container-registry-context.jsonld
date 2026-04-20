@@ -1,0 +1,244 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "azurecontainerregistry": "https://azure.microsoft.com/azure-container-registry/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Actor": "azurecontainerregistry:Actor",
+    "CallbackConfig": "azurecontainerregistry:CallbackConfig",
+    "EncryptionProperty": "azurecontainerregistry:EncryptionProperty",
+    "Event": "azurecontainerregistry:Event",
+    "EventContent": "azurecontainerregistry:EventContent",
+    "EventInfo": "azurecontainerregistry:EventInfo",
+    "EventListResult": "azurecontainerregistry:EventListResult",
+    "EventRequestMessage": "azurecontainerregistry:EventRequestMessage",
+    "EventResponseMessage": "azurecontainerregistry:EventResponseMessage",
+    "IPRule": "azurecontainerregistry:IPRule",
+    "IdentityProperties": "azurecontainerregistry:IdentityProperties",
+    "ImportImageParameters": "azurecontainerregistry:ImportImageParameters",
+    "ImportSource": "azurecontainerregistry:ImportSource",
+    "ImportSourceCredentials": "azurecontainerregistry:ImportSourceCredentials",
+    "KeyVaultProperties": "azurecontainerregistry:KeyVaultProperties",
+    "NetworkRuleSet": "azurecontainerregistry:NetworkRuleSet",
+    "OperationDefinition": "azurecontainerregistry:OperationDefinition",
+    "OperationDisplayDefinition": "azurecontainerregistry:OperationDisplayDefinition",
+    "OperationMetricSpecificationDefinition": "azurecontainerregistry:OperationMetricSpecificationDefinition",
+    "OperationPropertiesDefinition": "azurecontainerregistry:OperationPropertiesDefinition",
+    "name": "schema:name",
+    "customHeaders": {
+      "@id": "azurecontainerregistry:customHeaders",
+      "@type": "@id"
+    },
+    "serviceUri": {
+      "@id": "azurecontainerregistry:serviceUri",
+      "@type": "xsd:string"
+    },
+    "keyVaultProperties": {
+      "@id": "azurecontainerregistry:keyVaultProperties",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "azurecontainerregistry:status",
+      "@type": "xsd:string"
+    },
+    "eventRequestMessage": {
+      "@id": "azurecontainerregistry:eventRequestMessage",
+      "@type": "xsd:string"
+    },
+    "eventResponseMessage": {
+      "@id": "azurecontainerregistry:eventResponseMessage",
+      "@type": "xsd:string"
+    },
+    "action": {
+      "@id": "azurecontainerregistry:action",
+      "@type": "xsd:string"
+    },
+    "actor": {
+      "@id": "azurecontainerregistry:actor",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "azurecontainerregistry:id",
+      "@type": "xsd:string"
+    },
+    "request": {
+      "@id": "azurecontainerregistry:request",
+      "@type": "xsd:string"
+    },
+    "source": {
+      "@id": "azurecontainerregistry:source",
+      "@type": "xsd:string"
+    },
+    "target": {
+      "@id": "azurecontainerregistry:target",
+      "@type": "xsd:string"
+    },
+    "timestamp": {
+      "@id": "azurecontainerregistry:timestamp",
+      "@type": "xsd:string"
+    },
+    "nextLink": {
+      "@id": "azurecontainerregistry:nextLink",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "azurecontainerregistry:value",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "content": {
+      "@id": "azurecontainerregistry:content",
+      "@type": "xsd:string"
+    },
+    "headers": {
+      "@id": "azurecontainerregistry:headers",
+      "@type": "@id"
+    },
+    "method": {
+      "@id": "azurecontainerregistry:method",
+      "@type": "xsd:string"
+    },
+    "requestUri": {
+      "@id": "azurecontainerregistry:requestUri",
+      "@type": "xsd:string"
+    },
+    "version": {
+      "@id": "azurecontainerregistry:version",
+      "@type": "xsd:string"
+    },
+    "reasonPhrase": {
+      "@id": "azurecontainerregistry:reasonPhrase",
+      "@type": "xsd:string"
+    },
+    "statusCode": {
+      "@id": "azurecontainerregistry:statusCode",
+      "@type": "xsd:string"
+    },
+    "principalId": {
+      "@id": "azurecontainerregistry:principalId",
+      "@type": "xsd:string"
+    },
+    "tenantId": {
+      "@id": "azurecontainerregistry:tenantId",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "azurecontainerregistry:type",
+      "@type": "xsd:string"
+    },
+    "userAssignedIdentities": {
+      "@id": "azurecontainerregistry:userAssignedIdentities",
+      "@type": "@id"
+    },
+    "mode": {
+      "@id": "azurecontainerregistry:mode",
+      "@type": "xsd:string"
+    },
+    "targetTags": {
+      "@id": "azurecontainerregistry:targetTags",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "untaggedTargetRepositories": {
+      "@id": "azurecontainerregistry:untaggedTargetRepositories",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "credentials": {
+      "@id": "azurecontainerregistry:credentials",
+      "@type": "xsd:string"
+    },
+    "registryUri": {
+      "@id": "azurecontainerregistry:registryUri",
+      "@type": "xsd:string"
+    },
+    "resourceId": {
+      "@id": "azurecontainerregistry:resourceId",
+      "@type": "xsd:string"
+    },
+    "sourceImage": {
+      "@id": "azurecontainerregistry:sourceImage",
+      "@type": "xsd:string"
+    },
+    "password": {
+      "@id": "azurecontainerregistry:password",
+      "@type": "xsd:string"
+    },
+    "username": {
+      "@id": "azurecontainerregistry:username",
+      "@type": "xsd:string"
+    },
+    "identity": {
+      "@id": "azurecontainerregistry:identity",
+      "@type": "xsd:string"
+    },
+    "keyIdentifier": {
+      "@id": "azurecontainerregistry:keyIdentifier",
+      "@type": "xsd:string"
+    },
+    "defaultAction": {
+      "@id": "azurecontainerregistry:defaultAction",
+      "@type": "xsd:string"
+    },
+    "ipRules": {
+      "@id": "azurecontainerregistry:ipRules",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "virtualNetworkRules": {
+      "@id": "azurecontainerregistry:virtualNetworkRules",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "display": {
+      "@id": "azurecontainerregistry:display",
+      "@type": "xsd:string"
+    },
+    "origin": {
+      "@id": "azurecontainerregistry:origin",
+      "@type": "xsd:string"
+    },
+    "properties": {
+      "@id": "azurecontainerregistry:properties",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "operation": {
+      "@id": "azurecontainerregistry:operation",
+      "@type": "xsd:string"
+    },
+    "provider": {
+      "@id": "azurecontainerregistry:provider",
+      "@type": "xsd:string"
+    },
+    "resource": {
+      "@id": "azurecontainerregistry:resource",
+      "@type": "xsd:string"
+    },
+    "aggregationType": {
+      "@id": "azurecontainerregistry:aggregationType",
+      "@type": "xsd:string"
+    },
+    "displayDescription": {
+      "@id": "azurecontainerregistry:displayDescription",
+      "@type": "xsd:string"
+    },
+    "displayName": {
+      "@id": "azurecontainerregistry:displayName",
+      "@type": "xsd:string"
+    },
+    "internalMetricName": {
+      "@id": "azurecontainerregistry:internalMetricName",
+      "@type": "xsd:string"
+    },
+    "unit": {
+      "@id": "azurecontainerregistry:unit",
+      "@type": "xsd:string"
+    },
+    "serviceSpecification": {
+      "@id": "azurecontainerregistry:serviceSpecification",
+      "@type": "xsd:string"
+    }
+  }
+}

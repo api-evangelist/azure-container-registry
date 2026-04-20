@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-schema/azure-container-registry-event-info-schema.json",
+  "title": "EventInfo",
+  "description": "The basic information of an event.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The event ID.",
+      "type": "string"
+    }
+  }
+}

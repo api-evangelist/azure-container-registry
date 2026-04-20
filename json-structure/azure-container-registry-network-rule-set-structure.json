@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-network-rule-set-structure.json",
+  "description": "The network rule set for a container registry.",
+  "type": "object",
+  "properties": {
+    "defaultAction": {
+      "default": "Allow",
+      "description": "The default action of allow or deny when no other rules match.",
+      "enum": [
+        "Allow",
+        "Deny"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "DefaultAction"
+      }
+    },
+    "ipRules": {
+      "description": "The IP ACL rules.",
+      "items": {
+        "$ref": "#/definitions/IPRule"
+      },
+      "type": "array"
+    },
+    "virtualNetworkRules": {
+      "description": "The virtual network rules.",
+      "items": {
+        "$ref": "#/definitions/VirtualNetworkRule"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "defaultAction"
+  ],
+  "name": "NetworkRuleSet"
+}

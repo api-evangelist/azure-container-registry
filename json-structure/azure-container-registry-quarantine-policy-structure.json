@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-quarantine-policy-structure.json",
+  "description": "The quarantine policy for a container registry.",
+  "type": "object",
+  "properties": {
+    "status": {
+      "default": "disabled",
+      "description": "The value that indicates whether the policy is enabled or not.",
+      "enum": [
+        "enabled",
+        "disabled"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "PolicyStatus"
+      }
+    }
+  },
+  "name": "QuarantinePolicy"
+}

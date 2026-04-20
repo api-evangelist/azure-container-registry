@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-actor-structure.json",
+  "description": "The agent that initiated the event. For most situations, this could be from the authorization context of the request.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The subject or username associated with the request context that generated the event.",
+      "type": "string"
+    }
+  },
+  "name": "Actor"
+}

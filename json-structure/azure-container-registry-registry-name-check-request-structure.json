@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-registry-name-check-request-structure.json",
+  "description": "A request to check whether a container registry name is available.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the container registry.",
+      "maxLength": 50,
+      "minLength": 5,
+      "pattern": "^[a-zA-Z0-9]*$",
+      "type": "string"
+    },
+    "type": {
+      "description": "The resource type of the container registry. This field must be set to 'Microsoft.ContainerRegistry/registries'.",
+      "enum": [
+        "Microsoft.ContainerRegistry/registries"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": false,
+        "name": "ContainerRegistryResourceType"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "type"
+  ],
+  "name": "RegistryNameCheckRequest"
+}

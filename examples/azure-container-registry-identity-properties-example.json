@@ -1,0 +1,6 @@
+{
+  "principalId": "example-string",
+  "tenantId": "example-string",
+  "type": "SystemAssigned",
+  "userAssignedIdentities": {}
+}

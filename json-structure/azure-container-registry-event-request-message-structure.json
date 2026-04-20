@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-event-request-message-structure.json",
+  "description": "The event request message sent to the service URI.",
+  "type": "object",
+  "properties": {
+    "content": {
+      "$ref": "#/definitions/EventContent",
+      "description": "The content of the event request message."
+    },
+    "headers": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "The headers of the event request message.",
+      "type": "object"
+    },
+    "method": {
+      "description": "The HTTP method used to send the event request message.",
+      "type": "string"
+    },
+    "requestUri": {
+      "description": "The URI used to send the event request message.",
+      "type": "string"
+    },
+    "version": {
+      "description": "The HTTP message version.",
+      "type": "string"
+    }
+  },
+  "name": "EventRequestMessage"
+}

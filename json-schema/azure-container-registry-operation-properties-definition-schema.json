@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-schema/azure-container-registry-operation-properties-definition-schema.json",
+  "title": "OperationPropertiesDefinition",
+  "description": "The definition of Azure Monitoring properties.",
+  "type": "object",
+  "properties": {
+    "serviceSpecification": {
+      "$ref": "#/definitions/OperationServiceSpecificationDefinition",
+      "description": "The definition of Azure Monitoring service."
+    }
+  }
+}

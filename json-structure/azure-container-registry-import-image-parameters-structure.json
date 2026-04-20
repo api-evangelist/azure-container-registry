@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-import-image-parameters-structure.json",
+  "description": "ImportImageParameters schema from Azure Container Registry API",
+  "type": "object",
+  "properties": {
+    "mode": {
+      "default": "NoForce",
+      "description": "When Force, any existing target tags will be overwritten. When NoForce, any existing target tags will fail the operation before any copying begins.",
+      "enum": [
+        "NoForce",
+        "Force"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "ImportMode"
+      }
+    },
+    "source": {
+      "$ref": "#/definitions/ImportSource",
+      "description": "The source of the image."
+    },
+    "targetTags": {
+      "description": "List of strings of the form repo[:tag]. When tag is omitted the source will be used (or 'latest' if source tag is also omitted).",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "untaggedTargetRepositories": {
+      "description": "List of strings of repository names to do a manifest only copy. No tag will be created.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "source"
+  ],
+  "name": "ImportImageParameters"
+}

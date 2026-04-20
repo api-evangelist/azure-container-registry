@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-schema/azure-container-registry-encryption-property-schema.json",
+  "title": "EncryptionProperty",
+  "description": "EncryptionProperty schema from Azure Container Registry API",
+  "type": "object",
+  "properties": {
+    "keyVaultProperties": {
+      "$ref": "#/definitions/KeyVaultProperties",
+      "description": "Key vault properties."
+    },
+    "status": {
+      "description": "Indicates whether or not the encryption is enabled for container registry.",
+      "enum": [
+        "enabled",
+        "disabled"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "EncryptionStatus"
+      }
+    }
+  }
+}

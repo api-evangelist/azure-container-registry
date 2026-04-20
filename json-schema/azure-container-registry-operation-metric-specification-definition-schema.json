@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-schema/azure-container-registry-operation-metric-specification-definition-schema.json",
+  "title": "OperationMetricSpecificationDefinition",
+  "description": "The definition of Azure Monitoring metric.",
+  "type": "object",
+  "properties": {
+    "aggregationType": {
+      "description": "Metric aggregation type.",
+      "type": "string"
+    },
+    "displayDescription": {
+      "description": "Metric description.",
+      "type": "string"
+    },
+    "displayName": {
+      "description": "Metric display name.",
+      "type": "string"
+    },
+    "internalMetricName": {
+      "description": "Internal metric name.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Metric name.",
+      "type": "string"
+    },
+    "unit": {
+      "description": "Metric unit.",
+      "type": "string"
+    }
+  }
+}

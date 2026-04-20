@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-schema/azure-container-registry-operation-service-specification-definition-schema.json",
+  "title": "OperationServiceSpecificationDefinition",
+  "description": "The definition of Azure Monitoring list.",
+  "type": "object",
+  "properties": {
+    "metricSpecifications": {
+      "description": "A list of Azure Monitoring metrics definition.",
+      "items": {
+        "$ref": "#/definitions/OperationMetricSpecificationDefinition"
+      },
+      "type": "array"
+    }
+  }
+}

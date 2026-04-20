@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-key-vault-properties-structure.json",
+  "description": "KeyVaultProperties schema from Azure Container Registry API",
+  "type": "object",
+  "properties": {
+    "identity": {
+      "description": "The client id of the identity which will be used to access key vault.",
+      "type": "string"
+    },
+    "keyIdentifier": {
+      "description": "Key vault uri to access the encryption key.",
+      "type": "string"
+    }
+  },
+  "name": "KeyVaultProperties"
+}

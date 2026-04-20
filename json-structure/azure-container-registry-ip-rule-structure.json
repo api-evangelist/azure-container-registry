@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-ip-rule-structure.json",
+  "description": "IP rule with specific IP or IP range in CIDR format.",
+  "type": "object",
+  "properties": {
+    "action": {
+      "default": "Allow",
+      "description": "The action of IP ACL rule.",
+      "enum": [
+        "Allow"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "Action"
+      }
+    },
+    "value": {
+      "description": "Specifies the IP or IP range in CIDR format. Only IPV4 address is allowed.",
+      "type": "string",
+      "x-ms-client-name": "IPAddressOrRange"
+    }
+  },
+  "required": [
+    "value"
+  ],
+  "name": "IPRule"
+}

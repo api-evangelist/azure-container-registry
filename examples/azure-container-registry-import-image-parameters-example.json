@@ -1,0 +1,9 @@
+{
+  "mode": "NoForce",
+  "targetTags": [
+    "example-string"
+  ],
+  "untaggedTargetRepositories": [
+    "example-string"
+  ]
+}

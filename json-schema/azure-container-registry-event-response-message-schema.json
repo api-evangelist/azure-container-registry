@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-schema/azure-container-registry-event-response-message-schema.json",
+  "title": "EventResponseMessage",
+  "description": "The event response message received from the service URI.",
+  "type": "object",
+  "properties": {
+    "content": {
+      "description": "The content of the event response message.",
+      "type": "string"
+    },
+    "headers": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "The headers of the event response message.",
+      "type": "object"
+    },
+    "reasonPhrase": {
+      "description": "The reason phrase of the event response message.",
+      "type": "string"
+    },
+    "statusCode": {
+      "description": "The status code of the event response message.",
+      "type": "string"
+    },
+    "version": {
+      "description": "The HTTP message version.",
+      "type": "string"
+    }
+  }
+}

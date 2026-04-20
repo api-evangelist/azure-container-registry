@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-event-info-structure.json",
+  "description": "The basic information of an event.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The event ID.",
+      "type": "string"
+    }
+  },
+  "name": "EventInfo"
+}

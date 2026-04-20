@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-identity-properties-structure.json",
+  "description": "Managed identity for the resource.",
+  "type": "object",
+  "properties": {
+    "principalId": {
+      "description": "The principal ID of resource identity.",
+      "type": "string"
+    },
+    "tenantId": {
+      "description": "The tenant ID of resource.",
+      "type": "string"
+    },
+    "type": {
+      "description": "The identity type.",
+      "enum": [
+        "SystemAssigned",
+        "UserAssigned",
+        "SystemAssigned, UserAssigned",
+        "None"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": false,
+        "name": "ResourceIdentityType"
+      }
+    },
+    "userAssignedIdentities": {
+      "additionalProperties": {
+        "$ref": "#/definitions/UserIdentityProperties"
+      },
+      "description": "The list of user identities associated with the resource. The user identity \r\ndictionary key references will be ARM resource ids in the form: \r\n'/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/\r\n    providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.",
+      "type": "object"
+    }
+  },
+  "name": "IdentityProperties"
+}

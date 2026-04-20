@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-schema/azure-container-registry-policies-schema.json",
+  "title": "Policies",
+  "description": "The policies for a container registry.",
+  "type": "object",
+  "properties": {
+    "quarantinePolicy": {
+      "$ref": "#/definitions/QuarantinePolicy",
+      "description": "The quarantine policy for a container registry."
+    },
+    "retentionPolicy": {
+      "$ref": "#/definitions/RetentionPolicy",
+      "description": "The retention policy for a container registry."
+    },
+    "trustPolicy": {
+      "$ref": "#/definitions/TrustPolicy",
+      "description": "The content trust policy for a container registry."
+    }
+  }
+}

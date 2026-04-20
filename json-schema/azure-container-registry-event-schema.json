@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-schema/azure-container-registry-event-schema.json",
+  "title": "Event",
+  "description": "The event for a webhook.",
+  "type": "object",
+  "properties": {
+    "eventRequestMessage": {
+      "$ref": "#/definitions/EventRequestMessage",
+      "description": "The event request message sent to the service URI."
+    },
+    "eventResponseMessage": {
+      "$ref": "#/definitions/EventResponseMessage",
+      "description": "The event response message received from the service URI."
+    }
+  }
+}

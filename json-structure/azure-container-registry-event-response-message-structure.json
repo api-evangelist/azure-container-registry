@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-event-response-message-structure.json",
+  "description": "The event response message received from the service URI.",
+  "type": "object",
+  "properties": {
+    "content": {
+      "description": "The content of the event response message.",
+      "type": "string"
+    },
+    "headers": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "The headers of the event response message.",
+      "type": "object"
+    },
+    "reasonPhrase": {
+      "description": "The reason phrase of the event response message.",
+      "type": "string"
+    },
+    "statusCode": {
+      "description": "The status code of the event response message.",
+      "type": "string"
+    },
+    "version": {
+      "description": "The HTTP message version.",
+      "type": "string"
+    }
+  },
+  "name": "EventResponseMessage"
+}

@@ -1,0 +1,9 @@
+{
+  "defaultAction": "Allow",
+  "ipRules": [
+    {}
+  ],
+  "virtualNetworkRules": [
+    {}
+  ]
+}

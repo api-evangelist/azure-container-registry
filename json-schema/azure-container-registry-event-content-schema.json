@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-schema/azure-container-registry-event-content-schema.json",
+  "title": "EventContent",
+  "description": "The content of the event request message.",
+  "type": "object",
+  "properties": {
+    "action": {
+      "description": "The action that encompasses the provided event.",
+      "type": "string"
+    },
+    "actor": {
+      "$ref": "#/definitions/Actor",
+      "description": "The agent that initiated the event. For most situations, this could be from the authorization context of the request."
+    },
+    "id": {
+      "description": "The event ID.",
+      "type": "string"
+    },
+    "request": {
+      "$ref": "#/definitions/Request",
+      "description": "The request that generated the event."
+    },
+    "source": {
+      "$ref": "#/definitions/Source",
+      "description": "The registry node that generated the event. Put differently, while the actor initiates the event, the source generates it."
+    },
+    "target": {
+      "$ref": "#/definitions/Target",
+      "description": "The target of the event."
+    },
+    "timestamp": {
+      "description": "The time at which the event occurred.",
+      "format": "date-time",
+      "type": "string"
+    }
+  }
+}

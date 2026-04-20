@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-import-source-structure.json",
+  "description": "ImportSource schema from Azure Container Registry API",
+  "type": "object",
+  "properties": {
+    "credentials": {
+      "$ref": "#/definitions/ImportSourceCredentials",
+      "description": "Credentials used when importing from a registry uri."
+    },
+    "registryUri": {
+      "description": "The address of the source registry (e.g. 'mcr.microsoft.com').",
+      "type": "string"
+    },
+    "resourceId": {
+      "description": "The resource identifier of the source Azure Container Registry.",
+      "type": "string"
+    },
+    "sourceImage": {
+      "description": "Repository name of the source image.\r\nSpecify an image by repository ('hello-world'). This will use the 'latest' tag.\r\nSpecify an image by tag ('hello-world:latest').\r\nSpecify an image by sha256-based manifest digest ('hello-world@sha256:abc123').",
+      "type": "string"
+    }
+  },
+  "required": [
+    "sourceImage"
+  ],
+  "name": "ImportSource"
+}

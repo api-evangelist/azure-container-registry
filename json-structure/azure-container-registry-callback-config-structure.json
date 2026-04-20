@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-callback-config-structure.json",
+  "description": "The configuration of service URI and custom headers for the webhook.",
+  "type": "object",
+  "properties": {
+    "customHeaders": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Custom headers that will be added to the webhook notifications.",
+      "type": "object"
+    },
+    "serviceUri": {
+      "description": "The service URI for the webhook to post notifications.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "serviceUri"
+  ],
+  "name": "CallbackConfig"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-schema/azure-container-registry-event-list-result-schema.json",
+  "title": "EventListResult",
+  "description": "The result of a request to list events for a webhook.",
+  "type": "object",
+  "properties": {
+    "nextLink": {
+      "description": "The URI that can be used to request the next list of events.",
+      "type": "string"
+    },
+    "value": {
+      "description": "The list of events. Since this list may be incomplete, the nextLink field should be used to request the next list of events.",
+      "items": {
+        "$ref": "#/definitions/Event"
+      },
+      "type": "array"
+    }
+  }
+}

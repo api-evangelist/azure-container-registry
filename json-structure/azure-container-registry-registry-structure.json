@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-registry-structure.json",
+  "description": "An object that represents a container registry.",
+  "type": "object",
+  "properties": {
+    "identity": {
+      "$ref": "#/definitions/IdentityProperties",
+      "description": "The identity of the container registry."
+    },
+    "properties": {
+      "$ref": "#/definitions/RegistryProperties",
+      "description": "The properties of the container registry.",
+      "x-ms-client-flatten": true
+    },
+    "sku": {
+      "$ref": "#/definitions/Sku",
+      "description": "The SKU of the container registry."
+    }
+  },
+  "required": [
+    "sku"
+  ],
+  "name": "Registry"
+}

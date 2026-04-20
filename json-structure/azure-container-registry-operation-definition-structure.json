@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-operation-definition-structure.json",
+  "description": "The definition of a container registry operation.",
+  "type": "object",
+  "properties": {
+    "display": {
+      "$ref": "#/definitions/OperationDisplayDefinition",
+      "description": "The display information for the container registry operation."
+    },
+    "name": {
+      "description": "Operation name: {provider}/{resource}/{operation}.",
+      "type": "string"
+    },
+    "origin": {
+      "description": "The origin information of the container registry operation.",
+      "type": "string"
+    },
+    "properties": {
+      "$ref": "#/definitions/OperationPropertiesDefinition",
+      "description": "The properties information for the container registry operation.",
+      "x-ms-client-flatten": true
+    }
+  },
+  "name": "OperationDefinition"
+}

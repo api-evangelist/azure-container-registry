@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-structure/azure-container-registry-operation-display-definition-structure.json",
+  "description": "The display information for a container registry operation.",
+  "type": "object",
+  "properties": {
+    "description": {
+      "description": "The description for the operation.",
+      "type": "string"
+    },
+    "operation": {
+      "description": "The operation that users can perform.",
+      "type": "string"
+    },
+    "provider": {
+      "description": "The resource provider name: Microsoft.ContainerRegistry.",
+      "type": "string"
+    },
+    "resource": {
+      "description": "The resource on which the operation is performed.",
+      "type": "string"
+    }
+  },
+  "name": "OperationDisplayDefinition"
+}

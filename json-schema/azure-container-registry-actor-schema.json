@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/json-schema/azure-container-registry-actor-schema.json",
+  "title": "Actor",
+  "description": "The agent that initiated the event. For most situations, this could be from the authorization context of the request.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The subject or username associated with the request context that generated the event.",
+      "type": "string"
+    }
+  }
+}
