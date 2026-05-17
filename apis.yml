@@ -31,7 +31,7 @@ apis:
   properties:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/azure/container-registry/
-  - type: Getting Started
+  - type: GettingStarted
     url: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
@@ -42,17 +42,17 @@ common:
   url: https://azure.microsoft.com/en-us/products/container-registry
 - type: Documentation
   url: https://learn.microsoft.com/en-us/azure/container-registry/
-- type: Getting Started
+- type: GettingStarted
   url: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
-- type: GitHub Organization
+- type: GitHubOrganization
   url: https://github.com/Azure
 - type: Pricing
   url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
 - type: Blog
   url: https://azure.microsoft.com/en-us/blog/
-- type: Status
+- type: StatusPage
   url: https://status.azure.com/
-- type: Sign Up
+- type: SignUp
   url: https://azure.microsoft.com/en-us/free/
 - type: SpectralRules
   url: https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/rules/azure-container-registry-spectral-rules.yml
