@@ -1,0 +1,290 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ContainerRegistryManagementClient — Webhooks
+  description: 'ContainerRegistryManagementClient — Webhooks. 8 operations. Lead operation: Azure Container Registry Webhooks_
+    List. Self-contained Naftiko capability covering one Azure Container Registry business surface.'
+  tags:
+  - Azure Container Registry
+  - Webhooks
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AZURE_CONTAINER_REGISTRY_API_KEY: AZURE_CONTAINER_REGISTRY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-container-registry-webhooks
+    baseUri: https://management.azure.com
+    description: ContainerRegistryManagementClient — Webhooks business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/webhooks
+      operations:
+      - name: webhookslist
+        method: GET
+        description: Azure Container Registry Webhooks_ List
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/webhooks/{webhookName}
+      operations:
+      - name: webhooksdelete
+        method: DELETE
+        description: Azure Container Registry Webhooks_ Delete
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: webhooksget
+        method: GET
+        description: Azure Container Registry Webhooks_ Get
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: webhooksupdate
+        method: PATCH
+        description: Azure Container Registry Webhooks_ Update
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: webhookUpdateParameters
+          in: body
+          type: string
+          description: The parameters for updating a webhook.
+          required: true
+      - name: webhookscreate
+        method: PUT
+        description: Azure Container Registry Webhooks_ Create
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: webhookCreateParameters
+          in: body
+          type: string
+          description: The parameters for creating a webhook.
+          required: true
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/webhooks/{webhookName}/getCallbackConfig
+      operations:
+      - name: webhooksgetcallbackconfig
+        method: POST
+        description: Azure Container Registry Webhooks_ Get Callback Config
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/webhooks/{webhookName}/listEvents
+      operations:
+      - name: webhookslistevents
+        method: POST
+        description: Azure Container Registry Webhooks_ List Events
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/webhooks/{webhookName}/ping
+      operations:
+      - name: webhooksping
+        method: POST
+        description: Azure Container Registry Webhooks_ Ping
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: azure-container-registry-webhooks-rest
+    port: 8080
+    description: REST adapter for ContainerRegistryManagementClient — Webhooks. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-containerregistry/registries/{registryname}/webhooks
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: webhookslist
+        description: Azure Container Registry Webhooks_ List
+        call: azure-container-registry-webhooks.webhookslist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-containerregistry/registries/{registryname}/webhooks/{webhookname}
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: DELETE
+        name: webhooksdelete
+        description: Azure Container Registry Webhooks_ Delete
+        call: azure-container-registry-webhooks.webhooksdelete
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: webhooksget
+        description: Azure Container Registry Webhooks_ Get
+        call: azure-container-registry-webhooks.webhooksget
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: webhooksupdate
+        description: Azure Container Registry Webhooks_ Update
+        call: azure-container-registry-webhooks.webhooksupdate
+        with:
+          webhookUpdateParameters: rest.webhookUpdateParameters
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: webhookscreate
+        description: Azure Container Registry Webhooks_ Create
+        call: azure-container-registry-webhooks.webhookscreate
+        with:
+          webhookCreateParameters: rest.webhookCreateParameters
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-containerregistry/registries/{registryname}/webhooks/{webhookname}/getcallbackconfig
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: POST
+        name: webhooksgetcallbackconfig
+        description: Azure Container Registry Webhooks_ Get Callback Config
+        call: azure-container-registry-webhooks.webhooksgetcallbackconfig
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-containerregistry/registries/{registryname}/webhooks/{webhookname}/listevents
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: POST
+        name: webhookslistevents
+        description: Azure Container Registry Webhooks_ List Events
+        call: azure-container-registry-webhooks.webhookslistevents
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-containerregistry/registries/{registryname}/webhooks/{webhookname}/ping
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: POST
+        name: webhooksping
+        description: Azure Container Registry Webhooks_ Ping
+        call: azure-container-registry-webhooks.webhooksping
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-container-registry-webhooks-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ContainerRegistryManagementClient — Webhooks. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: azure-container-registry-webhooks-list
+      description: Azure Container Registry Webhooks_ List
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-webhooks.webhookslist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-webhooks-delete
+      description: Azure Container Registry Webhooks_ Delete
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-container-registry-webhooks.webhooksdelete
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-webhooks-get
+      description: Azure Container Registry Webhooks_ Get
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-webhooks.webhooksget
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-webhooks-update
+      description: Azure Container Registry Webhooks_ Update
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-webhooks.webhooksupdate
+      with:
+        webhookUpdateParameters: tools.webhookUpdateParameters
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-webhooks-create
+      description: Azure Container Registry Webhooks_ Create
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-webhooks.webhookscreate
+      with:
+        webhookCreateParameters: tools.webhookCreateParameters
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-webhooks-get-2
+      description: Azure Container Registry Webhooks_ Get Callback Config
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: azure-container-registry-webhooks.webhooksgetcallbackconfig
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-webhooks-list-2
+      description: Azure Container Registry Webhooks_ List Events
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: azure-container-registry-webhooks.webhookslistevents
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-webhooks-ping
+      description: Azure Container Registry Webhooks_ Ping
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-container-registry-webhooks.webhooksping
+      outputParameters:
+      - type: object
+        mapping: $.

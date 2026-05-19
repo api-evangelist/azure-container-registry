@@ -1,0 +1,194 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ContainerRegistryManagementClient — Replications
+  description: 'ContainerRegistryManagementClient — Replications. 5 operations. Lead operation: Azure Container Registry Replications_
+    List. Self-contained Naftiko capability covering one Azure Container Registry business surface.'
+  tags:
+  - Azure Container Registry
+  - Replications
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AZURE_CONTAINER_REGISTRY_API_KEY: AZURE_CONTAINER_REGISTRY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-container-registry-replications
+    baseUri: https://management.azure.com
+    description: ContainerRegistryManagementClient — Replications business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/replications
+      operations:
+      - name: replicationslist
+        method: GET
+        description: Azure Container Registry Replications_ List
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/replications/{replicationName}
+      operations:
+      - name: replicationsdelete
+        method: DELETE
+        description: Azure Container Registry Replications_ Delete
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: replicationsget
+        method: GET
+        description: Azure Container Registry Replications_ Get
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: replicationsupdate
+        method: PATCH
+        description: Azure Container Registry Replications_ Update
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: replicationUpdateParameters
+          in: body
+          type: string
+          description: The parameters for updating a replication.
+          required: true
+      - name: replicationscreate
+        method: PUT
+        description: Azure Container Registry Replications_ Create
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: replication
+          in: body
+          type: string
+          description: The parameters for creating a replication.
+          required: true
+  exposes:
+  - type: rest
+    namespace: azure-container-registry-replications-rest
+    port: 8080
+    description: REST adapter for ContainerRegistryManagementClient — Replications. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-containerregistry/registries/{registryname}/replications
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: replicationslist
+        description: Azure Container Registry Replications_ List
+        call: azure-container-registry-replications.replicationslist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-containerregistry/registries/{registryname}/replications/{replicationname}
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: DELETE
+        name: replicationsdelete
+        description: Azure Container Registry Replications_ Delete
+        call: azure-container-registry-replications.replicationsdelete
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: replicationsget
+        description: Azure Container Registry Replications_ Get
+        call: azure-container-registry-replications.replicationsget
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: replicationsupdate
+        description: Azure Container Registry Replications_ Update
+        call: azure-container-registry-replications.replicationsupdate
+        with:
+          replicationUpdateParameters: rest.replicationUpdateParameters
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: replicationscreate
+        description: Azure Container Registry Replications_ Create
+        call: azure-container-registry-replications.replicationscreate
+        with:
+          replication: rest.replication
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-container-registry-replications-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ContainerRegistryManagementClient — Replications. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: azure-container-registry-replications-list
+      description: Azure Container Registry Replications_ List
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-replications.replicationslist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-replications-delete
+      description: Azure Container Registry Replications_ Delete
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-container-registry-replications.replicationsdelete
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-replications-get
+      description: Azure Container Registry Replications_ Get
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-replications.replicationsget
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-replications-update
+      description: Azure Container Registry Replications_ Update
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-replications.replicationsupdate
+      with:
+        replicationUpdateParameters: tools.replicationUpdateParameters
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-replications-create
+      description: Azure Container Registry Replications_ Create
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-replications.replicationscreate
+      with:
+        replication: tools.replication
+      outputParameters:
+      - type: object
+        mapping: $.

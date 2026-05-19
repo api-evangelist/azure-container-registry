@@ -1,0 +1,374 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ContainerRegistryManagementClient — Registries
+  description: 'ContainerRegistryManagementClient — Registries. 10 operations. Lead operation: Azure Container Registry Registries_
+    List. Self-contained Naftiko capability covering one Azure Container Registry business surface.'
+  tags:
+  - Azure Container Registry
+  - Registries
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AZURE_CONTAINER_REGISTRY_API_KEY: AZURE_CONTAINER_REGISTRY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-container-registry-registries
+    baseUri: https://management.azure.com
+    description: ContainerRegistryManagementClient — Registries business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-providers-Microsoft.ContainerRegistry-registries
+      path: /subscriptions/{subscriptionId}/providers/Microsoft.ContainerRegistry/registries
+      operations:
+      - name: registrieslist
+        method: GET
+        description: Azure Container Registry Registries_ List
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries
+      operations:
+      - name: registrieslistbyresourcegroup
+        method: GET
+        description: Azure Container Registry Registries_ List by Resource Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}
+      operations:
+      - name: registriesdelete
+        method: DELETE
+        description: Azure Container Registry Registries_ Delete
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: registriesget
+        method: GET
+        description: Azure Container Registry Registries_ Get
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: registriesupdate
+        method: PATCH
+        description: Azure Container Registry Registries_ Update
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: registryUpdateParameters
+          in: body
+          type: string
+          description: The parameters for updating a container registry.
+          required: true
+      - name: registriescreate
+        method: PUT
+        description: Azure Container Registry Registries_ Create
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: registry
+          in: body
+          type: string
+          description: The parameters for creating a container registry.
+          required: true
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/importImage
+      operations:
+      - name: registriesimportimage
+        method: POST
+        description: Azure Container Registry Registries_ Import Image
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: parameters
+          in: body
+          type: string
+          description: The parameters specifying the image to copy and the source container registry.
+          required: true
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/listCredentials
+      operations:
+      - name: registrieslistcredentials
+        method: POST
+        description: Azure Container Registry Registries_ List Credentials
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/listUsages
+      operations:
+      - name: registrieslistusages
+        method: GET
+        description: Azure Container Registry Registries_ List Usages
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/regenerateCredential
+      operations:
+      - name: registriesregeneratecredential
+        method: POST
+        description: Azure Container Registry Registries_ Regenerate Credential
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: regenerateCredentialParameters
+          in: body
+          type: string
+          description: Specifies name of the password which should be regenerated -- password or password2.
+          required: true
+  exposes:
+  - type: rest
+    namespace: azure-container-registry-registries-rest
+    port: 8080
+    description: REST adapter for ContainerRegistryManagementClient — Registries. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/providers/microsoft-containerregistry/registries
+      name: subscriptions-subscriptionid-providers-microsoft-containerregistry-registries
+      description: REST surface for subscriptions-subscriptionId-providers-Microsoft.ContainerRegistry-registries.
+      operations:
+      - method: GET
+        name: registrieslist
+        description: Azure Container Registry Registries_ List
+        call: azure-container-registry-registries.registrieslist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-containerregistry/registries
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: registrieslistbyresourcegroup
+        description: Azure Container Registry Registries_ List by Resource Group
+        call: azure-container-registry-registries.registrieslistbyresourcegroup
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-containerregistry/registries/{registryname}
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: DELETE
+        name: registriesdelete
+        description: Azure Container Registry Registries_ Delete
+        call: azure-container-registry-registries.registriesdelete
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: registriesget
+        description: Azure Container Registry Registries_ Get
+        call: azure-container-registry-registries.registriesget
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: registriesupdate
+        description: Azure Container Registry Registries_ Update
+        call: azure-container-registry-registries.registriesupdate
+        with:
+          registryUpdateParameters: rest.registryUpdateParameters
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: registriescreate
+        description: Azure Container Registry Registries_ Create
+        call: azure-container-registry-registries.registriescreate
+        with:
+          registry: rest.registry
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-containerregistry/registries/{registryname}/importimage
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: POST
+        name: registriesimportimage
+        description: Azure Container Registry Registries_ Import Image
+        call: azure-container-registry-registries.registriesimportimage
+        with:
+          parameters: rest.parameters
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-containerregistry/registries/{registryname}/listcredentials
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: POST
+        name: registrieslistcredentials
+        description: Azure Container Registry Registries_ List Credentials
+        call: azure-container-registry-registries.registrieslistcredentials
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-containerregistry/registries/{registryname}/listusages
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: registrieslistusages
+        description: Azure Container Registry Registries_ List Usages
+        call: azure-container-registry-registries.registrieslistusages
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-containerregistry/registries/{registryname}/regeneratecredential
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: POST
+        name: registriesregeneratecredential
+        description: Azure Container Registry Registries_ Regenerate Credential
+        call: azure-container-registry-registries.registriesregeneratecredential
+        with:
+          regenerateCredentialParameters: rest.regenerateCredentialParameters
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-container-registry-registries-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ContainerRegistryManagementClient — Registries. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: azure-container-registry-registries-list
+      description: Azure Container Registry Registries_ List
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-registries.registrieslist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-registries-list-2
+      description: Azure Container Registry Registries_ List by Resource Group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-registries.registrieslistbyresourcegroup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-registries-delete
+      description: Azure Container Registry Registries_ Delete
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-container-registry-registries.registriesdelete
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-registries-get
+      description: Azure Container Registry Registries_ Get
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-registries.registriesget
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-registries-update
+      description: Azure Container Registry Registries_ Update
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-registries.registriesupdate
+      with:
+        registryUpdateParameters: tools.registryUpdateParameters
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-registries-create
+      description: Azure Container Registry Registries_ Create
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-registries.registriescreate
+      with:
+        registry: tools.registry
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-registries-import
+      description: Azure Container Registry Registries_ Import Image
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-container-registry-registries.registriesimportimage
+      with:
+        parameters: tools.parameters
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-registries-list-3
+      description: Azure Container Registry Registries_ List Credentials
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: azure-container-registry-registries.registrieslistcredentials
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-registries-list-4
+      description: Azure Container Registry Registries_ List Usages
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-container-registry-registries.registrieslistusages
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-container-registry-registries-regenerate
+      description: Azure Container Registry Registries_ Regenerate Credential
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-container-registry-registries.registriesregeneratecredential
+      with:
+        regenerateCredentialParameters: tools.regenerateCredentialParameters
+      outputParameters:
+      - type: object
+        mapping: $.
