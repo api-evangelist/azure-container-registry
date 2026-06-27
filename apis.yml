@@ -35,13 +35,13 @@ apis:
     url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
   - type: OpenAPI
     url: https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/openapi/azure-container-registry-openapi.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/azure-container-registry-operation.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/azure-container-registry-registries.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/azure-container-registry-replications.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/azure-container-registry-webhooks.yaml
 common:
 - type: Website
@@ -58,7 +58,7 @@ common:
   url: https://azure.microsoft.com/en-us/blog/
 - type: StatusPage
   url: https://status.azure.com/
-- type: SignUp
+- type: Signup
   url: https://azure.microsoft.com/en-us/free/
 - type: SpectralRules
   url: https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/rules/azure-container-registry-spectral-rules.yml
