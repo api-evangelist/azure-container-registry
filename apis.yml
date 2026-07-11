@@ -44,6 +44,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/azure-container-registry-webhooks.yaml
 common:
+- type: OAuthScopes
+  url: scopes/azure-container-registry-scopes.yml
 - type: Website
   url: https://azure.microsoft.com/en-us/products/container-registry
 - type: Documentation
