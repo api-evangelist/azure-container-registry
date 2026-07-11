@@ -44,6 +44,12 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/azure-container-registry-webhooks.yaml
 common:
+- type: VulnerabilityDisclosure
+  url: security/azure-container-registry-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/azure-container-registry-domain-security.yml
+- type: Authentication
+  url: authentication/azure-container-registry-authentication.yml
 - type: OAuthScopes
   url: scopes/azure-container-registry-scopes.yml
 - type: Website
