@@ -44,6 +44,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/azure-container-registry-webhooks.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/azure-container-registry-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/azure-container-registry-vulnerability-disclosure.yml
 - type: DomainSecurity
