@@ -1,0 +1,1149 @@
+swagger: '2.0'
+info:
+  title: ContainerRegistryManagementClient Operation Registries API
+  version: 2019-12-01-preview
+  x-apisguru-categories:
+  - cloud
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_assets.onestore.ms_cdnfiles_onestorerolling-1606-01000_shell_v3_images_logo_microsoft.png
+  x-origin:
+  - format: swagger
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/preview/2019-12-01-preview/containerregistry.json
+    version: '2.0'
+  x-preferred: false
+  x-providerName: azure.com
+  x-serviceName: containerregistry
+  x-tags:
+  - Azure
+  - Microsoft
+host: management.azure.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: Registries
+paths:
+  /subscriptions/{subscriptionId}/providers/Microsoft.ContainerRegistry/registries:
+    get:
+      description: Lists all the container registries under the specified subscription.
+      operationId: Registries_List
+      parameters:
+      - $ref: '#/parameters/ApiVersionParameter'
+      - $ref: '#/parameters/SubscriptionIdParameter'
+      responses:
+        '200':
+          description: The request was successful; the request was well-formed and received properly.
+          schema:
+            $ref: '#/definitions/RegistryListResult'
+      tags:
+      - Registries
+      x-ms-examples:
+        RegistryList:
+          parameters:
+            api-version: 2019-12-01-preview
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200':
+              body:
+                value:
+                - id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry
+                  location: westus
+                  name: myRegistry
+                  properties:
+                    adminUserEnabled: true
+                    creationDate: '2017-03-01T23:14:37.0707808Z'
+                    loginServer: myregistry.azurecr.io
+                    provisioningState: Succeeded
+                    status:
+                      displayStatus: Ready
+                      message: The registry is ready.
+                      timestamp: '2017-03-01T23:15:37.0707808Z'
+                  sku:
+                    name: Standard
+                    tier: Standard
+                  tags:
+                    key: value
+                  type: Microsoft.ContainerRegistry/registries
+      x-ms-pageable:
+        nextLinkName: nextLink
+      summary: Azure Container Registry Registries_ List
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries:
+    get:
+      description: Lists all the container registries under the specified resource group.
+      operationId: Registries_ListByResourceGroup
+      parameters:
+      - $ref: '#/parameters/ApiVersionParameter'
+      - $ref: '#/parameters/SubscriptionIdParameter'
+      - $ref: '#/parameters/ResourceGroupParameter'
+      responses:
+        '200':
+          description: The request was successful; the request was well-formed and received properly.
+          schema:
+            $ref: '#/definitions/RegistryListResult'
+      tags:
+      - Registries
+      x-ms-examples:
+        RegistryListByResourceGroup:
+          parameters:
+            api-version: 2019-12-01-preview
+            resourceGroupName: myResourceGroup
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200':
+              body:
+                value:
+                - id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry
+                  location: westus
+                  name: myRegistry
+                  properties:
+                    adminUserEnabled: true
+                    creationDate: '2017-03-01T23:14:37.0707808Z'
+                    loginServer: myregistry.azurecr.io
+                    provisioningState: Succeeded
+                    status:
+                      displayStatus: Ready
+                      message: The registry is ready.
+                      timestamp: '2017-03-01T23:15:37.0707808Z'
+                  sku:
+                    name: Standard
+                    tier: Standard
+                  tags:
+                    key: value
+                  type: Microsoft.ContainerRegistry/registries
+      x-ms-pageable:
+        nextLinkName: nextLink
+      summary: Azure Container Registry Registries_ List by Resource Group
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}
+  : delete:
+      description: Deletes a container registry.
+      operationId: Registries_Delete
+      parameters:
+      - $ref: '#/parameters/ApiVersionParameter'
+      - $ref: '#/parameters/SubscriptionIdParameter'
+      - $ref: '#/parameters/ResourceGroupParameter'
+      - $ref: '#/parameters/RegistryNameParameter'
+      responses:
+        '200':
+          description: The request was successful; the request was well-formed and received properly.
+        '202':
+          description: The request was successful; the operation will complete asynchronously.
+        '204':
+          description: The container registry does not exist in the subscription.
+      tags:
+      - Registries
+      x-ms-examples:
+        RegistryDelete:
+          parameters:
+            api-version: 2019-12-01-preview
+            registryName: myRegistry
+            resourceGroupName: myResourceGroup
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200': {}
+            '202': {}
+            '204': {}
+      x-ms-long-running-operation: true
+      summary: Azure Container Registry Registries_ Delete
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Gets the properties of the specified container registry.
+      operationId: Registries_Get
+      parameters:
+      - $ref: '#/parameters/ApiVersionParameter'
+      - $ref: '#/parameters/SubscriptionIdParameter'
+      - $ref: '#/parameters/ResourceGroupParameter'
+      - $ref: '#/parameters/RegistryNameParameter'
+      responses:
+        '200':
+          description: The request was successful; the request was well-formed and received properly.
+          schema:
+            $ref: '#/definitions/Registry'
+      tags:
+      - Registries
+      x-ms-examples:
+        RegistryGet:
+          parameters:
+            api-version: 2019-12-01-preview
+            registryName: myRegistry
+            resourceGroupName: myResourceGroup
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200':
+              body:
+                id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry
+                location: westus
+                name: myRegistry
+                properties:
+                  adminUserEnabled: true
+                  creationDate: '2017-03-01T23:14:37.0707808Z'
+                  loginServer: myregistry.azurecr.io
+                  provisioningState: Succeeded
+                  status:
+                    displayStatus: Ready
+                    message: The registry is ready.
+                    timestamp: '2017-03-01T23:15:37.0707808Z'
+                sku:
+                  name: Standard
+                  tier: Standard
+                tags:
+                  key: value
+                type: Microsoft.ContainerRegistry/registries
+      summary: Azure Container Registry Registries_ Get
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    patch:
+      description: Updates a container registry with the specified parameters.
+      operationId: Registries_Update
+      parameters:
+      - $ref: '#/parameters/ApiVersionParameter'
+      - $ref: '#/parameters/SubscriptionIdParameter'
+      - $ref: '#/parameters/ResourceGroupParameter'
+      - $ref: '#/parameters/RegistryNameParameter'
+      - description: The parameters for updating a container registry.
+        in: body
+        name: registryUpdateParameters
+        required: true
+        schema:
+          $ref: '#/definitions/RegistryUpdateParameters'
+        example: example-value
+      responses:
+        '200':
+          description: The request was successful; the request was well-formed and received properly.
+          schema:
+            $ref: '#/definitions/Registry'
+        '201':
+          description: The request was successful; the operation will complete asynchronously.
+          schema:
+            $ref: '#/definitions/Registry'
+      tags:
+      - Registries
+      x-ms-examples:
+        RegistryUpdate:
+          parameters:
+            api-version: 2019-12-01-preview
+            registryName: myRegistry
+            registryUpdateParameters:
+              properties:
+                adminUserEnabled: true
+              sku:
+                name: Standard
+              tags:
+                key: value
+            resourceGroupName: myResourceGroup
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200':
+              body:
+                id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry
+                location: westus
+                name: myRegistry
+                properties:
+                  adminUserEnabled: true
+                  creationDate: '2017-03-01T23:14:37.0707808Z'
+                  loginServer: myregistry.azurecr.io
+                  provisioningState: Succeeded
+                  status:
+                    displayStatus: Ready
+                    message: The registry is ready.
+                    timestamp: '2017-03-01T23:15:37.0707808Z'
+                sku:
+                  name: Standard
+                  tier: Standard
+                tags:
+                  key: value
+                type: Microsoft.ContainerRegistry/registries
+            '201':
+              body:
+                id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry
+                location: westus
+                name: myRegistry
+                properties:
+                  adminUserEnabled: true
+                  creationDate: '2017-03-01T23:14:37.0707808Z'
+                  loginServer: myregistry.azurecr.io
+                  provisioningState: Updating
+                  status:
+                    displayStatus: Provisioning
+                    message: The registry is provisioning.
+                    timestamp: '2017-03-01T23:15:37.0707808Z'
+                sku:
+                  name: Standard
+                  tier: Standard
+                tags:
+                  key: value
+                type: Microsoft.ContainerRegistry/registries
+      x-ms-long-running-operation: true
+      summary: Azure Container Registry Registries_ Update
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      description: Creates a container registry with the specified parameters.
+      operationId: Registries_Create
+      parameters:
+      - $ref: '#/parameters/ApiVersionParameter'
+      - $ref: '#/parameters/SubscriptionIdParameter'
+      - $ref: '#/parameters/ResourceGroupParameter'
+      - $ref: '#/parameters/RegistryNameParameter'
+      - description: The parameters for creating a container registry.
+        in: body
+        name: registry
+        required: true
+        schema:
+          $ref: '#/definitions/Registry'
+        example: example-value
+      responses:
+        '200':
+          description: The request was successful; the request was well-formed and received properly.
+          schema:
+            $ref: '#/definitions/Registry'
+        '201':
+          description: The request was successful; the operation will complete asynchronously.
+          schema:
+            $ref: '#/definitions/Registry'
+      tags:
+      - Registries
+      x-ms-examples:
+        RegistryCreate:
+          parameters:
+            api-version: 2019-12-01-preview
+            registry:
+              location: westus
+              properties:
+                adminUserEnabled: true
+              sku:
+                name: Standard
+              tags:
+                key: value
+            registryName: myRegistry
+            resourceGroupName: myResourceGroup
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200':
+              body:
+                id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry
+                location: westus
+                name: myRegistry
+                properties:
+                  adminUserEnabled: true
+                  creationDate: '2017-03-01T23:14:37.0707808Z'
+                  loginServer: myregistry.azurecr.io
+                  provisioningState: Succeeded
+                  status:
+                    displayStatus: Ready
+                    message: The registry is ready.
+                    timestamp: '2017-03-01T23:15:37.0707808Z'
+                sku:
+                  name: Standard
+                  tier: Standard
+                tags:
+                  key: value
+                type: Microsoft.ContainerRegistry/registries
+            '201':
+              body:
+                id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry
+                location: westus
+                name: myRegistry
+                properties:
+                  adminUserEnabled: true
+                  creationDate: '2017-03-01T23:14:37.0707808Z'
+                  loginServer: myregistry.azurecr.io
+                  provisioningState: Creating
+                  status:
+                    displayStatus: Provisioning
+                    message: The registry is provisioning.
+                    timestamp: '2017-03-01T23:15:37.0707808Z'
+                sku:
+                  name: Standard
+                  tier: Standard
+                tags:
+                  key: value
+                type: Microsoft.ContainerRegistry/registries
+      x-ms-long-running-operation: true
+      summary: Azure Container Registry Registries_ Create
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/importImage
+  : post:
+      description: Copies an image to this container registry from the specified container registry.
+      operationId: Registries_ImportImage
+      parameters:
+      - $ref: '#/parameters/ApiVersionParameter'
+      - $ref: '#/parameters/SubscriptionIdParameter'
+      - $ref: '#/parameters/ResourceGroupParameter'
+      - $ref: '#/parameters/RegistryNameParameter'
+      - description: The parameters specifying the image to copy and the source container registry.
+        in: body
+        name: parameters
+        required: true
+        schema:
+          $ref: '#/definitions/ImportImageParameters'
+        example: example-value
+      responses:
+        '200':
+          description: The request was successful; the operation has completed successfully.
+        '202':
+          description: The request was successful; the operation will complete asynchronously.
+      tags:
+      - Registries
+      x-ms-examples:
+        ImportImageByManifestDigest:
+          parameters:
+            api-version: 2019-12-01-preview
+            parameters:
+              mode: Force
+              source:
+                resourceId: /subscriptions/10000000-0000-0000-0000-000000000000/resourceGroups/sourceResourceGroup/providers/Microsoft.ContainerRegistry/registries/sourceRegistry
+                sourceImage: sourceRepository@sha256:0000000000000000000000000000000000000000000000000000000000000000
+              targetTags:
+              - targetRepository:targetTag
+              untaggedTargetRepositories:
+              - targetRepository1
+            registryName: myRegistry
+            resourceGroupName: myResourceGroup
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200': {}
+            '202': {}
+        ImportImageByTag:
+          parameters:
+            api-version: 2019-12-01-preview
+            parameters:
+              mode: Force
+              source:
+                resourceId: /subscriptions/10000000-0000-0000-0000-000000000000/resourceGroups/sourceResourceGroup/providers/Microsoft.ContainerRegistry/registries/sourceRegistry
+                sourceImage: sourceRepository:sourceTag
+              targetTags:
+              - targetRepository:targetTag
+              untaggedTargetRepositories:
+              - targetRepository1
+            registryName: myRegistry
+            resourceGroupName: myResourceGroup
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200': {}
+            '202': {}
+        ImportImageFromPublicRegistry:
+          parameters:
+            api-version: 2019-12-01-preview
+            parameters:
+              mode: Force
+              source:
+                registryUri: registry.hub.docker.com
+                sourceImage: library/hello-world
+              targetTags:
+              - targetRepository:targetTag
+              untaggedTargetRepositories:
+              - targetRepository1
+            registryName: myRegistry
+            resourceGroupName: myResourceGroup
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200': {}
+            '202': {}
+      x-ms-long-running-operation: true
+      summary: Azure Container Registry Registries_ Import Image
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/listCredentials
+  : post:
+      description: Lists the login credentials for the specified container registry.
+      operationId: Registries_ListCredentials
+      parameters:
+      - $ref: '#/parameters/ApiVersionParameter'
+      - $ref: '#/parameters/SubscriptionIdParameter'
+      - $ref: '#/parameters/ResourceGroupParameter'
+      - $ref: '#/parameters/RegistryNameParameter'
+      responses:
+        '200':
+          description: The request was successful; the list of credentials retrieved and returned successfully.
+          schema:
+            $ref: '#/definitions/RegistryListCredentialsResult'
+      tags:
+      - Registries
+      x-ms-examples:
+        RegistryListCredentials:
+          parameters:
+            api-version: 2019-12-01-preview
+            registryName: myRegistry
+            resourceGroupName: myResourceGroup
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200':
+              body:
+                passwords:
+                - name: password
+                  value: '00000000000000000000000000000000'
+                - name: password2
+                  value: '00000000000000000000000000000000'
+                username: myRegistry
+      summary: Azure Container Registry Registries_ List Credentials
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/listUsages
+  : get:
+      description: Gets the quota usages for the specified container registry.
+      operationId: Registries_ListUsages
+      parameters:
+      - $ref: '#/parameters/ApiVersionParameter'
+      - $ref: '#/parameters/SubscriptionIdParameter'
+      - $ref: '#/parameters/ResourceGroupParameter'
+      - $ref: '#/parameters/RegistryNameParameter'
+      responses:
+        '200':
+          description: The request was successful; the registry usages retrieved and returned successfully.
+          schema:
+            $ref: '#/definitions/RegistryUsageListResult'
+      tags:
+      - Registries
+      x-ms-examples:
+        RegistryListUsages:
+          parameters:
+            api-version: 2019-12-01-preview
+            registryName: myRegistry
+            resourceGroupName: myResourceGroup
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200':
+              body:
+                value:
+                - currentValue: 12345678
+                  limit: 107374182400
+                  name: Size
+                  unit: Bytes
+                - currentValue: 2
+                  limit: 10
+                  name: Webhooks
+                  unit: Count
+      summary: Azure Container Registry Registries_ List Usages
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/regenerateCredential
+  : post:
+      description: Regenerates one of the login credentials for the specified container registry.
+      operationId: Registries_RegenerateCredential
+      parameters:
+      - $ref: '#/parameters/ApiVersionParameter'
+      - $ref: '#/parameters/SubscriptionIdParameter'
+      - $ref: '#/parameters/ResourceGroupParameter'
+      - $ref: '#/parameters/RegistryNameParameter'
+      - description: Specifies name of the password which should be regenerated -- password or password2.
+        in: body
+        name: regenerateCredentialParameters
+        required: true
+        schema:
+          $ref: '#/definitions/RegenerateCredentialParameters'
+        example: example-value
+      responses:
+        '200':
+          description: The request was successful; the specified credential regenerated successfully.
+          schema:
+            $ref: '#/definitions/RegistryListCredentialsResult'
+      tags:
+      - Registries
+      x-ms-examples:
+        RegistryRegenerateCredential:
+          parameters:
+            api-version: 2019-12-01-preview
+            regenerateCredentialParameters:
+              name: password
+            registryName: myRegistry
+            resourceGroupName: myResourceGroup
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200':
+              body:
+                passwords:
+                - name: password
+                  value: '00000000000000000000000000000000'
+                - name: password2
+                  value: '00000000000000000000000000000000'
+                username: myRegistry
+      summary: Azure Container Registry Registries_ Regenerate Credential
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+definitions:
+  TrustPolicy:
+    description: The content trust policy for a container registry.
+    properties:
+      status:
+        default: disabled
+        description: The value that indicates whether the policy is enabled or not.
+        enum:
+        - enabled
+        - disabled
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: PolicyStatus
+      type:
+        default: Notary
+        description: The type of trust policy.
+        enum:
+        - Notary
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: TrustPolicyType
+    type: object
+  Resource:
+    description: An Azure resource.
+    properties:
+      id:
+        description: The resource ID.
+        readOnly: true
+        type: string
+      location:
+        description: The location of the resource. This cannot be changed after the resource is created.
+        type: string
+        x-ms-mutability:
+        - read
+        - create
+      name:
+        description: The name of the resource.
+        readOnly: true
+        type: string
+      tags:
+        additionalProperties:
+          type: string
+        description: The tags of the resource.
+        type: object
+      type:
+        description: The type of the resource.
+        readOnly: true
+        type: string
+    required:
+    - location
+    x-ms-azure-resource: true
+  ImportImageParameters:
+    properties:
+      mode:
+        default: NoForce
+        description: When Force, any existing target tags will be overwritten. When NoForce, any existing target tags will fail the operation before any copying begins.
+        enum:
+        - NoForce
+        - Force
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: ImportMode
+      source:
+        $ref: '#/definitions/ImportSource'
+        description: The source of the image.
+      targetTags:
+        description: List of strings of the form repo[:tag]. When tag is omitted the source will be used (or 'latest' if source tag is also omitted).
+        items:
+          type: string
+        type: array
+      untaggedTargetRepositories:
+        description: List of strings of repository names to do a manifest only copy. No tag will be created.
+        items:
+          type: string
+        type: array
+    required:
+    - source
+    type: object
+  RegistryListCredentialsResult:
+    description: The response from the ListCredentials operation.
+    properties:
+      passwords:
+        description: The list of passwords for a container registry.
+        items:
+          $ref: '#/definitions/RegistryPassword'
+        type: array
+      username:
+        description: The username for a container registry.
+        type: string
+    type: object
+  Sku:
+    description: The SKU of a container registry.
+    properties:
+      name:
+        description: The SKU name of the container registry. Required for registry creation.
+        enum:
+        - Classic
+        - Basic
+        - Standard
+        - Premium
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: SkuName
+      tier:
+        description: The SKU tier based on the SKU name.
+        enum:
+        - Classic
+        - Basic
+        - Standard
+        - Premium
+        readOnly: true
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: SkuTier
+    required:
+    - name
+    type: object
+  UserIdentityProperties:
+    properties:
+      clientId:
+        description: The client id of user assigned identity.
+        type: string
+      principalId:
+        description: The principal id of user assigned identity.
+        type: string
+    type: object
+  Policies:
+    description: The policies for a container registry.
+    properties:
+      quarantinePolicy:
+        $ref: '#/definitions/QuarantinePolicy'
+        description: The quarantine policy for a container registry.
+      retentionPolicy:
+        $ref: '#/definitions/RetentionPolicy'
+        description: The retention policy for a container registry.
+      trustPolicy:
+        $ref: '#/definitions/TrustPolicy'
+        description: The content trust policy for a container registry.
+    type: object
+  ImportSource:
+    properties:
+      credentials:
+        $ref: '#/definitions/ImportSourceCredentials'
+        description: Credentials used when importing from a registry uri.
+      registryUri:
+        description: The address of the source registry (e.g. 'mcr.microsoft.com').
+        type: string
+      resourceId:
+        description: The resource identifier of the source Azure Container Registry.
+        type: string
+      sourceImage:
+        description: "Repository name of the source image.\r\nSpecify an image by repository ('hello-world'). This will use the 'latest' tag.\r\nSpecify an image by tag ('hello-world:latest').\r\nSpecify an image by sha256-based manifest digest ('hello-world@sha256:abc123')."
+        type: string
+    required:
+    - sourceImage
+    type: object
+  NetworkRuleSet:
+    description: The network rule set for a container registry.
+    properties:
+      defaultAction:
+        default: Allow
+        description: The default action of allow or deny when no other rules match.
+        enum:
+        - Allow
+        - Deny
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: DefaultAction
+      ipRules:
+        description: The IP ACL rules.
+        items:
+          $ref: '#/definitions/IPRule'
+        type: array
+      virtualNetworkRules:
+        description: The virtual network rules.
+        items:
+          $ref: '#/definitions/VirtualNetworkRule'
+        type: array
+    required:
+    - defaultAction
+    type: object
+  RegenerateCredentialParameters:
+    description: The parameters used to regenerate the login credential.
+    properties:
+      name:
+        description: Specifies name of the password which should be regenerated -- password or password2.
+        enum:
+        - password
+        - password2
+        type: string
+        x-ms-enum:
+          modelAsString: false
+          name: PasswordName
+    required:
+    - name
+    type: object
+  IPRule:
+    description: IP rule with specific IP or IP range in CIDR format.
+    properties:
+      action:
+        default: Allow
+        description: The action of IP ACL rule.
+        enum:
+        - Allow
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: Action
+      value:
+        description: Specifies the IP or IP range in CIDR format. Only IPV4 address is allowed.
+        type: string
+        x-ms-client-name: IPAddressOrRange
+    required:
+    - value
+    type: object
+  RegistryUsageListResult:
+    description: The result of a request to get container registry quota usages.
+    properties:
+      value:
+        description: The list of container registry quota usages.
+        items:
+          $ref: '#/definitions/RegistryUsage'
+        type: array
+    type: object
+  RegistryUsage:
+    description: The quota usage for a container registry.
+    properties:
+      currentValue:
+        description: The current value of the usage.
+        format: int64
+        type: integer
+      limit:
+        description: The limit of the usage.
+        format: int64
+        type: integer
+      name:
+        description: The name of the usage.
+        type: string
+      unit:
+        description: The unit of measurement.
+        enum:
+        - Count
+        - Bytes
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: RegistryUsageUnit
+    type: object
+  VirtualNetworkRule:
+    description: Virtual network rule.
+    properties:
+      action:
+        default: Allow
+        description: The action of virtual network rule.
+        enum:
+        - Allow
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: Action
+      id:
+        description: 'Resource ID of a subnet, for example: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.'
+        type: string
+        x-ms-client-name: VirtualNetworkResourceId
+    required:
+    - id
+    type: object
+  IdentityProperties:
+    description: Managed identity for the resource.
+    properties:
+      principalId:
+        description: The principal ID of resource identity.
+        type: string
+      tenantId:
+        description: The tenant ID of resource.
+        type: string
+      type:
+        description: The identity type.
+        enum:
+        - SystemAssigned
+        - UserAssigned
+        - SystemAssigned, UserAssigned
+        - None
+        type: string
+        x-ms-enum:
+          modelAsString: false
+          name: ResourceIdentityType
+      userAssignedIdentities:
+        additionalProperties:
+          $ref: '#/definitions/UserIdentityProperties'
+        description: "The list of user identities associated with the resource. The user identity \r\ndictionary key references will be ARM resource ids in the form: \r\n'/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/\r\n    providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'."
+        type: object
+    type: object
+  ImportSourceCredentials:
+    properties:
+      password:
+        description: The password used to authenticate with the source registry.
+        type: string
+      username:
+        description: The username to authenticate with the source registry.
+        type: string
+    required:
+    - password
+    type: object
+  RegistryListResult:
+    description: The result of a request to list container registries.
+    properties:
+      nextLink:
+        description: The URI that can be used to request the next list of container registries.
+        type: string
+      value:
+        description: The list of container registries. Since this list may be incomplete, the nextLink field should be used to request the next list of container registries.
+        items:
+          $ref: '#/definitions/Registry'
+        type: array
+    type: object
+  Registry:
+    allOf:
+    - $ref: '#/definitions/Resource'
+    description: An object that represents a container registry.
+    properties:
+      identity:
+        $ref: '#/definitions/IdentityProperties'
+        description: The identity of the container registry.
+      properties:
+        $ref: '#/definitions/RegistryProperties'
+        description: The properties of the container registry.
+        x-ms-client-flatten: true
+      sku:
+        $ref: '#/definitions/Sku'
+        description: The SKU of the container registry.
+    required:
+    - sku
+    type: object
+  RegistryPropertiesUpdateParameters:
+    description: The parameters for updating the properties of a container registry.
+    properties:
+      adminUserEnabled:
+        description: The value that indicates whether the admin user is enabled.
+        type: boolean
+      encryption:
+        $ref: '#/definitions/EncryptionProperty'
+        description: The encryption settings of container registry.
+      networkRuleSet:
+        $ref: '#/definitions/NetworkRuleSet'
+        description: The network rule set for a container registry.
+      policies:
+        $ref: '#/definitions/Policies'
+        description: The policies for a container registry.
+    type: object
+  RetentionPolicy:
+    description: The retention policy for a container registry.
+    properties:
+      days:
+        default: 7
+        description: The number of days to retain an untagged manifest after which it gets purged.
+        format: int32
+        type: integer
+      lastUpdatedTime:
+        description: The timestamp when the policy was last updated.
+        format: date-time
+        readOnly: true
+        type: string
+      status:
+        default: disabled
+        description: The value that indicates whether the policy is enabled or not.
+        enum:
+        - enabled
+        - disabled
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: PolicyStatus
+    type: object
+  QuarantinePolicy:
+    description: The quarantine policy for a container registry.
+    properties:
+      status:
+        default: disabled
+        description: The value that indicates whether the policy is enabled or not.
+        enum:
+        - enabled
+        - disabled
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: PolicyStatus
+    type: object
+  RegistryPassword:
+    description: The login password for the container registry.
+    properties:
+      name:
+        description: The password name.
+        enum:
+        - password
+        - password2
+        type: string
+        x-ms-enum:
+          modelAsString: false
+          name: PasswordName
+      value:
+        description: The password value.
+        type: string
+    type: object
+  KeyVaultProperties:
+    properties:
+      identity:
+        description: The client id of the identity which will be used to access key vault.
+        type: string
+      keyIdentifier:
+        description: Key vault uri to access the encryption key.
+        type: string
+    type: object
+  RegistryUpdateParameters:
+    description: The parameters for updating a container registry.
+    properties:
+      identity:
+        $ref: '#/definitions/IdentityProperties'
+        description: The identity of the container registry.
+      properties:
+        $ref: '#/definitions/RegistryPropertiesUpdateParameters'
+        description: The properties that the container registry will be updated with.
+        x-ms-client-flatten: true
+      sku:
+        $ref: '#/definitions/Sku'
+        description: The SKU of the container registry.
+      tags:
+        additionalProperties:
+          type: string
+        description: The tags for the container registry.
+        type: object
+    type: object
+  RegistryProperties:
+    description: The properties of a container registry.
+    properties:
+      adminUserEnabled:
+        default: false
+        description: The value that indicates whether the admin user is enabled.
+        type: boolean
+      creationDate:
+        description: The creation date of the container registry in ISO8601 format.
+        format: date-time
+        readOnly: true
+        type: string
+      encryption:
+        $ref: '#/definitions/EncryptionProperty'
+        description: The encryption settings of container registry.
+      loginServer:
+        description: The URL that can be used to log into the container registry.
+        readOnly: true
+        type: string
+      networkRuleSet:
+        $ref: '#/definitions/NetworkRuleSet'
+        description: The network rule set for a container registry.
+      policies:
+        $ref: '#/definitions/Policies'
+        description: The policies for a container registry.
+      provisioningState:
+        description: The provisioning state of the container registry at the time the operation was called.
+        enum:
+        - Creating
+        - Updating
+        - Deleting
+        - Succeeded
+        - Failed
+        - Canceled
+        readOnly: true
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: ProvisioningState
+      status:
+        $ref: '#/definitions/Status'
+        description: The status of the container registry at the time the operation was called.
+        readOnly: true
+      storageAccount:
+        $ref: '#/definitions/StorageAccountProperties'
+        description: The properties of the storage account for the container registry. Only applicable to Classic SKU.
+    type: object
+  Status:
+    description: The status of an Azure resource at the time the operation was called.
+    properties:
+      displayStatus:
+        description: The short label for the status.
+        readOnly: true
+        type: string
+      message:
+        description: The detailed message for the status, including alerts and error messages.
+        readOnly: true
+        type: string
+      timestamp:
+        description: The timestamp when the status was changed to the current value.
+        format: date-time
+        readOnly: true
+        type: string
+    type: object
+  EncryptionProperty:
+    properties:
+      keyVaultProperties:
+        $ref: '#/definitions/KeyVaultProperties'
+        description: Key vault properties.
+      status:
+        description: Indicates whether or not the encryption is enabled for container registry.
+        enum:
+        - enabled
+        - disabled
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: EncryptionStatus
+    type: object
+  StorageAccountProperties:
+    description: The properties of a storage account for a container registry. Only applicable to Classic SKU.
+    properties:
+      id:
+        description: The resource ID of the storage account.
+        type: string
+    required:
+    - id
+    type: object
+parameters:
+  ResourceGroupParameter:
+    description: The name of the resource group to which the container registry belongs.
+    in: path
+    minLength: 1
+    name: resourceGroupName
+    required: true
+    type: string
+    x-ms-parameter-location: method
+  ApiVersionParameter:
+    description: The client API version.
+    in: query
+    name: api-version
+    required: true
+    type: string
+  RegistryNameParameter:
+    description: The name of the container registry.
+    in: path
+    maxLength: 50
+    minLength: 5
+    name: registryName
+    pattern: ^[a-zA-Z0-9]*$
+    required: true
+    type: string
+    x-ms-parameter-location: method
+  SubscriptionIdParameter:
+    description: The Microsoft Azure subscription ID.
+    in: path
+    name: subscriptionId
+    required: true
+    type: string
+securityDefinitions:
+  azure_auth:
+    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+    description: Azure Active Directory OAuth2 Flow
+    flow: implicit
+    scopes:
+      user_impersonation: impersonate your user account
+    type: oauth2

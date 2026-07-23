@@ -1,0 +1,239 @@
+swagger: '2.0'
+info:
+  title: ContainerRegistryManagementClient Operation API
+  version: 2019-12-01-preview
+  x-apisguru-categories:
+  - cloud
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_assets.onestore.ms_cdnfiles_onestorerolling-1606-01000_shell_v3_images_logo_microsoft.png
+  x-origin:
+  - format: swagger
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/preview/2019-12-01-preview/containerregistry.json
+    version: '2.0'
+  x-preferred: false
+  x-providerName: azure.com
+  x-serviceName: containerregistry
+  x-tags:
+  - Azure
+  - Microsoft
+host: management.azure.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: Operation
+paths:
+  /providers/Microsoft.ContainerRegistry/operations:
+    get:
+      description: Lists all of the available Azure Container Registry REST API operations.
+      operationId: Operations_List
+      parameters:
+      - $ref: '#/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: The request was successful; the request was well-formed and received properly.
+          schema:
+            $ref: '#/definitions/OperationListResult'
+      tags:
+      - Operation
+      x-ms-pageable:
+        nextLinkName: nextLink
+      summary: Azure Container Registry Operations_ List
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /subscriptions/{subscriptionId}/providers/Microsoft.ContainerRegistry/checkNameAvailability:
+    post:
+      description: Checks whether the container registry name is available for use. The name must contain only alphanumeric characters, be globally unique, and between 5 and 50 characters in length.
+      operationId: Registries_CheckNameAvailability
+      parameters:
+      - $ref: '#/parameters/ApiVersionParameter'
+      - $ref: '#/parameters/SubscriptionIdParameter'
+      - description: The object containing information for the availability request.
+        in: body
+        name: registryNameCheckRequest
+        required: true
+        schema:
+          $ref: '#/definitions/RegistryNameCheckRequest'
+        example: example-value
+      responses:
+        '200':
+          description: The request was successful; the request was well-formed and received properly.
+          schema:
+            $ref: '#/definitions/RegistryNameStatus'
+      tags:
+      - Operation
+      x-ms-examples:
+        RegistryCheckNameAvailable:
+          parameters:
+            api-version: 2019-12-01-preview
+            registryNameCheckRequest:
+              name: myRegistry
+              type: Microsoft.ContainerRegistry/registries
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200':
+              body:
+                nameAvailable: true
+        RegistryCheckNameNotAvailable:
+          parameters:
+            api-version: 2019-12-01-preview
+            registryNameCheckRequest:
+              name: myRegistry
+              type: Microsoft.ContainerRegistry/registries
+            subscriptionId: 00000000-0000-0000-0000-000000000000
+          responses:
+            '200':
+              body:
+                message: The registry myRegistry is already in use.
+                nameAvailable: false
+                reason: AlreadyExists
+      summary: Azure Container Registry Registries_ Check Name Availability
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+definitions:
+  OperationListResult:
+    description: The result of a request to list container registry operations.
+    properties:
+      nextLink:
+        description: The URI that can be used to request the next list of container registry operations.
+        type: string
+      value:
+        description: The list of container registry operations. Since this list may be incomplete, the nextLink field should be used to request the next list of operations.
+        items:
+          $ref: '#/definitions/OperationDefinition'
+        type: array
+    type: object
+  OperationPropertiesDefinition:
+    description: The definition of Azure Monitoring properties.
+    properties:
+      serviceSpecification:
+        $ref: '#/definitions/OperationServiceSpecificationDefinition'
+        description: The definition of Azure Monitoring service.
+    type: object
+  OperationDisplayDefinition:
+    description: The display information for a container registry operation.
+    properties:
+      description:
+        description: The description for the operation.
+        type: string
+      operation:
+        description: The operation that users can perform.
+        type: string
+      provider:
+        description: 'The resource provider name: Microsoft.ContainerRegistry.'
+        type: string
+      resource:
+        description: The resource on which the operation is performed.
+        type: string
+    type: object
+  OperationMetricSpecificationDefinition:
+    description: The definition of Azure Monitoring metric.
+    properties:
+      aggregationType:
+        description: Metric aggregation type.
+        type: string
+      displayDescription:
+        description: Metric description.
+        type: string
+      displayName:
+        description: Metric display name.
+        type: string
+      internalMetricName:
+        description: Internal metric name.
+        type: string
+      name:
+        description: Metric name.
+        type: string
+      unit:
+        description: Metric unit.
+        type: string
+    type: object
+  RegistryNameStatus:
+    description: The result of a request to check the availability of a container registry name.
+    properties:
+      message:
+        description: If any, the error message that provides more detail for the reason that the name is not available.
+        type: string
+      nameAvailable:
+        description: The value that indicates whether the name is available.
+        type: boolean
+      reason:
+        description: If any, the reason that the name is not available.
+        type: string
+    type: object
+  OperationDefinition:
+    description: The definition of a container registry operation.
+    properties:
+      display:
+        $ref: '#/definitions/OperationDisplayDefinition'
+        description: The display information for the container registry operation.
+      name:
+        description: 'Operation name: {provider}/{resource}/{operation}.'
+        type: string
+      origin:
+        description: The origin information of the container registry operation.
+        type: string
+      properties:
+        $ref: '#/definitions/OperationPropertiesDefinition'
+        description: The properties information for the container registry operation.
+        x-ms-client-flatten: true
+    type: object
+  OperationServiceSpecificationDefinition:
+    description: The definition of Azure Monitoring list.
+    properties:
+      metricSpecifications:
+        description: A list of Azure Monitoring metrics definition.
+        items:
+          $ref: '#/definitions/OperationMetricSpecificationDefinition'
+        type: array
+    type: object
+  RegistryNameCheckRequest:
+    description: A request to check whether a container registry name is available.
+    properties:
+      name:
+        description: The name of the container registry.
+        maxLength: 50
+        minLength: 5
+        pattern: ^[a-zA-Z0-9]*$
+        type: string
+      type:
+        description: The resource type of the container registry. This field must be set to 'Microsoft.ContainerRegistry/registries'.
+        enum:
+        - Microsoft.ContainerRegistry/registries
+        type: string
+        x-ms-enum:
+          modelAsString: false
+          name: ContainerRegistryResourceType
+    required:
+    - name
+    - type
+    type: object
+parameters:
+  SubscriptionIdParameter:
+    description: The Microsoft Azure subscription ID.
+    in: path
+    name: subscriptionId
+    required: true
+    type: string
+  ApiVersionParameter:
+    description: The client API version.
+    in: query
+    name: api-version
+    required: true
+    type: string
+securityDefinitions:
+  azure_auth:
+    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+    description: Azure Active Directory OAuth2 Flow
+    flow: implicit
+    scopes:
+      user_impersonation: impersonate your user account
+    type: oauth2
