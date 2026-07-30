@@ -4,7 +4,20 @@ description: Azure Container Registry is a managed Docker registry service based
   and managing private container images and artifacts. It supports automated container image builds, geo-replication, and
   integrates with Azure Kubernetes Service and other Azure deployment targets.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/azure-container-registry.png
 tags:
 - Azure
 - Container Images
@@ -16,25 +29,94 @@ created: '2026-03-26'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: azure-container-registry:azure-container-registry
-  name: Azure Container Registry
-  description: Azure Container Registry is a managed Docker registry service for storing and managing private container images
-    and artifacts with support for automated builds, geo-replication, and integration with Azure deployment targets.
+- aid: azure-container-registry:azure-container-registry-operation-api
+  name: Azure Container Registry Operation API
+  description: The Operation API from Azure Container Registry — 2 operation(s) for operation.
   humanURL: https://azure.microsoft.com/en-us/products/container-registry
   tags:
-  - Container Images
-  - Containers
-  - Docker
-  - Registry
+  - Operation
   properties:
+  - type: OpenAPI
+    url: openapi/azure-container-registry-operation-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/azure/container-registry/
   - type: GettingStarted
-    url: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
+    url: >-
+      https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
+  - type: X-NaftikoCapability
+    url: capabilities/azure-container-registry-operation.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/azure-container-registry-registries.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/azure-container-registry-replications.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/azure-container-registry-webhooks.yaml
+- aid: azure-container-registry:azure-container-registry-registries-api
+  name: Azure Container Registry Registries API
+  description: The Registries API from Azure Container Registry — 7 operation(s) for registries.
+  humanURL: https://azure.microsoft.com/en-us/products/container-registry
+  tags:
+  - Registries
+  properties:
   - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/openapi/azure-container-registry-openapi.yaml
+    url: openapi/azure-container-registry-registries-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/container-registry/
+  - type: GettingStarted
+    url: >-
+      https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
+  - type: X-NaftikoCapability
+    url: capabilities/azure-container-registry-operation.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/azure-container-registry-registries.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/azure-container-registry-replications.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/azure-container-registry-webhooks.yaml
+- aid: azure-container-registry:azure-container-registry-replications-api
+  name: Azure Container Registry Replications API
+  description: The Replications API from Azure Container Registry — 2 operation(s) for replications.
+  humanURL: https://azure.microsoft.com/en-us/products/container-registry
+  tags:
+  - Replications
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-container-registry-replications-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/container-registry/
+  - type: GettingStarted
+    url: >-
+      https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
+  - type: X-NaftikoCapability
+    url: capabilities/azure-container-registry-operation.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/azure-container-registry-registries.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/azure-container-registry-replications.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/azure-container-registry-webhooks.yaml
+- aid: azure-container-registry:azure-container-registry-webhooks-api
+  name: Azure Container Registry Webhooks API
+  description: The Webhooks API from Azure Container Registry — 5 operation(s) for webhooks.
+  humanURL: https://azure.microsoft.com/en-us/products/container-registry
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-container-registry-webhooks-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/container-registry/
+  - type: GettingStarted
+    url: >-
+      https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
   - type: X-NaftikoCapability
     url: capabilities/azure-container-registry-operation.yaml
   - type: X-NaftikoCapability
