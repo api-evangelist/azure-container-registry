@@ -1,0 +1,20 @@
+{
+  "provider": "azure-container-registry",
+  "sources": [
+    "azure-container-registry-operation-api-openapi.yml",
+    "azure-container-registry-registries-api-openapi.yml",
+    "azure-container-registry-replications-api-openapi.yml",
+    "azure-container-registry-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "azure-container-registry-operation-api-openapi.yml",
+    "azure-container-registry-registries-api-openapi.yml",
+    "azure-container-registry-replications-api-openapi.yml",
+    "azure-container-registry-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
