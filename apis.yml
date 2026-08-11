@@ -45,14 +45,6 @@ apis:
       https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-operation.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-registries.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-replications.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-webhooks.yaml
 - aid: azure-container-registry:azure-container-registry-registries-api
   name: Azure Container Registry Registries API
   description: The Registries API from Azure Container Registry — 7 operation(s) for registries.
@@ -69,14 +61,6 @@ apis:
       https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-operation.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-registries.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-replications.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-webhooks.yaml
 - aid: azure-container-registry:azure-container-registry-replications-api
   name: Azure Container Registry Replications API
   description: The Replications API from Azure Container Registry — 2 operation(s) for replications.
@@ -93,14 +77,6 @@ apis:
       https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-operation.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-registries.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-replications.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-webhooks.yaml
 - aid: azure-container-registry:azure-container-registry-webhooks-api
   name: Azure Container Registry Webhooks API
   description: The Webhooks API from Azure Container Registry — 5 operation(s) for webhooks.
@@ -117,14 +93,6 @@ apis:
       https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-operation.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-registries.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-replications.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/azure-container-registry-webhooks.yaml
 common:
 - type: AgenticAccess
   url: agentic-access/azure-container-registry-agentic-access.yml
