@@ -1,0 +1,1951 @@
+{
+  "item": [
+    {
+      "id": "8fc07461-9a9d-4d4a-9909-909b4fb28d6f",
+      "name": "Registries",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a60ed461-bbd6-4bb6-9d9c-a0cd9f32d1e9",
+          "name": "Azure Container Registry Registries_ List",
+          "request": {
+            "name": "Azure Container Registry Registries_ List",
+            "description": {
+              "content": "Lists all the container registries under the specified subscription.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "providers",
+                "Microsoft.ContainerRegistry",
+                "registries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The Microsoft Azure subscription ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3985789d-3a5c-4ce2-adc0-2d21a37a9893",
+              "name": "The request was successful; the request was well-formed and received properly.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry\",\n      \"location\": \"westus\",\n      \"name\": \"myRegistry\",\n      \"properties\": {\n        \"adminUserEnabled\": true,\n        \"creationDate\": \"2017-03-01T23:14:37.0707808Z\",\n        \"loginServer\": \"myregistry.azurecr.io\",\n        \"provisioningState\": \"Succeeded\",\n        \"status\": {\n          \"displayStatus\": \"Ready\",\n          \"message\": \"The registry is ready.\",\n          \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\n        }\n      },\n      \"sku\": {\n        \"name\": \"Standard\",\n        \"tier\": \"Standard\"\n      },\n      \"tags\": {\n        \"key\": \"value\"\n      },\n      \"type\": \"Microsoft.ContainerRegistry/registries\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f521ff64-63e4-4855-9cf7-218552a5b568",
+          "name": "Azure Container Registry Registries_ List by Resource Group",
+          "request": {
+            "name": "Azure Container Registry Registries_ List by Resource Group",
+            "description": {
+              "content": "Lists all the container registries under the specified resource group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.ContainerRegistry",
+                "registries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The Microsoft Azure subscription ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group to which the container registry belongs."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8bbc5436-0f46-415a-b52e-052532e86d15",
+              "name": "The request was successful; the request was well-formed and received properly.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry\",\n      \"location\": \"westus\",\n      \"name\": \"myRegistry\",\n      \"properties\": {\n        \"adminUserEnabled\": true,\n        \"creationDate\": \"2017-03-01T23:14:37.0707808Z\",\n        \"loginServer\": \"myregistry.azurecr.io\",\n        \"provisioningState\": \"Succeeded\",\n        \"status\": {\n          \"displayStatus\": \"Ready\",\n          \"message\": \"The registry is ready.\",\n          \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\n        }\n      },\n      \"sku\": {\n        \"name\": \"Standard\",\n        \"tier\": \"Standard\"\n      },\n      \"tags\": {\n        \"key\": \"value\"\n      },\n      \"type\": \"Microsoft.ContainerRegistry/registries\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8f9ef169-13dd-4895-8b00-2e605ed8d7a2",
+          "name": "Azure Container Registry Registries_ Delete",
+          "request": {
+            "name": "Azure Container Registry Registries_ Delete",
+            "description": {
+              "content": "Deletes a container registry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.ContainerRegistry",
+                "registries",
+                ":registryName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The Microsoft Azure subscription ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group to which the container registry belongs."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registryName",
+                  "description": "(Required) The name of the container registry."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6ab66aca-7f52-4acf-82c4-64b9d4c11d08",
+              "name": "The request was successful; the request was well-formed and received properly.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries",
+                    ":registryName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registryName",
+                      "description": "(Required) The name of the container registry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6f6fcd1f-3d6e-4eaf-b11b-88fdbdeab8af",
+              "name": "The request was successful; the operation will complete asynchronously.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries",
+                    ":registryName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registryName",
+                      "description": "(Required) The name of the container registry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b0220d3b-d5de-47aa-87b3-a751d7c034d1",
+              "name": "The container registry does not exist in the subscription.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries",
+                    ":registryName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registryName",
+                      "description": "(Required) The name of the container registry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7d2571dc-e2ff-4d6b-819c-ec2b152f2148",
+          "name": "Azure Container Registry Registries_ Get",
+          "request": {
+            "name": "Azure Container Registry Registries_ Get",
+            "description": {
+              "content": "Gets the properties of the specified container registry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.ContainerRegistry",
+                "registries",
+                ":registryName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The Microsoft Azure subscription ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group to which the container registry belongs."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registryName",
+                  "description": "(Required) The name of the container registry."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "93468233-9202-40d2-9621-d5154e998e8f",
+              "name": "The request was successful; the request was well-formed and received properly.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries",
+                    ":registryName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registryName",
+                      "description": "(Required) The name of the container registry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry\",\n  \"location\": \"westus\",\n  \"name\": \"myRegistry\",\n  \"properties\": {\n    \"adminUserEnabled\": true,\n    \"creationDate\": \"2017-03-01T23:14:37.0707808Z\",\n    \"loginServer\": \"myregistry.azurecr.io\",\n    \"provisioningState\": \"Succeeded\",\n    \"status\": {\n      \"displayStatus\": \"Ready\",\n      \"message\": \"The registry is ready.\",\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\n    }\n  },\n  \"sku\": {\n    \"name\": \"Standard\",\n    \"tier\": \"Standard\"\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b335f3f6-6b02-4d16-aa80-8d2b2f73225b",
+          "name": "Azure Container Registry Registries_ Update",
+          "request": {
+            "name": "Azure Container Registry Registries_ Update",
+            "description": {
+              "content": "Updates a container registry with the specified parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.ContainerRegistry",
+                "registries",
+                ":registryName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The Microsoft Azure subscription ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group to which the container registry belongs."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registryName",
+                  "description": "(Required) The name of the container registry."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identity\": {\n    \"principalId\": \"<string>\",\n    \"tenantId\": \"<string>\",\n    \"type\": \"<string>\",\n    \"userAssignedIdentities\": {\n      \"key_0\": {\n        \"clientId\": \"<string>\",\n        \"principalId\": \"<string>\"\n      }\n    }\n  },\n  \"properties\": {\n    \"adminUserEnabled\": \"<boolean>\",\n    \"encryption\": {\n      \"keyVaultProperties\": {\n        \"identity\": \"<string>\",\n        \"keyIdentifier\": \"<string>\"\n      },\n      \"status\": \"<string>\"\n    },\n    \"networkRuleSet\": {\n      \"defaultAction\": \"Allow\",\n      \"ipRules\": [\n        {\n          \"value\": \"<string>\",\n          \"action\": \"Allow\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"action\": \"Allow\"\n        }\n      ],\n      \"virtualNetworkRules\": [\n        {\n          \"id\": \"<string>\",\n          \"action\": \"Allow\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"action\": \"Allow\"\n        }\n      ]\n    },\n    \"policies\": {\n      \"quarantinePolicy\": {\n        \"status\": \"disabled\"\n      },\n      \"retentionPolicy\": {\n        \"days\": 7,\n        \"status\": \"disabled\"\n      },\n      \"trustPolicy\": {\n        \"status\": \"disabled\",\n        \"type\": \"Notary\"\n      }\n    }\n  },\n  \"sku\": {\n    \"name\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "83c72abb-c4a2-42bf-8276-5d12c328be3a",
+              "name": "The request was successful; the request was well-formed and received properly.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries",
+                    ":registryName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registryName",
+                      "description": "(Required) The name of the container registry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identity\": {\n    \"principalId\": \"<string>\",\n    \"tenantId\": \"<string>\",\n    \"type\": \"<string>\",\n    \"userAssignedIdentities\": {\n      \"key_0\": {\n        \"clientId\": \"<string>\",\n        \"principalId\": \"<string>\"\n      },\n      \"key_1\": {\n        \"clientId\": \"<string>\",\n        \"principalId\": \"<string>\"\n      }\n    }\n  },\n  \"properties\": {\n    \"adminUserEnabled\": \"<boolean>\",\n    \"encryption\": {\n      \"keyVaultProperties\": {\n        \"identity\": \"<string>\",\n        \"keyIdentifier\": \"<string>\"\n      },\n      \"status\": \"<string>\"\n    },\n    \"networkRuleSet\": {\n      \"defaultAction\": \"Allow\",\n      \"ipRules\": [\n        {\n          \"value\": \"<string>\",\n          \"action\": \"Allow\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"action\": \"Allow\"\n        }\n      ],\n      \"virtualNetworkRules\": [\n        {\n          \"id\": \"<string>\",\n          \"action\": \"Allow\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"action\": \"Allow\"\n        }\n      ]\n    },\n    \"policies\": {\n      \"quarantinePolicy\": {\n        \"status\": \"disabled\"\n      },\n      \"retentionPolicy\": {\n        \"days\": 7,\n        \"status\": \"disabled\"\n      },\n      \"trustPolicy\": {\n        \"status\": \"disabled\",\n        \"type\": \"Notary\"\n      }\n    }\n  },\n  \"sku\": {\n    \"name\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry\",\n  \"location\": \"westus\",\n  \"name\": \"myRegistry\",\n  \"properties\": {\n    \"adminUserEnabled\": true,\n    \"creationDate\": \"2017-03-01T23:14:37.0707808Z\",\n    \"loginServer\": \"myregistry.azurecr.io\",\n    \"provisioningState\": \"Updating\",\n    \"status\": {\n      \"displayStatus\": \"Provisioning\",\n      \"message\": \"The registry is provisioning.\",\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\n    }\n  },\n  \"sku\": {\n    \"name\": \"Standard\",\n    \"tier\": \"Standard\"\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aac390b0-1d47-4dd7-8f0d-c8e3d8e5e966",
+              "name": "The request was successful; the operation will complete asynchronously.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries",
+                    ":registryName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registryName",
+                      "description": "(Required) The name of the container registry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identity\": {\n    \"principalId\": \"<string>\",\n    \"tenantId\": \"<string>\",\n    \"type\": \"<string>\",\n    \"userAssignedIdentities\": {\n      \"key_0\": {\n        \"clientId\": \"<string>\",\n        \"principalId\": \"<string>\"\n      },\n      \"key_1\": {\n        \"clientId\": \"<string>\",\n        \"principalId\": \"<string>\"\n      }\n    }\n  },\n  \"properties\": {\n    \"adminUserEnabled\": \"<boolean>\",\n    \"encryption\": {\n      \"keyVaultProperties\": {\n        \"identity\": \"<string>\",\n        \"keyIdentifier\": \"<string>\"\n      },\n      \"status\": \"<string>\"\n    },\n    \"networkRuleSet\": {\n      \"defaultAction\": \"Allow\",\n      \"ipRules\": [\n        {\n          \"value\": \"<string>\",\n          \"action\": \"Allow\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"action\": \"Allow\"\n        }\n      ],\n      \"virtualNetworkRules\": [\n        {\n          \"id\": \"<string>\",\n          \"action\": \"Allow\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"action\": \"Allow\"\n        }\n      ]\n    },\n    \"policies\": {\n      \"quarantinePolicy\": {\n        \"status\": \"disabled\"\n      },\n      \"retentionPolicy\": {\n        \"days\": 7,\n        \"status\": \"disabled\"\n      },\n      \"trustPolicy\": {\n        \"status\": \"disabled\",\n        \"type\": \"Notary\"\n      }\n    }\n  },\n  \"sku\": {\n    \"name\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry\",\n  \"location\": \"westus\",\n  \"name\": \"myRegistry\",\n  \"properties\": {\n    \"adminUserEnabled\": true,\n    \"creationDate\": \"2017-03-01T23:14:37.0707808Z\",\n    \"loginServer\": \"myregistry.azurecr.io\",\n    \"provisioningState\": \"Updating\",\n    \"status\": {\n      \"displayStatus\": \"Provisioning\",\n      \"message\": \"The registry is provisioning.\",\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\n    }\n  },\n  \"sku\": {\n    \"name\": \"Standard\",\n    \"tier\": \"Standard\"\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe2d362e-b1a8-48e1-88ed-b7ad4d2bca3d",
+          "name": "Azure Container Registry Registries_ Create",
+          "request": {
+            "name": "Azure Container Registry Registries_ Create",
+            "description": {
+              "content": "Creates a container registry with the specified parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.ContainerRegistry",
+                "registries",
+                ":registryName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The Microsoft Azure subscription ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group to which the container registry belongs."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registryName",
+                  "description": "(Required) The name of the container registry."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"location\": \"<string>\",\n  \"sku\": {\n    \"name\": \"<string>\"\n  },\n  \"identity\": {\n    \"principalId\": \"<string>\",\n    \"tenantId\": \"<string>\",\n    \"type\": \"<string>\",\n    \"userAssignedIdentities\": {\n      \"key_0\": {\n        \"clientId\": \"<string>\",\n        \"principalId\": \"<string>\"\n      },\n      \"key_1\": {\n        \"clientId\": \"<string>\",\n        \"principalId\": \"<string>\"\n      }\n    }\n  },\n  \"properties\": {\n    \"adminUserEnabled\": false,\n    \"encryption\": {\n      \"keyVaultProperties\": {\n        \"identity\": \"<string>\",\n        \"keyIdentifier\": \"<string>\"\n      },\n      \"status\": \"<string>\"\n    },\n    \"networkRuleSet\": {\n      \"defaultAction\": \"Allow\",\n      \"ipRules\": [\n        {\n          \"value\": \"<string>\",\n          \"action\": \"Allow\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"action\": \"Allow\"\n        }\n      ],\n      \"virtualNetworkRules\": [\n        {\n          \"id\": \"<string>\",\n          \"action\": \"Allow\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"action\": \"Allow\"\n        }\n      ]\n    },\n    \"policies\": {\n      \"quarantinePolicy\": {\n        \"status\": \"disabled\"\n      },\n      \"retentionPolicy\": {\n        \"days\": 7,\n        \"status\": \"disabled\"\n      },\n      \"trustPolicy\": {\n        \"status\": \"disabled\",\n        \"type\": \"Notary\"\n      }\n    },\n    \"status\": {},\n    \"storageAccount\": {\n      \"id\": \"<string>\"\n    }\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1b9ca460-d09e-4848-8b80-c1582a9e0722",
+              "name": "The request was successful; the request was well-formed and received properly.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries",
+                    ":registryName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registryName",
+                      "description": "(Required) The name of the container registry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"<string>\",\n  \"sku\": {\n    \"name\": \"<string>\"\n  },\n  \"identity\": {\n    \"principalId\": \"<string>\",\n    \"tenantId\": \"<string>\",\n    \"type\": \"<string>\",\n    \"userAssignedIdentities\": {\n      \"key_0\": {\n        \"clientId\": \"<string>\",\n        \"principalId\": \"<string>\"\n      }\n    }\n  },\n  \"properties\": {\n    \"adminUserEnabled\": false,\n    \"encryption\": {\n      \"keyVaultProperties\": {\n        \"identity\": \"<string>\",\n        \"keyIdentifier\": \"<string>\"\n      },\n      \"status\": \"<string>\"\n    },\n    \"networkRuleSet\": {\n      \"defaultAction\": \"Allow\",\n      \"ipRules\": [\n        {\n          \"value\": \"<string>\",\n          \"action\": \"Allow\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"action\": \"Allow\"\n        }\n      ],\n      \"virtualNetworkRules\": [\n        {\n          \"id\": \"<string>\",\n          \"action\": \"Allow\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"action\": \"Allow\"\n        }\n      ]\n    },\n    \"policies\": {\n      \"quarantinePolicy\": {\n        \"status\": \"disabled\"\n      },\n      \"retentionPolicy\": {\n        \"days\": 7,\n        \"status\": \"disabled\"\n      },\n      \"trustPolicy\": {\n        \"status\": \"disabled\",\n        \"type\": \"Notary\"\n      }\n    },\n    \"status\": {},\n    \"storageAccount\": {\n      \"id\": \"<string>\"\n    }\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry\",\n  \"location\": \"westus\",\n  \"name\": \"myRegistry\",\n  \"properties\": {\n    \"adminUserEnabled\": true,\n    \"creationDate\": \"2017-03-01T23:14:37.0707808Z\",\n    \"loginServer\": \"myregistry.azurecr.io\",\n    \"provisioningState\": \"Creating\",\n    \"status\": {\n      \"displayStatus\": \"Provisioning\",\n      \"message\": \"The registry is provisioning.\",\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\n    }\n  },\n  \"sku\": {\n    \"name\": \"Standard\",\n    \"tier\": \"Standard\"\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cae1976d-86aa-4739-8eab-66474ae4467d",
+              "name": "The request was successful; the operation will complete asynchronously.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries",
+                    ":registryName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registryName",
+                      "description": "(Required) The name of the container registry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"<string>\",\n  \"sku\": {\n    \"name\": \"<string>\"\n  },\n  \"identity\": {\n    \"principalId\": \"<string>\",\n    \"tenantId\": \"<string>\",\n    \"type\": \"<string>\",\n    \"userAssignedIdentities\": {\n      \"key_0\": {\n        \"clientId\": \"<string>\",\n        \"principalId\": \"<string>\"\n      }\n    }\n  },\n  \"properties\": {\n    \"adminUserEnabled\": false,\n    \"encryption\": {\n      \"keyVaultProperties\": {\n        \"identity\": \"<string>\",\n        \"keyIdentifier\": \"<string>\"\n      },\n      \"status\": \"<string>\"\n    },\n    \"networkRuleSet\": {\n      \"defaultAction\": \"Allow\",\n      \"ipRules\": [\n        {\n          \"value\": \"<string>\",\n          \"action\": \"Allow\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"action\": \"Allow\"\n        }\n      ],\n      \"virtualNetworkRules\": [\n        {\n          \"id\": \"<string>\",\n          \"action\": \"Allow\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"action\": \"Allow\"\n        }\n      ]\n    },\n    \"policies\": {\n      \"quarantinePolicy\": {\n        \"status\": \"disabled\"\n      },\n      \"retentionPolicy\": {\n        \"days\": 7,\n        \"status\": \"disabled\"\n      },\n      \"trustPolicy\": {\n        \"status\": \"disabled\",\n        \"type\": \"Notary\"\n      }\n    },\n    \"status\": {},\n    \"storageAccount\": {\n      \"id\": \"<string>\"\n    }\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry\",\n  \"location\": \"westus\",\n  \"name\": \"myRegistry\",\n  \"properties\": {\n    \"adminUserEnabled\": true,\n    \"creationDate\": \"2017-03-01T23:14:37.0707808Z\",\n    \"loginServer\": \"myregistry.azurecr.io\",\n    \"provisioningState\": \"Creating\",\n    \"status\": {\n      \"displayStatus\": \"Provisioning\",\n      \"message\": \"The registry is provisioning.\",\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\n    }\n  },\n  \"sku\": {\n    \"name\": \"Standard\",\n    \"tier\": \"Standard\"\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c38c5c8-625c-4f50-adf7-d3943b997b84",
+          "name": "Azure Container Registry Registries_ Import Image",
+          "request": {
+            "name": "Azure Container Registry Registries_ Import Image",
+            "description": {
+              "content": "Copies an image to this container registry from the specified container registry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.ContainerRegistry",
+                "registries",
+                ":registryName",
+                "importImage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The Microsoft Azure subscription ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group to which the container registry belongs."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registryName",
+                  "description": "(Required) The name of the container registry."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"source\": {\n    \"sourceImage\": \"<string>\",\n    \"credentials\": {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\"\n    },\n    \"registryUri\": \"<string>\",\n    \"resourceId\": \"<string>\"\n  },\n  \"mode\": \"NoForce\",\n  \"targetTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"untaggedTargetRepositories\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "568d0e20-7a61-4847-b061-3ee1fdd2910f",
+              "name": "The request was successful; the operation has completed successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries",
+                    ":registryName",
+                    "importImage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registryName",
+                      "description": "(Required) The name of the container registry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": {\n    \"sourceImage\": \"<string>\",\n    \"credentials\": {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\"\n    },\n    \"registryUri\": \"<string>\",\n    \"resourceId\": \"<string>\"\n  },\n  \"mode\": \"NoForce\",\n  \"targetTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"untaggedTargetRepositories\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "292d4ce6-439a-4285-85be-21bf0d24a5b4",
+              "name": "The request was successful; the operation will complete asynchronously.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries",
+                    ":registryName",
+                    "importImage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registryName",
+                      "description": "(Required) The name of the container registry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": {\n    \"sourceImage\": \"<string>\",\n    \"credentials\": {\n      \"password\": \"<string>\",\n      \"username\": \"<string>\"\n    },\n    \"registryUri\": \"<string>\",\n    \"resourceId\": \"<string>\"\n  },\n  \"mode\": \"NoForce\",\n  \"targetTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"untaggedTargetRepositories\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae670825-7a58-49af-8643-fd2355fa6b02",
+          "name": "Azure Container Registry Registries_ List Credentials",
+          "request": {
+            "name": "Azure Container Registry Registries_ List Credentials",
+            "description": {
+              "content": "Lists the login credentials for the specified container registry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.ContainerRegistry",
+                "registries",
+                ":registryName",
+                "listCredentials"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The Microsoft Azure subscription ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group to which the container registry belongs."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registryName",
+                  "description": "(Required) The name of the container registry."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00fcc236-560f-42f1-ad8f-f220f2f75e75",
+              "name": "The request was successful; the list of credentials retrieved and returned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries",
+                    ":registryName",
+                    "listCredentials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registryName",
+                      "description": "(Required) The name of the container registry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"passwords\": [\n    {\n      \"name\": \"password\",\n      \"value\": \"00000000000000000000000000000000\"\n    },\n    {\n      \"name\": \"password2\",\n      \"value\": \"00000000000000000000000000000000\"\n    }\n  ],\n  \"username\": \"myRegistry\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed1f6399-2100-4da1-97ee-bd028030fe54",
+          "name": "Azure Container Registry Registries_ List Usages",
+          "request": {
+            "name": "Azure Container Registry Registries_ List Usages",
+            "description": {
+              "content": "Gets the quota usages for the specified container registry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.ContainerRegistry",
+                "registries",
+                ":registryName",
+                "listUsages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The Microsoft Azure subscription ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group to which the container registry belongs."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registryName",
+                  "description": "(Required) The name of the container registry."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "61cddd93-a6da-41e5-97f7-b00e0295fbab",
+              "name": "The request was successful; the registry usages retrieved and returned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries",
+                    ":registryName",
+                    "listUsages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registryName",
+                      "description": "(Required) The name of the container registry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"currentValue\": 12345678,\n      \"limit\": 107374182400,\n      \"name\": \"Size\",\n      \"unit\": \"Bytes\"\n    },\n    {\n      \"currentValue\": 2,\n      \"limit\": 10,\n      \"name\": \"Webhooks\",\n      \"unit\": \"Count\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8420f401-06cc-49f0-97cc-b2c1e1b97c69",
+          "name": "Azure Container Registry Registries_ Regenerate Credential",
+          "request": {
+            "name": "Azure Container Registry Registries_ Regenerate Credential",
+            "description": {
+              "content": "Regenerates one of the login credentials for the specified container registry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.ContainerRegistry",
+                "registries",
+                ":registryName",
+                "regenerateCredential"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The Microsoft Azure subscription ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group to which the container registry belongs."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registryName",
+                  "description": "(Required) The name of the container registry."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "19d050bb-7fd1-44c4-b51e-b1faf1f374e1",
+              "name": "The request was successful; the specified credential regenerated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.ContainerRegistry",
+                    "registries",
+                    ":registryName",
+                    "regenerateCredential"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-12-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The Microsoft Azure subscription ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registryName",
+                      "description": "(Required) The name of the container registry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"passwords\": [\n    {\n      \"name\": \"password\",\n      \"value\": \"00000000000000000000000000000000\"\n    },\n    {\n      \"name\": \"password2\",\n      \"value\": \"00000000000000000000000000000000\"\n    }\n  ],\n  \"username\": \"myRegistry\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://management.azure.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3b9b96d9-8f0a-4b6c-9410-da5159d6497a",
+    "name": "ContainerRegistryManagementClient Operation Registries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

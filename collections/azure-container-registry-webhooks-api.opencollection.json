@@ -1,0 +1,356 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ContainerRegistryManagementClient Operation Webhooks API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Container Registry Webhooks_ List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "The client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "The Microsoft Azure subscription ID."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the resource group to which the container registry belongs."
+              },
+              {
+                "name": "registryName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the container registry."
+              }
+            ]
+          },
+          "docs": "Lists all the webhooks for the specified container registry."
+        },
+        {
+          "info": {
+            "name": "Azure Container Registry Webhooks_ Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "The client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "The Microsoft Azure subscription ID."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the resource group to which the container registry belongs."
+              },
+              {
+                "name": "registryName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the container registry."
+              },
+              {
+                "name": "webhookName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the webhook."
+              }
+            ]
+          },
+          "docs": "Gets the properties of the specified webhook."
+        },
+        {
+          "info": {
+            "name": "Azure Container Registry Webhooks_ Create",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "The client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "The Microsoft Azure subscription ID."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the resource group to which the container registry belongs."
+              },
+              {
+                "name": "registryName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the container registry."
+              },
+              {
+                "name": "webhookName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the webhook."
+              }
+            ]
+          },
+          "docs": "Creates a webhook for a container registry with the specified parameters."
+        },
+        {
+          "info": {
+            "name": "Azure Container Registry Webhooks_ Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "The client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "The Microsoft Azure subscription ID."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the resource group to which the container registry belongs."
+              },
+              {
+                "name": "registryName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the container registry."
+              },
+              {
+                "name": "webhookName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the webhook."
+              }
+            ]
+          },
+          "docs": "Updates a webhook with the specified parameters."
+        },
+        {
+          "info": {
+            "name": "Azure Container Registry Webhooks_ Delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "The client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "The Microsoft Azure subscription ID."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the resource group to which the container registry belongs."
+              },
+              {
+                "name": "registryName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the container registry."
+              },
+              {
+                "name": "webhookName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the webhook."
+              }
+            ]
+          },
+          "docs": "Deletes a webhook from a container registry."
+        },
+        {
+          "info": {
+            "name": "Azure Container Registry Webhooks_ Get Callback Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName/getCallbackConfig",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "The client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "The Microsoft Azure subscription ID."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the resource group to which the container registry belongs."
+              },
+              {
+                "name": "registryName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the container registry."
+              },
+              {
+                "name": "webhookName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the webhook."
+              }
+            ]
+          },
+          "docs": "Gets the configuration of service URI and custom headers for the webhook."
+        },
+        {
+          "info": {
+            "name": "Azure Container Registry Webhooks_ List Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName/listEvents",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "The client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "The Microsoft Azure subscription ID."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the resource group to which the container registry belongs."
+              },
+              {
+                "name": "registryName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the container registry."
+              },
+              {
+                "name": "webhookName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the webhook."
+              }
+            ]
+          },
+          "docs": "Lists recent events for the specified webhook."
+        },
+        {
+          "info": {
+            "name": "Azure Container Registry Webhooks_ Ping",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName/ping",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "The client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "The Microsoft Azure subscription ID."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the resource group to which the container registry belongs."
+              },
+              {
+                "name": "registryName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the container registry."
+              },
+              {
+                "name": "webhookName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the webhook."
+              }
+            ]
+          },
+          "docs": "Triggers a ping event to be sent to the webhook."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
