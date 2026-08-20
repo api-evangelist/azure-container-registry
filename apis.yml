@@ -82,6 +82,8 @@ apis:
   description: The Webhooks API from Azure Container Registry — 5 operation(s) for webhooks.
   humanURL: https://azure.microsoft.com/en-us/products/container-registry
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
