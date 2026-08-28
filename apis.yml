@@ -4,6 +4,18 @@ description: Azure Container Registry is a managed Docker registry service based
   and managing private container images and artifacts. It supports automated container image builds, geo-replication, and
   integrates with Azure Kubernetes Service and other Azure deployment targets.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
