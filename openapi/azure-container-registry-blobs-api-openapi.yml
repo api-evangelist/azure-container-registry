@@ -1,0 +1,51 @@
+openapi: 3.2.0
+info:
+  title: Azure Container Registry REST Blobs API
+  description: Azure Container Registry data plane API implements the OCI Distribution Specification for managing container images and artifacts. Operations include listing repositories, tags, manifests, and blobs.
+  version: v2
+servers:
+- url: https://{registry}.azurecr.io
+  variables:
+    registry:
+      default: myregistry
+security:
+- bearerAuth: []
+tags:
+- name: Blobs
+paths:
+  /v2/{name}/blobs/{digest}:
+    parameters:
+    - name: name
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: digest
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: getBlob
+      summary: ACR Get blob
+      description: Retrieves a blob by digest.
+      tags:
+      - Blobs
+      responses:
+        '200':
+          description: Blob
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+externalDocs:
+  description: Azure Container Registry REST API Documentation
+  url: https://learn.microsoft.com/en-us/rest/api/containerregistry/
+x-generated-from: https://learn.microsoft.com/en-us/rest/api/containerregistry/
+x-generated-by: claude-crawl-2026-05-08

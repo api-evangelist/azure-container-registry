@@ -1,0 +1,74 @@
+openapi: 3.2.0
+info:
+  title: Azure Container Registry REST Blobs Manifests API
+  description: Azure Container Registry data plane API implements the OCI Distribution Specification for managing container images and artifacts. Operations include listing repositories, tags, manifests, and blobs.
+  version: v2
+servers:
+- url: https://{registry}.azurecr.io
+  variables:
+    registry:
+      default: myregistry
+security:
+- bearerAuth: []
+tags:
+- name: Manifests
+paths:
+  /v2/{name}/manifests/{reference}:
+    parameters:
+    - name: name
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: reference
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: getManifest
+      summary: ACR Get manifest
+      description: Gets a manifest by tag or digest.
+      tags:
+      - Manifests
+      responses:
+        '200':
+          description: Manifest
+          content:
+            application/vnd.docker.distribution.manifest.v2+json:
+              schema:
+                type: object
+    put:
+      operationId: putManifest
+      summary: ACR Put manifest
+      description: Pushes a manifest.
+      tags:
+      - Manifests
+      requestBody:
+        required: true
+        content:
+          application/vnd.docker.distribution.manifest.v2+json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Manifest stored
+    delete:
+      operationId: deleteManifest
+      summary: ACR Delete manifest
+      description: Deletes a manifest.
+      tags:
+      - Manifests
+      responses:
+        '202':
+          description: Deleted
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+externalDocs:
+  description: Azure Container Registry REST API Documentation
+  url: https://learn.microsoft.com/en-us/rest/api/containerregistry/
+x-generated-from: https://learn.microsoft.com/en-us/rest/api/containerregistry/
+x-generated-by: claude-crawl-2026-05-08
