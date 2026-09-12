@@ -1,8 +1,6 @@
 aid: azure-container-registry
 name: Azure Container Registry
-description: Azure Container Registry is a managed Docker registry service based on the open-source Docker Registry for storing
-  and managing private container images and artifacts. It supports automated container image builds, geo-replication, and
-  integrates with Azure Kubernetes Service and other Azure deployment targets.
+description: Azure Container Registry is a managed Docker registry service based on the open-source Docker Registry for storing and managing private container images and artifacts. It supports automated container image builds, geo-replication, and integrates with Azure Kubernetes Service and other Azure deployment targets.
 type: Index
 deliveryModel:
   model: saas
@@ -53,8 +51,7 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/azure/container-registry/
   - type: GettingStarted
-    url: >-
-      https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
+    url: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
 - aid: azure-container-registry:azure-container-registry-registries-api
@@ -69,8 +66,7 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/azure/container-registry/
   - type: GettingStarted
-    url: >-
-      https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
+    url: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
 - aid: azure-container-registry:azure-container-registry-replications-api
@@ -85,8 +81,7 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/azure/container-registry/
   - type: GettingStarted
-    url: >-
-      https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
+    url: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
 - aid: azure-container-registry:azure-container-registry-webhooks-api
@@ -103,11 +98,66 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/azure/container-registry/
   - type: GettingStarted
-    url: >-
-      https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
+    url: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/container-registry/
+- aid: microsoft-azure-container-registry:microsoft-azure-container-registry-blobs-api
+  name: microsoft-azure-container-registry Blobs API
+  description: The Blobs API from microsoft-azure-container-registry — 1 operation(s) for blobs.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/containerregistry/
+  baseURL: https://{registry}.azurecr.io/
+  tags:
+  - Blobs
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-container-registry-blobs-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/containerregistry/
+- aid: microsoft-azure-container-registry:microsoft-azure-container-registry-manifests-api
+  name: microsoft-azure-container-registry Manifests API
+  description: The Manifests API from microsoft-azure-container-registry — 1 operation(s) for manifests.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/containerregistry/
+  baseURL: https://{registry}.azurecr.io/
+  tags:
+  - Manifests
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-container-registry-manifests-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/containerregistry/
+- aid: microsoft-azure-container-registry:microsoft-azure-container-registry-repositories-api
+  name: microsoft-azure-container-registry Repositories API
+  description: The Repositories API from microsoft-azure-container-registry — 1 operation(s) for repositories.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/containerregistry/
+  baseURL: https://{registry}.azurecr.io/
+  tags:
+  - Repositories
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-container-registry-repositories-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/containerregistry/
+- aid: microsoft-azure-container-registry:microsoft-azure-container-registry-tags-api
+  name: microsoft-azure-container-registry Tags API
+  description: The Tags API from microsoft-azure-container-registry — 1 operation(s) for tags.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/containerregistry/
+  baseURL: https://{registry}.azurecr.io/
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-container-registry-tags-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/containerregistry/
 common:
+- type: Portal
+  url: https://portal.azure.com/
+- type: TermsOfService
+  url: https://www.microsoft.com/en-us/legal/terms-of-use
+- type: PrivacyPolicy
+  url: https://privacy.microsoft.com/en-us/privacystatement
+- type: Support
+  url: https://support.microsoft.com/
 - type: AgenticAccess
   url: agentic-access/azure-container-registry-agentic-access.yml
 - type: VulnerabilityDisclosure
