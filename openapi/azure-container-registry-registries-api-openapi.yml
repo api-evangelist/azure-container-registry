@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
-  title: ContainerRegistryManagementClient Operation Registries API
-  version: '2.0'
+  title: ContainerRegistryManagementClient Registries API
+  version: 2019-12-01-preview
   x-apisguru-categories:
   - cloud
   x-logo:
@@ -9,6 +9,7 @@ info:
   x-origin:
   - format: swagger
     url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/preview/2019-12-01-preview/containerregistry.json
+    version: '2.0'
   x-preferred: false
   x-providerName: azure.com
   x-serviceName: containerregistry
@@ -598,390 +599,6 @@ paths:
         required: true
 components:
   schemas:
-    TrustPolicy:
-      description: The content trust policy for a container registry.
-      properties:
-        status:
-          default: disabled
-          description: The value that indicates whether the policy is enabled or not.
-          enum:
-          - enabled
-          - disabled
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: PolicyStatus
-        type:
-          default: Notary
-          description: The type of trust policy.
-          enum:
-          - Notary
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: TrustPolicyType
-      type: object
-    RegistryProperties:
-      description: The properties of a container registry.
-      properties:
-        adminUserEnabled:
-          default: false
-          description: The value that indicates whether the admin user is enabled.
-          type: boolean
-        creationDate:
-          description: The creation date of the container registry in ISO8601 format.
-          format: date-time
-          readOnly: true
-          type: string
-        encryption:
-          $ref: '#/components/schemas/EncryptionProperty'
-          description: The encryption settings of container registry.
-        loginServer:
-          description: The URL that can be used to log into the container registry.
-          readOnly: true
-          type: string
-        networkRuleSet:
-          $ref: '#/components/schemas/NetworkRuleSet'
-          description: The network rule set for a container registry.
-        policies:
-          $ref: '#/components/schemas/Policies'
-          description: The policies for a container registry.
-        provisioningState:
-          description: The provisioning state of the container registry at the time the operation was called.
-          enum:
-          - Creating
-          - Updating
-          - Deleting
-          - Succeeded
-          - Failed
-          - Canceled
-          readOnly: true
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: ProvisioningState
-        status:
-          $ref: '#/components/schemas/Status'
-          description: The status of the container registry at the time the operation was called.
-          readOnly: true
-        storageAccount:
-          $ref: '#/components/schemas/StorageAccountProperties'
-          description: The properties of the storage account for the container registry. Only applicable to Classic SKU.
-      type: object
-    KeyVaultProperties:
-      properties:
-        identity:
-          description: The client id of the identity which will be used to access key vault.
-          type: string
-        keyIdentifier:
-          description: Key vault uri to access the encryption key.
-          type: string
-      type: object
-    RegistryPropertiesUpdateParameters:
-      description: The parameters for updating the properties of a container registry.
-      properties:
-        adminUserEnabled:
-          description: The value that indicates whether the admin user is enabled.
-          type: boolean
-        encryption:
-          $ref: '#/components/schemas/EncryptionProperty'
-          description: The encryption settings of container registry.
-        networkRuleSet:
-          $ref: '#/components/schemas/NetworkRuleSet'
-          description: The network rule set for a container registry.
-        policies:
-          $ref: '#/components/schemas/Policies'
-          description: The policies for a container registry.
-      type: object
-    Policies:
-      description: The policies for a container registry.
-      properties:
-        quarantinePolicy:
-          $ref: '#/components/schemas/QuarantinePolicy'
-          description: The quarantine policy for a container registry.
-        retentionPolicy:
-          $ref: '#/components/schemas/RetentionPolicy'
-          description: The retention policy for a container registry.
-        trustPolicy:
-          $ref: '#/components/schemas/TrustPolicy'
-          description: The content trust policy for a container registry.
-      type: object
-    VirtualNetworkRule:
-      description: Virtual network rule.
-      properties:
-        action:
-          default: Allow
-          description: The action of virtual network rule.
-          enum:
-          - Allow
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: Action
-        id:
-          description: 'Resource ID of a subnet, for example: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.'
-          type: string
-          x-ms-client-name: VirtualNetworkResourceId
-      required:
-      - id
-      type: object
-    UserIdentityProperties:
-      properties:
-        clientId:
-          description: The client id of user assigned identity.
-          type: string
-        principalId:
-          description: The principal id of user assigned identity.
-          type: string
-      type: object
-    RegistryListCredentialsResult:
-      description: The response from the ListCredentials operation.
-      properties:
-        passwords:
-          description: The list of passwords for a container registry.
-          items:
-            $ref: '#/components/schemas/RegistryPassword'
-          type: array
-        username:
-          description: The username for a container registry.
-          type: string
-      type: object
-    RegistryUsageListResult:
-      description: The result of a request to get container registry quota usages.
-      properties:
-        value:
-          description: The list of container registry quota usages.
-          items:
-            $ref: '#/components/schemas/RegistryUsage'
-          type: array
-      type: object
-    Registry:
-      allOf:
-      - $ref: '#/components/schemas/Resource'
-      description: An object that represents a container registry.
-      properties:
-        identity:
-          $ref: '#/components/schemas/IdentityProperties'
-          description: The identity of the container registry.
-        properties:
-          $ref: '#/components/schemas/RegistryProperties'
-          description: The properties of the container registry.
-          x-ms-client-flatten: true
-        sku:
-          $ref: '#/components/schemas/Sku'
-          description: The SKU of the container registry.
-      required:
-      - sku
-      type: object
-    ImportSourceCredentials:
-      properties:
-        password:
-          description: The password used to authenticate with the source registry.
-          type: string
-        username:
-          description: The username to authenticate with the source registry.
-          type: string
-      required:
-      - password
-      type: object
-    RegistryListResult:
-      description: The result of a request to list container registries.
-      properties:
-        nextLink:
-          description: The URI that can be used to request the next list of container registries.
-          type: string
-        value:
-          description: The list of container registries. Since this list may be incomplete, the nextLink field should be used to request the next list of container registries.
-          items:
-            $ref: '#/components/schemas/Registry'
-          type: array
-      type: object
-    NetworkRuleSet:
-      description: The network rule set for a container registry.
-      properties:
-        defaultAction:
-          default: Allow
-          description: The default action of allow or deny when no other rules match.
-          enum:
-          - Allow
-          - Deny
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: DefaultAction
-        ipRules:
-          description: The IP ACL rules.
-          items:
-            $ref: '#/components/schemas/IPRule'
-          type: array
-        virtualNetworkRules:
-          description: The virtual network rules.
-          items:
-            $ref: '#/components/schemas/VirtualNetworkRule'
-          type: array
-      required:
-      - defaultAction
-      type: object
-    IdentityProperties:
-      description: Managed identity for the resource.
-      properties:
-        principalId:
-          description: The principal ID of resource identity.
-          type: string
-        tenantId:
-          description: The tenant ID of resource.
-          type: string
-        type:
-          description: The identity type.
-          enum:
-          - SystemAssigned
-          - UserAssigned
-          - SystemAssigned, UserAssigned
-          - None
-          type: string
-          x-ms-enum:
-            modelAsString: false
-            name: ResourceIdentityType
-        userAssignedIdentities:
-          additionalProperties:
-            $ref: '#/components/schemas/UserIdentityProperties'
-          description: "The list of user identities associated with the resource. The user identity \ndictionary key references will be ARM resource ids in the form: \n'/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/\n    providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'."
-          type: object
-      type: object
-    RegistryUsage:
-      description: The quota usage for a container registry.
-      properties:
-        currentValue:
-          description: The current value of the usage.
-          format: int64
-          type: integer
-        limit:
-          description: The limit of the usage.
-          format: int64
-          type: integer
-        name:
-          description: The name of the usage.
-          type: string
-        unit:
-          description: The unit of measurement.
-          enum:
-          - Count
-          - Bytes
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: RegistryUsageUnit
-      type: object
-    ImportImageParameters:
-      properties:
-        mode:
-          default: NoForce
-          description: When Force, any existing target tags will be overwritten. When NoForce, any existing target tags will fail the operation before any copying begins.
-          enum:
-          - NoForce
-          - Force
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: ImportMode
-        source:
-          $ref: '#/components/schemas/ImportSource'
-          description: The source of the image.
-        targetTags:
-          description: List of strings of the form repo[:tag]. When tag is omitted the source will be used (or 'latest' if source tag is also omitted).
-          items:
-            type: string
-          type: array
-        untaggedTargetRepositories:
-          description: List of strings of repository names to do a manifest only copy. No tag will be created.
-          items:
-            type: string
-          type: array
-      required:
-      - source
-      type: object
-    RetentionPolicy:
-      description: The retention policy for a container registry.
-      properties:
-        days:
-          default: 7
-          description: The number of days to retain an untagged manifest after which it gets purged.
-          format: int32
-          type: integer
-        lastUpdatedTime:
-          description: The timestamp when the policy was last updated.
-          format: date-time
-          readOnly: true
-          type: string
-        status:
-          default: disabled
-          description: The value that indicates whether the policy is enabled or not.
-          enum:
-          - enabled
-          - disabled
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: PolicyStatus
-      type: object
-    QuarantinePolicy:
-      description: The quarantine policy for a container registry.
-      properties:
-        status:
-          default: disabled
-          description: The value that indicates whether the policy is enabled or not.
-          enum:
-          - enabled
-          - disabled
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: PolicyStatus
-      type: object
-    EncryptionProperty:
-      properties:
-        keyVaultProperties:
-          $ref: '#/components/schemas/KeyVaultProperties'
-          description: Key vault properties.
-        status:
-          description: Indicates whether or not the encryption is enabled for container registry.
-          enum:
-          - enabled
-          - disabled
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: EncryptionStatus
-      type: object
-    Sku:
-      description: The SKU of a container registry.
-      properties:
-        name:
-          description: The SKU name of the container registry. Required for registry creation.
-          enum:
-          - Classic
-          - Basic
-          - Standard
-          - Premium
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: SkuName
-        tier:
-          description: The SKU tier based on the SKU name.
-          enum:
-          - Classic
-          - Basic
-          - Standard
-          - Premium
-          readOnly: true
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: SkuTier
-      required:
-      - name
-      type: object
     IPRule:
       description: IP rule with specific IP or IP range in CIDR format.
       properties:
@@ -1030,6 +647,88 @@ components:
       required:
       - location
       x-ms-azure-resource: true
+    VirtualNetworkRule:
+      description: Virtual network rule.
+      properties:
+        action:
+          default: Allow
+          description: The action of virtual network rule.
+          enum:
+          - Allow
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: Action
+        id:
+          description: 'Resource ID of a subnet, for example: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.'
+          type: string
+          x-ms-client-name: VirtualNetworkResourceId
+      required:
+      - id
+      type: object
+    RegistryUpdateParameters:
+      description: The parameters for updating a container registry.
+      properties:
+        identity:
+          $ref: '#/components/schemas/IdentityProperties'
+          description: The identity of the container registry.
+        properties:
+          $ref: '#/components/schemas/RegistryPropertiesUpdateParameters'
+          description: The properties that the container registry will be updated with.
+          x-ms-client-flatten: true
+        sku:
+          $ref: '#/components/schemas/Sku'
+          description: The SKU of the container registry.
+        tags:
+          additionalProperties:
+            type: string
+          description: The tags for the container registry.
+          type: object
+      type: object
+    KeyVaultProperties:
+      properties:
+        identity:
+          description: The client id of the identity which will be used to access key vault.
+          type: string
+        keyIdentifier:
+          description: Key vault uri to access the encryption key.
+          type: string
+      type: object
+    TrustPolicy:
+      description: The content trust policy for a container registry.
+      properties:
+        status:
+          default: disabled
+          description: The value that indicates whether the policy is enabled or not.
+          enum:
+          - enabled
+          - disabled
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: PolicyStatus
+        type:
+          default: Notary
+          description: The type of trust policy.
+          enum:
+          - Notary
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: TrustPolicyType
+      type: object
+    RegistryListCredentialsResult:
+      description: The response from the ListCredentials operation.
+      properties:
+        passwords:
+          description: The list of passwords for a container registry.
+          items:
+            $ref: '#/components/schemas/RegistryPassword'
+          type: array
+        username:
+          description: The username for a container registry.
+          type: string
+      type: object
     ImportSource:
       properties:
         credentials:
@@ -1053,6 +752,151 @@ components:
       required:
       - sourceImage
       type: object
+    ImportSourceCredentials:
+      properties:
+        password:
+          description: The password used to authenticate with the source registry.
+          type: string
+        username:
+          description: The username to authenticate with the source registry.
+          type: string
+      required:
+      - password
+      type: object
+    QuarantinePolicy:
+      description: The quarantine policy for a container registry.
+      properties:
+        status:
+          default: disabled
+          description: The value that indicates whether the policy is enabled or not.
+          enum:
+          - enabled
+          - disabled
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: PolicyStatus
+      type: object
+    EncryptionProperty:
+      properties:
+        keyVaultProperties:
+          $ref: '#/components/schemas/KeyVaultProperties'
+          description: Key vault properties.
+        status:
+          description: Indicates whether or not the encryption is enabled for container registry.
+          enum:
+          - enabled
+          - disabled
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: EncryptionStatus
+      type: object
+    StorageAccountProperties:
+      description: The properties of a storage account for a container registry. Only applicable to Classic SKU.
+      properties:
+        id:
+          description: The resource ID of the storage account.
+          type: string
+      required:
+      - id
+      type: object
+    IdentityProperties:
+      description: Managed identity for the resource.
+      properties:
+        principalId:
+          description: The principal ID of resource identity.
+          type: string
+        tenantId:
+          description: The tenant ID of resource.
+          type: string
+        type:
+          description: The identity type.
+          enum:
+          - SystemAssigned
+          - UserAssigned
+          - SystemAssigned, UserAssigned
+          - None
+          type: string
+          x-ms-enum:
+            modelAsString: false
+            name: ResourceIdentityType
+        userAssignedIdentities:
+          additionalProperties:
+            $ref: '#/components/schemas/UserIdentityProperties'
+          description: "The list of user identities associated with the resource. The user identity \ndictionary key references will be ARM resource ids in the form: \n'/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/\n    providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'."
+          type: object
+      type: object
+    Policies:
+      description: The policies for a container registry.
+      properties:
+        quarantinePolicy:
+          $ref: '#/components/schemas/QuarantinePolicy'
+          description: The quarantine policy for a container registry.
+        retentionPolicy:
+          $ref: '#/components/schemas/RetentionPolicy'
+          description: The retention policy for a container registry.
+        trustPolicy:
+          $ref: '#/components/schemas/TrustPolicy'
+          description: The content trust policy for a container registry.
+      type: object
+    ImportImageParameters:
+      properties:
+        mode:
+          default: NoForce
+          description: When Force, any existing target tags will be overwritten. When NoForce, any existing target tags will fail the operation before any copying begins.
+          enum:
+          - NoForce
+          - Force
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: ImportMode
+        source:
+          $ref: '#/components/schemas/ImportSource'
+          description: The source of the image.
+        targetTags:
+          description: List of strings of the form repo[:tag]. When tag is omitted the source will be used (or 'latest' if source tag is also omitted).
+          items:
+            type: string
+          type: array
+        untaggedTargetRepositories:
+          description: List of strings of repository names to do a manifest only copy. No tag will be created.
+          items:
+            type: string
+          type: array
+      required:
+      - source
+      type: object
+    Sku:
+      description: The SKU of a container registry.
+      properties:
+        name:
+          description: The SKU name of the container registry. Required for registry creation.
+          enum:
+          - Classic
+          - Basic
+          - Standard
+          - Premium
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: SkuName
+        tier:
+          description: The SKU tier based on the SKU name.
+          enum:
+          - Classic
+          - Basic
+          - Standard
+          - Premium
+          readOnly: true
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: SkuTier
+      required:
+      - name
+      type: object
     Status:
       description: The status of an Azure resource at the time the operation was called.
       properties:
@@ -1070,6 +914,36 @@ components:
           readOnly: true
           type: string
       type: object
+    RegistryListResult:
+      description: The result of a request to list container registries.
+      properties:
+        nextLink:
+          description: The URI that can be used to request the next list of container registries.
+          type: string
+        value:
+          description: The list of container registries. Since this list may be incomplete, the nextLink field should be used to request the next list of container registries.
+          items:
+            $ref: '#/components/schemas/Registry'
+          type: array
+      type: object
+    Registry:
+      allOf:
+      - $ref: '#/components/schemas/Resource'
+      description: An object that represents a container registry.
+      properties:
+        identity:
+          $ref: '#/components/schemas/IdentityProperties'
+          description: The identity of the container registry.
+        properties:
+          $ref: '#/components/schemas/RegistryProperties'
+          description: The properties of the container registry.
+          x-ms-client-flatten: true
+        sku:
+          $ref: '#/components/schemas/Sku'
+          description: The SKU of the container registry.
+      required:
+      - sku
+      type: object
     RegistryPassword:
       description: The login password for the container registry.
       properties:
@@ -1086,6 +960,98 @@ components:
           description: The password value.
           type: string
       type: object
+    RegistryUsage:
+      description: The quota usage for a container registry.
+      properties:
+        currentValue:
+          description: The current value of the usage.
+          format: int64
+          type: integer
+        limit:
+          description: The limit of the usage.
+          format: int64
+          type: integer
+        name:
+          description: The name of the usage.
+          type: string
+        unit:
+          description: The unit of measurement.
+          enum:
+          - Count
+          - Bytes
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: RegistryUsageUnit
+      type: object
+    NetworkRuleSet:
+      description: The network rule set for a container registry.
+      properties:
+        defaultAction:
+          default: Allow
+          description: The default action of allow or deny when no other rules match.
+          enum:
+          - Allow
+          - Deny
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: DefaultAction
+        ipRules:
+          description: The IP ACL rules.
+          items:
+            $ref: '#/components/schemas/IPRule'
+          type: array
+        virtualNetworkRules:
+          description: The virtual network rules.
+          items:
+            $ref: '#/components/schemas/VirtualNetworkRule'
+          type: array
+      required:
+      - defaultAction
+      type: object
+    UserIdentityProperties:
+      properties:
+        clientId:
+          description: The client id of user assigned identity.
+          type: string
+        principalId:
+          description: The principal id of user assigned identity.
+          type: string
+      type: object
+    RegistryUsageListResult:
+      description: The result of a request to get container registry quota usages.
+      properties:
+        value:
+          description: The list of container registry quota usages.
+          items:
+            $ref: '#/components/schemas/RegistryUsage'
+          type: array
+      type: object
+    RetentionPolicy:
+      description: The retention policy for a container registry.
+      properties:
+        days:
+          default: 7
+          description: The number of days to retain an untagged manifest after which it gets purged.
+          format: int32
+          type: integer
+        lastUpdatedTime:
+          description: The timestamp when the policy was last updated.
+          format: date-time
+          readOnly: true
+          type: string
+        status:
+          default: disabled
+          description: The value that indicates whether the policy is enabled or not.
+          enum:
+          - enabled
+          - disabled
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: PolicyStatus
+      type: object
     RegenerateCredentialParameters:
       description: The parameters used to regenerate the login credential.
       properties:
@@ -1101,44 +1067,70 @@ components:
       required:
       - name
       type: object
-    StorageAccountProperties:
-      description: The properties of a storage account for a container registry. Only applicable to Classic SKU.
+    RegistryPropertiesUpdateParameters:
+      description: The parameters for updating the properties of a container registry.
       properties:
-        id:
-          description: The resource ID of the storage account.
-          type: string
-      required:
-      - id
+        adminUserEnabled:
+          description: The value that indicates whether the admin user is enabled.
+          type: boolean
+        encryption:
+          $ref: '#/components/schemas/EncryptionProperty'
+          description: The encryption settings of container registry.
+        networkRuleSet:
+          $ref: '#/components/schemas/NetworkRuleSet'
+          description: The network rule set for a container registry.
+        policies:
+          $ref: '#/components/schemas/Policies'
+          description: The policies for a container registry.
       type: object
-    RegistryUpdateParameters:
-      description: The parameters for updating a container registry.
+    RegistryProperties:
+      description: The properties of a container registry.
       properties:
-        identity:
-          $ref: '#/components/schemas/IdentityProperties'
-          description: The identity of the container registry.
-        properties:
-          $ref: '#/components/schemas/RegistryPropertiesUpdateParameters'
-          description: The properties that the container registry will be updated with.
-          x-ms-client-flatten: true
-        sku:
-          $ref: '#/components/schemas/Sku'
-          description: The SKU of the container registry.
-        tags:
-          additionalProperties:
-            type: string
-          description: The tags for the container registry.
-          type: object
+        adminUserEnabled:
+          default: false
+          description: The value that indicates whether the admin user is enabled.
+          type: boolean
+        creationDate:
+          description: The creation date of the container registry in ISO8601 format.
+          format: date-time
+          readOnly: true
+          type: string
+        encryption:
+          $ref: '#/components/schemas/EncryptionProperty'
+          description: The encryption settings of container registry.
+        loginServer:
+          description: The URL that can be used to log into the container registry.
+          readOnly: true
+          type: string
+        networkRuleSet:
+          $ref: '#/components/schemas/NetworkRuleSet'
+          description: The network rule set for a container registry.
+        policies:
+          $ref: '#/components/schemas/Policies'
+          description: The policies for a container registry.
+        provisioningState:
+          description: The provisioning state of the container registry at the time the operation was called.
+          enum:
+          - Creating
+          - Updating
+          - Deleting
+          - Succeeded
+          - Failed
+          - Canceled
+          readOnly: true
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: ProvisioningState
+        status:
+          $ref: '#/components/schemas/Status'
+          description: The status of the container registry at the time the operation was called.
+          readOnly: true
+        storageAccount:
+          $ref: '#/components/schemas/StorageAccountProperties'
+          description: The properties of the storage account for the container registry. Only applicable to Classic SKU.
       type: object
   parameters:
-    ResourceGroupParameter:
-      description: The name of the resource group to which the container registry belongs.
-      in: path
-      name: resourceGroupName
-      required: true
-      x-ms-parameter-location: method
-      schema:
-        type: string
-        minLength: 1
     ApiVersionParameter:
       description: The client API version.
       in: query
@@ -1153,6 +1145,15 @@ components:
       required: true
       schema:
         type: string
+    ResourceGroupParameter:
+      description: The name of the resource group to which the container registry belongs.
+      in: path
+      name: resourceGroupName
+      required: true
+      x-ms-parameter-location: method
+      schema:
+        type: string
+        minLength: 1
     RegistryNameParameter:
       description: The name of the container registry.
       in: path

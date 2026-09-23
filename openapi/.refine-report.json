@@ -1,26 +1,43 @@
 {
   "provider": "azure-container-registry",
   "sources": [
-    "azure-container-registry-operation-api-openapi.yml",
-    "azure-container-registry-registries-api-openapi.yml",
-    "azure-container-registry-replications-api-openapi.yml",
-    "azure-container-registry-webhooks-api-openapi.yml"
+    "_original/azure-container-registry-openapi.yaml",
+    "azure-container-registry-blobs-api-openapi.yml",
+    "azure-container-registry-manifests-api-openapi.yml",
+    "azure-container-registry-repositories-api-openapi.yml",
+    "azure-container-registry-tags-api-openapi.yml"
   ],
   "outputs": [
     "azure-container-registry-operation-api-openapi.yml",
     "azure-container-registry-registries-api-openapi.yml",
     "azure-container-registry-replications-api-openapi.yml",
-    "azure-container-registry-webhooks-api-openapi.yml"
+    "azure-container-registry-webhooks-api-openapi.yml",
+    "azure-container-registry-blobs-api-openapi.yml",
+    "azure-container-registry-manifests-api-openapi.yml",
+    "azure-container-registry-repositories-api-openapi.yml",
+    "azure-container-registry-tags-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
-  "warnings": [],
+  "warnings": [
+    "azure-container-registry-blobs-api-openapi.yml: previously refined output kept for 1 operation(s) no archived document covers (e.g. /v2/{name}/blobs/{digest} get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "azure-container-registry-manifests-api-openapi.yml: previously refined output kept for 3 operation(s) no archived document covers (e.g. /v2/{name}/manifests/{reference} delete, /v2/{name}/manifests/{reference} get, /v2/{name}/manifests/{reference} put); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "azure-container-registry-repositories-api-openapi.yml: previously refined output kept for 1 operation(s) no archived document covers (e.g. /v2/_catalog get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "azure-container-registry-tags-api-openapi.yml: previously refined output kept for 1 operation(s) no archived document covers (e.g. /v2/{name}/tags/list get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth."
+  ],
   "notes": [
-    "azure-container-registry-operation-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
-    "azure-container-registry-registries-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
-    "azure-container-registry-replications-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
-    "azure-container-registry-webhooks-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "azure-container-registry-openapi.yaml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "azure-container-registry-openapi.yaml: declared missing tag: Operation",
+    "azure-container-registry-openapi.yaml: declared missing tag: Registries",
+    "azure-container-registry-openapi.yaml: declared missing tag: Replications",
+    "azure-container-registry-openapi.yaml: declared missing tag: Webhooks",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "azure-container-registry-operation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "azure-container-registry-registries-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "azure-container-registry-replications-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "azure-container-registry-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

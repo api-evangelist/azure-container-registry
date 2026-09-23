@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
-  title: ContainerRegistryManagementClient Operation Webhooks API
-  version: '2.0'
+  title: ContainerRegistryManagementClient Webhooks API
+  version: 2019-12-01-preview
   x-apisguru-categories:
   - cloud
   x-logo:
@@ -9,6 +9,7 @@ info:
   x-origin:
   - format: swagger
     url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/preview/2019-12-01-preview/containerregistry.json
+    version: '2.0'
   x-preferred: false
   x-providerName: azure.com
   x-serviceName: containerregistry
@@ -466,84 +467,36 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    ResourceGroupParameter:
-      description: The name of the resource group to which the container registry belongs.
-      in: path
-      name: resourceGroupName
-      required: true
-      x-ms-parameter-location: method
-      schema:
-        type: string
-        minLength: 1
-    ApiVersionParameter:
-      description: The client API version.
-      in: query
-      name: api-version
-      required: true
-      schema:
-        type: string
-    SubscriptionIdParameter:
-      description: The Microsoft Azure subscription ID.
-      in: path
-      name: subscriptionId
-      required: true
-      schema:
-        type: string
-    WebhookNameParameter:
-      description: The name of the webhook.
-      in: path
-      name: webhookName
-      required: true
-      x-ms-parameter-location: method
-      schema:
-        type: string
-        maxLength: 50
-        minLength: 5
-        pattern: ^[a-zA-Z0-9]*$
-    RegistryNameParameter:
-      description: The name of the container registry.
-      in: path
-      name: registryName
-      required: true
-      x-ms-parameter-location: method
-      schema:
-        type: string
-        maxLength: 50
-        minLength: 5
-        pattern: ^[a-zA-Z0-9]*$
   schemas:
-    WebhookUpdateParameters:
-      description: The parameters for updating a webhook.
+    Resource:
+      description: An Azure resource.
       properties:
-        properties:
-          $ref: '#/components/schemas/WebhookPropertiesUpdateParameters'
-          description: The properties that the webhook will be updated with.
-          x-ms-client-flatten: true
-        tags:
-          additionalProperties:
-            type: string
-          description: The tags for the webhook.
-          type: object
-      type: object
-    WebhookCreateParameters:
-      description: The parameters for creating a webhook.
-      properties:
-        location:
-          description: The location of the webhook. This cannot be changed after the resource is created.
+        id:
+          description: The resource ID.
+          readOnly: true
           type: string
-        properties:
-          $ref: '#/components/schemas/WebhookPropertiesCreateParameters'
-          description: The properties that the webhook will be created with.
-          x-ms-client-flatten: true
+        location:
+          description: The location of the resource. This cannot be changed after the resource is created.
+          type: string
+          x-ms-mutability:
+          - read
+          - create
+        name:
+          description: The name of the resource.
+          readOnly: true
+          type: string
         tags:
           additionalProperties:
             type: string
-          description: The tags for the webhook.
+          description: The tags of the resource.
           type: object
+        type:
+          description: The type of the resource.
+          readOnly: true
+          type: string
       required:
       - location
-      type: object
+      x-ms-azure-resource: true
     Source:
       description: The registry node that generated the event. Put differently, while the actor initiates the event, the source generates it.
       properties:
@@ -595,12 +548,234 @@ components:
       - serviceUri
       - actions
       type: object
+    WebhookProperties:
+      description: The properties of a webhook.
+      properties:
+        actions:
+          description: The list of actions that trigger the webhook to post notifications.
+          items:
+            enum:
+            - push
+            - delete
+            - quarantine
+            - chart_push
+            - chart_delete
+            type: string
+            x-ms-enum:
+              modelAsString: true
+              name: WebhookAction
+          type: array
+        provisioningState:
+          description: The provisioning state of the webhook at the time the operation was called.
+          enum:
+          - Creating
+          - Updating
+          - Deleting
+          - Succeeded
+          - Failed
+          - Canceled
+          readOnly: true
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: ProvisioningState
+        scope:
+          description: The scope of repositories where the event can be triggered. For example, 'foo:*' means events for all tags under repository 'foo'. 'foo:bar' means events for 'foo:bar' only. 'foo' is equivalent to 'foo:latest'. Empty means all events.
+          type: string
+        status:
+          description: The status of the webhook at the time the operation was called.
+          enum:
+          - enabled
+          - disabled
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: WebhookStatus
+      required:
+      - actions
+      type: object
+    WebhookListResult:
+      description: The result of a request to list webhooks for a container registry.
+      properties:
+        nextLink:
+          description: The URI that can be used to request the next list of webhooks.
+          type: string
+        value:
+          description: The list of webhooks. Since this list may be incomplete, the nextLink field should be used to request the next list of webhooks.
+          items:
+            $ref: '#/components/schemas/Webhook'
+          type: array
+      type: object
+    EventContent:
+      description: The content of the event request message.
+      properties:
+        action:
+          description: The action that encompasses the provided event.
+          type: string
+        actor:
+          $ref: '#/components/schemas/Actor'
+          description: The agent that initiated the event. For most situations, this could be from the authorization context of the request.
+        id:
+          description: The event ID.
+          type: string
+        request:
+          $ref: '#/components/schemas/Request'
+          description: The request that generated the event.
+        source:
+          $ref: '#/components/schemas/Source'
+          description: The registry node that generated the event. Put differently, while the actor initiates the event, the source generates it.
+        target:
+          $ref: '#/components/schemas/Target'
+          description: The target of the event.
+        timestamp:
+          description: The time at which the event occurred.
+          format: date-time
+          type: string
+      type: object
+    WebhookCreateParameters:
+      description: The parameters for creating a webhook.
+      properties:
+        location:
+          description: The location of the webhook. This cannot be changed after the resource is created.
+          type: string
+        properties:
+          $ref: '#/components/schemas/WebhookPropertiesCreateParameters'
+          description: The properties that the webhook will be created with.
+          x-ms-client-flatten: true
+        tags:
+          additionalProperties:
+            type: string
+          description: The tags for the webhook.
+          type: object
+      required:
+      - location
+      type: object
+    EventListResult:
+      description: The result of a request to list events for a webhook.
+      properties:
+        nextLink:
+          description: The URI that can be used to request the next list of events.
+          type: string
+        value:
+          description: The list of events. Since this list may be incomplete, the nextLink field should be used to request the next list of events.
+          items:
+            $ref: '#/components/schemas/Event'
+          type: array
+      type: object
+    EventRequestMessage:
+      description: The event request message sent to the service URI.
+      properties:
+        content:
+          $ref: '#/components/schemas/EventContent'
+          description: The content of the event request message.
+        headers:
+          additionalProperties:
+            type: string
+          description: The headers of the event request message.
+          type: object
+        method:
+          description: The HTTP method used to send the event request message.
+          type: string
+        requestUri:
+          description: The URI used to send the event request message.
+          type: string
+        version:
+          description: The HTTP message version.
+          type: string
+      type: object
+    CallbackConfig:
+      description: The configuration of service URI and custom headers for the webhook.
+      properties:
+        customHeaders:
+          additionalProperties:
+            type: string
+          description: Custom headers that will be added to the webhook notifications.
+          type: object
+        serviceUri:
+          description: The service URI for the webhook to post notifications.
+          type: string
+      required:
+      - serviceUri
+      type: object
+    WebhookUpdateParameters:
+      description: The parameters for updating a webhook.
+      properties:
+        properties:
+          $ref: '#/components/schemas/WebhookPropertiesUpdateParameters'
+          description: The properties that the webhook will be updated with.
+          x-ms-client-flatten: true
+        tags:
+          additionalProperties:
+            type: string
+          description: The tags for the webhook.
+          type: object
+      type: object
+    Event:
+      allOf:
+      - $ref: '#/components/schemas/EventInfo'
+      description: The event for a webhook.
+      properties:
+        eventRequestMessage:
+          $ref: '#/components/schemas/EventRequestMessage'
+          description: The event request message sent to the service URI.
+        eventResponseMessage:
+          $ref: '#/components/schemas/EventResponseMessage'
+          description: The event response message received from the service URI.
+      type: object
+    WebhookPropertiesUpdateParameters:
+      description: The parameters for updating the properties of a webhook.
+      properties:
+        actions:
+          description: The list of actions that trigger the webhook to post notifications.
+          items:
+            enum:
+            - push
+            - delete
+            - quarantine
+            - chart_push
+            - chart_delete
+            type: string
+            x-ms-enum:
+              modelAsString: true
+              name: WebhookAction
+          type: array
+        customHeaders:
+          additionalProperties:
+            type: string
+          description: Custom headers that will be added to the webhook notifications.
+          type: object
+        scope:
+          description: The scope of repositories where the event can be triggered. For example, 'foo:*' means events for all tags under repository 'foo'. 'foo:bar' means events for 'foo:bar' only. 'foo' is equivalent to 'foo:latest'. Empty means all events.
+          type: string
+        serviceUri:
+          description: The service URI for the webhook to post notifications.
+          type: string
+        status:
+          description: The status of the webhook at the time the operation was called.
+          enum:
+          - enabled
+          - disabled
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: WebhookStatus
+      type: object
     EventInfo:
       description: The basic information of an event.
       properties:
         id:
           description: The event ID.
           type: string
+      type: object
+    Webhook:
+      allOf:
+      - $ref: '#/components/schemas/Resource'
+      description: An object that represents a webhook for a container registry.
+      properties:
+        properties:
+          $ref: '#/components/schemas/WebhookProperties'
+          description: The properties of the webhook.
+          x-ms-client-flatten: true
       type: object
     EventResponseMessage:
       description: The event response message received from the service URI.
@@ -621,25 +796,6 @@ components:
           type: string
         version:
           description: The HTTP message version.
-          type: string
-      type: object
-    Event:
-      allOf:
-      - $ref: '#/components/schemas/EventInfo'
-      description: The event for a webhook.
-      properties:
-        eventRequestMessage:
-          $ref: '#/components/schemas/EventRequestMessage'
-          description: The event request message sent to the service URI.
-        eventResponseMessage:
-          $ref: '#/components/schemas/EventResponseMessage'
-          description: The event response message received from the service URI.
-      type: object
-    Actor:
-      description: The agent that initiated the event. For most situations, this could be from the authorization context of the request.
-      properties:
-        name:
-          description: The subject or username associated with the request context that generated the event.
           type: string
       type: object
     Target:
@@ -694,214 +850,59 @@ components:
           description: The user agent header of the request.
           type: string
       type: object
-    WebhookListResult:
-      description: The result of a request to list webhooks for a container registry.
+    Actor:
+      description: The agent that initiated the event. For most situations, this could be from the authorization context of the request.
       properties:
-        nextLink:
-          description: The URI that can be used to request the next list of webhooks.
-          type: string
-        value:
-          description: The list of webhooks. Since this list may be incomplete, the nextLink field should be used to request the next list of webhooks.
-          items:
-            $ref: '#/components/schemas/Webhook'
-          type: array
-      type: object
-    EventListResult:
-      description: The result of a request to list events for a webhook.
-      properties:
-        nextLink:
-          description: The URI that can be used to request the next list of events.
-          type: string
-        value:
-          description: The list of events. Since this list may be incomplete, the nextLink field should be used to request the next list of events.
-          items:
-            $ref: '#/components/schemas/Event'
-          type: array
-      type: object
-    Resource:
-      description: An Azure resource.
-      properties:
-        id:
-          description: The resource ID.
-          readOnly: true
-          type: string
-        location:
-          description: The location of the resource. This cannot be changed after the resource is created.
-          type: string
-          x-ms-mutability:
-          - read
-          - create
         name:
-          description: The name of the resource.
-          readOnly: true
-          type: string
-        tags:
-          additionalProperties:
-            type: string
-          description: The tags of the resource.
-          type: object
-        type:
-          description: The type of the resource.
-          readOnly: true
-          type: string
-      required:
-      - location
-      x-ms-azure-resource: true
-    Webhook:
-      allOf:
-      - $ref: '#/components/schemas/Resource'
-      description: An object that represents a webhook for a container registry.
-      properties:
-        properties:
-          $ref: '#/components/schemas/WebhookProperties'
-          description: The properties of the webhook.
-          x-ms-client-flatten: true
-      type: object
-    EventContent:
-      description: The content of the event request message.
-      properties:
-        action:
-          description: The action that encompasses the provided event.
-          type: string
-        actor:
-          $ref: '#/components/schemas/Actor'
-          description: The agent that initiated the event. For most situations, this could be from the authorization context of the request.
-        id:
-          description: The event ID.
-          type: string
-        request:
-          $ref: '#/components/schemas/Request'
-          description: The request that generated the event.
-        source:
-          $ref: '#/components/schemas/Source'
-          description: The registry node that generated the event. Put differently, while the actor initiates the event, the source generates it.
-        target:
-          $ref: '#/components/schemas/Target'
-          description: The target of the event.
-        timestamp:
-          description: The time at which the event occurred.
-          format: date-time
+          description: The subject or username associated with the request context that generated the event.
           type: string
       type: object
-    CallbackConfig:
-      description: The configuration of service URI and custom headers for the webhook.
-      properties:
-        customHeaders:
-          additionalProperties:
-            type: string
-          description: Custom headers that will be added to the webhook notifications.
-          type: object
-        serviceUri:
-          description: The service URI for the webhook to post notifications.
-          type: string
-      required:
-      - serviceUri
-      type: object
-    EventRequestMessage:
-      description: The event request message sent to the service URI.
-      properties:
-        content:
-          $ref: '#/components/schemas/EventContent'
-          description: The content of the event request message.
-        headers:
-          additionalProperties:
-            type: string
-          description: The headers of the event request message.
-          type: object
-        method:
-          description: The HTTP method used to send the event request message.
-          type: string
-        requestUri:
-          description: The URI used to send the event request message.
-          type: string
-        version:
-          description: The HTTP message version.
-          type: string
-      type: object
-    WebhookProperties:
-      description: The properties of a webhook.
-      properties:
-        actions:
-          description: The list of actions that trigger the webhook to post notifications.
-          items:
-            enum:
-            - push
-            - delete
-            - quarantine
-            - chart_push
-            - chart_delete
-            type: string
-            x-ms-enum:
-              modelAsString: true
-              name: WebhookAction
-          type: array
-        provisioningState:
-          description: The provisioning state of the webhook at the time the operation was called.
-          enum:
-          - Creating
-          - Updating
-          - Deleting
-          - Succeeded
-          - Failed
-          - Canceled
-          readOnly: true
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: ProvisioningState
-        scope:
-          description: The scope of repositories where the event can be triggered. For example, 'foo:*' means events for all tags under repository 'foo'. 'foo:bar' means events for 'foo:bar' only. 'foo' is equivalent to 'foo:latest'. Empty means all events.
-          type: string
-        status:
-          description: The status of the webhook at the time the operation was called.
-          enum:
-          - enabled
-          - disabled
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: WebhookStatus
-      required:
-      - actions
-      type: object
-    WebhookPropertiesUpdateParameters:
-      description: The parameters for updating the properties of a webhook.
-      properties:
-        actions:
-          description: The list of actions that trigger the webhook to post notifications.
-          items:
-            enum:
-            - push
-            - delete
-            - quarantine
-            - chart_push
-            - chart_delete
-            type: string
-            x-ms-enum:
-              modelAsString: true
-              name: WebhookAction
-          type: array
-        customHeaders:
-          additionalProperties:
-            type: string
-          description: Custom headers that will be added to the webhook notifications.
-          type: object
-        scope:
-          description: The scope of repositories where the event can be triggered. For example, 'foo:*' means events for all tags under repository 'foo'. 'foo:bar' means events for 'foo:bar' only. 'foo' is equivalent to 'foo:latest'. Empty means all events.
-          type: string
-        serviceUri:
-          description: The service URI for the webhook to post notifications.
-          type: string
-        status:
-          description: The status of the webhook at the time the operation was called.
-          enum:
-          - enabled
-          - disabled
-          type: string
-          x-ms-enum:
-            modelAsString: true
-            name: WebhookStatus
-      type: object
+  parameters:
+    ApiVersionParameter:
+      description: The client API version.
+      in: query
+      name: api-version
+      required: true
+      schema:
+        type: string
+    SubscriptionIdParameter:
+      description: The Microsoft Azure subscription ID.
+      in: path
+      name: subscriptionId
+      required: true
+      schema:
+        type: string
+    ResourceGroupParameter:
+      description: The name of the resource group to which the container registry belongs.
+      in: path
+      name: resourceGroupName
+      required: true
+      x-ms-parameter-location: method
+      schema:
+        type: string
+        minLength: 1
+    RegistryNameParameter:
+      description: The name of the container registry.
+      in: path
+      name: registryName
+      required: true
+      x-ms-parameter-location: method
+      schema:
+        type: string
+        maxLength: 50
+        minLength: 5
+        pattern: ^[a-zA-Z0-9]*$
+    WebhookNameParameter:
+      description: The name of the webhook.
+      in: path
+      name: webhookName
+      required: true
+      x-ms-parameter-location: method
+      schema:
+        type: string
+        maxLength: 50
+        minLength: 5
+        pattern: ^[a-zA-Z0-9]*$
   securitySchemes:
     azure_auth:
       type: oauth2
