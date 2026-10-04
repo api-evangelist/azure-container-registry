@@ -307,31 +307,6 @@ paths:
         required: true
 components:
   parameters:
-    ApiVersionParameter:
-      description: The client API version.
-      in: query
-      name: api-version
-      required: true
-      schema:
-        type: string
-    SubscriptionIdParameter:
-      description: The Microsoft Azure subscription ID.
-      in: path
-      name: subscriptionId
-      required: true
-      schema:
-        type: string
-    ReplicationNameParameter:
-      description: The name of the replication.
-      in: path
-      name: replicationName
-      required: true
-      x-ms-parameter-location: method
-      schema:
-        type: string
-        maxLength: 50
-        minLength: 5
-        pattern: ^[a-zA-Z0-9]*$
     ResourceGroupParameter:
       description: The name of the resource group to which the container registry belongs.
       in: path
@@ -341,10 +316,35 @@ components:
       schema:
         type: string
         minLength: 1
+    SubscriptionIdParameter:
+      description: The Microsoft Azure subscription ID.
+      in: path
+      name: subscriptionId
+      required: true
+      schema:
+        type: string
+    ApiVersionParameter:
+      description: The client API version.
+      in: query
+      name: api-version
+      required: true
+      schema:
+        type: string
     RegistryNameParameter:
       description: The name of the container registry.
       in: path
       name: registryName
+      required: true
+      x-ms-parameter-location: method
+      schema:
+        type: string
+        maxLength: 50
+        minLength: 5
+        pattern: ^[a-zA-Z0-9]*$
+    ReplicationNameParameter:
+      description: The name of the replication.
+      in: path
+      name: replicationName
       required: true
       x-ms-parameter-location: method
       schema:
@@ -375,23 +375,6 @@ components:
           description: The status of the replication at the time the operation was called.
           readOnly: true
       type: object
-    Status:
-      description: The status of an Azure resource at the time the operation was called.
-      properties:
-        displayStatus:
-          description: The short label for the status.
-          readOnly: true
-          type: string
-        message:
-          description: The detailed message for the status, including alerts and error messages.
-          readOnly: true
-          type: string
-        timestamp:
-          description: The timestamp when the status was changed to the current value.
-          format: date-time
-          readOnly: true
-          type: string
-      type: object
     Replication:
       allOf:
       - $ref: '#/components/schemas/Resource'
@@ -401,15 +384,6 @@ components:
           $ref: '#/components/schemas/ReplicationProperties'
           description: The properties of the replication.
           x-ms-client-flatten: true
-      type: object
-    ReplicationUpdateParameters:
-      description: The parameters for updating a replication.
-      properties:
-        tags:
-          additionalProperties:
-            type: string
-          description: The tags for the replication.
-          type: object
       type: object
     Resource:
       description: An Azure resource.
@@ -440,6 +414,32 @@ components:
       required:
       - location
       x-ms-azure-resource: true
+    ReplicationUpdateParameters:
+      description: The parameters for updating a replication.
+      properties:
+        tags:
+          additionalProperties:
+            type: string
+          description: The tags for the replication.
+          type: object
+      type: object
+    Status:
+      description: The status of an Azure resource at the time the operation was called.
+      properties:
+        displayStatus:
+          description: The short label for the status.
+          readOnly: true
+          type: string
+        message:
+          description: The detailed message for the status, including alerts and error messages.
+          readOnly: true
+          type: string
+        timestamp:
+          description: The timestamp when the status was changed to the current value.
+          format: date-time
+          readOnly: true
+          type: string
+      type: object
     ReplicationListResult:
       description: The result of a request to list replications for a container registry.
       properties:
