@@ -150,6 +150,9 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/containerregistry/
 common:
+- type: CapabilityMap
+  url: capabilities/azure-container-registry-capability-edges.yml
+  name: Azure Container Registry Business Capability Map
 - type: Portal
   url: https://portal.azure.com/
 - type: TermsOfService

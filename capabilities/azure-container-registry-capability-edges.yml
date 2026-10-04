@@ -1,0 +1,25 @@
+slug: azure-container-registry
+provider: Azure Container Registry
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Registries
+  spec_file: azure-container-registry-registries-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: PUT .../registries/{registryName} Registries_Create; POST .../listCredentials; GET .../listUsages
+  reason: Control-plane provisioning, update, deletion and credential rotation of a managed cloud registry
+    resource is cloud infrastructure management. Schemas (Sku, NetworkRuleSet, StorageAccountProperties)
+    confirm infrastructure resource administration rather than a business domain.
