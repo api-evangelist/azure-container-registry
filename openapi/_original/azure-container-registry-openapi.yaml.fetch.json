@@ -1,0 +1,12 @@
+{
+ "url": "https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/stable/2017-10-01/containerregistry.json",
+ "requested_url": "https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/stable/2017-10-01/containerregistry.json",
+ "status": 200,
+ "content_type": "text/plain; charset=utf-8",
+ "bytes": 79609,
+ "sha256": "557059e9ecaf5a6c4d9db9d679a13b3ec5da5810907e959120076e5fb725c1b7",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 0.926), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
