@@ -150,6 +150,12 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/containerregistry/
 common:
+- type: Plans
+  url: plans/azure-container-registry-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/azure-container-registry-rate-limits.yml
+- type: FinOps
+  url: finops/azure-container-registry-finops.yml
 - type: CapabilityMap
   url: capabilities/azure-container-registry-capability-edges.yml
   name: Azure Container Registry Business Capability Map
