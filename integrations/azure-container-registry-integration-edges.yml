@@ -1,0 +1,82 @@
+edges:
+- partner_name: Open Container Initiative
+  partner: open-container-initiative
+  partner_match: shape-anchor
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  shape: oci-distribution
+  type: docs
+  degree: full
+  evidence: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-image-formats
+  evidence_kind: own-docs
+  evidence_file: https://github.com/api-evangelist/azure-container-registry/blob/main/evidence/compatibility/azure-container-registry-oci-distribution-1.md
+  quote: Azure Container Registry supports the OCI Distribution Specification , a vendor-neutral, cloud-agnostic
+    spec to store, share, secure, and deploy container images and other content types (artifacts). The specification
+    allows a registry to st
+  detected_by: sweep-shape-compat.py
+  first_seen: '2026-10-13'
+- partner_name: Open Container Initiative
+  partner: open-container-initiative
+  partner_match: register
+  type: register
+  direction: partner-built
+  evidence: https://github.com/opencontainers/oci-conformance/tree/16097618fca61dc5d7aed970d61514aa8efad2c9/distribution-spec/v1.1/azurecontainerregistry
+  conformance: &id001
+    spec_versions:
+    - v1.0
+    - v1.1
+    live_ci: true
+    live_badge: https://github.com/AzureCR/oci-conformance-workflows/actions/workflows/acr_all.yml
+    newest:
+      spec_version: v1.1
+      name: Azure Container Registry
+      vendor: Microsoft
+      version: 240626
+      tests: 80
+      failures: 0
+      errors: 0
+      skipped: 5
+      pass_rate: 1.0
+    submissions:
+    - spec_version: v1.0
+      version: 211214
+      tests: 59
+      failures: 0
+      errors: 0
+      pass_rate: 1.0
+    - spec_version: v1.1
+      version: 240626
+      tests: 80
+      failures: 0
+      errors: 0
+      pass_rate: 1.0
+  detected_by: sweep-oci-conformance.py
+  first_seen: '2026-10-13'
+  channel: standard-directory
+  relationship: standard-participant
+  contract_reference:
+    register: github.com/opencontainers/oci-conformance
+    spec_file: null
+    role: conformance-submission
+    registered_name: Azure Container Registry
+    register_id: azurecontainerregistry
+    detected_by: sweep-oci-conformance.py
+    detected: '2026-10-13'
+- partner_name: Open Container Initiative
+  partner: open-container-initiative
+  partner_match: register
+  type: register
+  direction: partner-built
+  evidence: https://github.com/opencontainers/oci-conformance/tree/16097618fca61dc5d7aed970d61514aa8efad2c9/distribution-spec/v1.1/azurecontainerregistry
+  conformance: *id001
+  detected_by: sweep-oci-conformance.py
+  first_seen: '2026-10-13'
+  channel: standard-directory
+  relationship: compatible
+  shape: oci-distribution
+  degree: full
+  evidence_kind: conformance-register
+  note: the OCI conformance suite was run against this registry and the result submitted to the OCI register
+generated: '2026-10-13'
+method: searched

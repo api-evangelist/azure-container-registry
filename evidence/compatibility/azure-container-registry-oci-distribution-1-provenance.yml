@@ -1,0 +1,14 @@
+fetched: '2026-10-13'
+method: fetched
+source: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-image-formats
+page: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-image-formats
+file: azure-container-registry-oci-distribution-1.md
+bytes: 3459
+sha256: 162019602f70d3eb535ea6e6879933e5c1a5d1273802b6279e5a4937037dd693
+anchor: open-container-initiative
+shape: oci-distribution
+classification: declares-compatibility
+quote: Azure Container Registry supports the OCI Distribution Specification , a vendor-neutral, cloud-agnostic spec
+  to store, share, secure, and deploy container images and other content types (artifacts). The specification allows
+  a registry to store a wide range of artifacts in addition to container image
+note: text extracted from the provider's own page (tags stripped), saved for evidence
