@@ -1,6 +1,23 @@
 edges:
 - partner_name: Open Container Initiative
   partner: open-container-initiative
+  partner_match: shape-anchor
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  shape: oci-distribution
+  type: docs
+  degree: full
+  evidence: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-image-formats
+  evidence_kind: own-docs
+  evidence_file: https://github.com/api-evangelist/azure-container-registry/blob/main/evidence/compatibility/azure-container-registry-oci-distribution-1.md
+  quote: Azure Container Registry supports the OCI Distribution Specification , a vendor-neutral, cloud-agnostic
+    spec to store, share, secure, and deploy container images and other content types (artifacts). The specification
+    allows a registry to st
+  detected_by: sweep-shape-compat.py
+  first_seen: '2026-10-13'
+- partner_name: Open Container Initiative
+  partner: open-container-initiative
   partner_match: register
   type: register
   direction: partner-built
@@ -45,7 +62,7 @@ edges:
     registered_name: Azure Container Registry
     register_id: azurecontainerregistry
     detected_by: sweep-oci-conformance.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Open Container Initiative
   partner: open-container-initiative
   partner_match: register
@@ -61,22 +78,5 @@ edges:
   degree: full
   evidence_kind: conformance-register
   note: the OCI conformance suite was run against this registry and the result submitted to the OCI register
-- partner_name: Open Container Initiative
-  partner: open-container-initiative
-  partner_match: shape-anchor
-  channel: provider-built
-  relationship: compatible
-  direction: provider-built
-  shape: oci-distribution
-  type: docs
-  degree: full
-  evidence: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-image-formats
-  evidence_kind: own-docs
-  evidence_file: https://github.com/api-evangelist/azure-container-registry/blob/main/evidence/compatibility/azure-container-registry-oci-distribution-1.md
-  quote: Azure Container Registry supports the OCI Distribution Specification , a vendor-neutral, cloud-agnostic
-    spec to store, share, secure, and deploy container images and other content types (artifacts). The specification
-    allows a registry to st
-  detected_by: sweep-shape-compat.py
-  first_seen: '2026-10-13'
 generated: '2026-10-13'
 method: searched
