@@ -108,51 +108,6 @@ components:
             $ref: '#/components/schemas/OperationMetricSpecificationDefinition'
           type: array
       type: object
-    OperationPropertiesDefinition:
-      description: The definition of Azure Monitoring properties.
-      properties:
-        serviceSpecification:
-          $ref: '#/components/schemas/OperationServiceSpecificationDefinition'
-          description: The definition of Azure Monitoring service.
-      type: object
-    RegistryNameCheckRequest:
-      description: A request to check whether a container registry name is available.
-      properties:
-        name:
-          description: The name of the container registry.
-          maxLength: 50
-          minLength: 5
-          pattern: ^[a-zA-Z0-9]*$
-          type: string
-        type:
-          description: The resource type of the container registry. This field must be set to 'Microsoft.ContainerRegistry/registries'.
-          enum:
-          - Microsoft.ContainerRegistry/registries
-          type: string
-          x-ms-enum:
-            modelAsString: false
-            name: ContainerRegistryResourceType
-      required:
-      - name
-      - type
-      type: object
-    OperationDefinition:
-      description: The definition of a container registry operation.
-      properties:
-        display:
-          $ref: '#/components/schemas/OperationDisplayDefinition'
-          description: The display information for the container registry operation.
-        name:
-          description: 'Operation name: {provider}/{resource}/{operation}.'
-          type: string
-        origin:
-          description: The origin information of the container registry operation.
-          type: string
-        properties:
-          $ref: '#/components/schemas/OperationPropertiesDefinition'
-          description: The properties information for the container registry operation.
-          x-ms-client-flatten: true
-      type: object
     OperationMetricSpecificationDefinition:
       description: The definition of Azure Monitoring metric.
       properties:
@@ -173,19 +128,6 @@ components:
           type: string
         unit:
           description: Metric unit.
-          type: string
-      type: object
-    RegistryNameStatus:
-      description: The result of a request to check the availability of a container registry name.
-      properties:
-        message:
-          description: If any, the error message that provides more detail for the reason that the name is not available.
-          type: string
-        nameAvailable:
-          description: The value that indicates whether the name is available.
-          type: boolean
-        reason:
-          description: If any, the reason that the name is not available.
           type: string
       type: object
     OperationListResult:
@@ -215,6 +157,64 @@ components:
         resource:
           description: The resource on which the operation is performed.
           type: string
+      type: object
+    OperationPropertiesDefinition:
+      description: The definition of Azure Monitoring properties.
+      properties:
+        serviceSpecification:
+          $ref: '#/components/schemas/OperationServiceSpecificationDefinition'
+          description: The definition of Azure Monitoring service.
+      type: object
+    RegistryNameCheckRequest:
+      description: A request to check whether a container registry name is available.
+      properties:
+        name:
+          description: The name of the container registry.
+          maxLength: 50
+          minLength: 5
+          pattern: ^[a-zA-Z0-9]*$
+          type: string
+        type:
+          description: The resource type of the container registry. This field must be set to 'Microsoft.ContainerRegistry/registries'.
+          enum:
+          - Microsoft.ContainerRegistry/registries
+          type: string
+          x-ms-enum:
+            modelAsString: false
+            name: ContainerRegistryResourceType
+      required:
+      - name
+      - type
+      type: object
+    RegistryNameStatus:
+      description: The result of a request to check the availability of a container registry name.
+      properties:
+        message:
+          description: If any, the error message that provides more detail for the reason that the name is not available.
+          type: string
+        nameAvailable:
+          description: The value that indicates whether the name is available.
+          type: boolean
+        reason:
+          description: If any, the reason that the name is not available.
+          type: string
+      type: object
+    OperationDefinition:
+      description: The definition of a container registry operation.
+      properties:
+        display:
+          $ref: '#/components/schemas/OperationDisplayDefinition'
+          description: The display information for the container registry operation.
+        name:
+          description: 'Operation name: {provider}/{resource}/{operation}.'
+          type: string
+        origin:
+          description: The origin information of the container registry operation.
+          type: string
+        properties:
+          $ref: '#/components/schemas/OperationPropertiesDefinition'
+          description: The properties information for the container registry operation.
+          x-ms-client-flatten: true
       type: object
   parameters:
     SubscriptionIdParameter:
