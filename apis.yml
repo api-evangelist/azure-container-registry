@@ -29,6 +29,12 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/azure-container-registry.png
 tags:
+- Microsoft Azure
+- Container Images
+- Containers
+- Docker
+- Registry
+tags_raw:
 - Azure
 - Container Images
 - Containers
