@@ -156,6 +156,8 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/containerregistry/
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/azure-container-registry/overview
 - type: Plans
   url: plans/azure-container-registry-plans-pricing.yml
 - type: RateLimits
