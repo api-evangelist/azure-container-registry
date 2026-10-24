@@ -1,0 +1,171 @@
+{
+  "info": {
+    "_postman_id": "9ebb94f8-320b-4151-a319-f343a76fecc1",
+    "name": "Azure Container Registry REST Blobs API",
+    "description": "Azure Container Registry data plane API implements the OCI Distribution Specification for managing container images and artifacts. Operations include listing repositories, tags, manifests, and blobs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:58:46.000Z",
+    "updatedAt": "2026-10-22T02:58:46.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9ebb94f8-320b-4151-a319-f343a76fecc1"
+  },
+  "item": [
+    {
+      "name": "v2",
+      "item": [
+        {
+          "name": "{name}",
+          "item": [
+            {
+              "name": "blobs",
+              "item": [
+                {
+                  "name": "{digest}",
+                  "item": [
+                    {
+                      "name": "ACR Get blob",
+                      "id": "e8776fe9-b6fe-4b11-a028-c88b71105910",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/octet-stream"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/:name/blobs/:digest",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            ":name",
+                            "blobs",
+                            ":digest"
+                          ],
+                          "variable": [
+                            {
+                              "id": "3e014549-f08b-46a7-bd34-debe455f8d10",
+                              "key": "name",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "524b35a3-6323-4254-bfc2-543a422bbd61",
+                              "key": "digest",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Retrieves a blob by digest."
+                      },
+                      "response": [
+                        {
+                          "id": "d39e2ba8-b1db-4343-bcc3-f957c9d158e5",
+                          "name": "Blob",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/octet-stream"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/:name/blobs/:digest",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                ":name",
+                                "blobs",
+                                ":digest"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                },
+                                {
+                                  "key": "digest"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/octet-stream"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "<binary>",
+                          "createdAt": "2026-10-22T02:58:46.000Z",
+                          "updatedAt": "2026-10-22T02:58:46.000Z",
+                          "uid": "35240-d39e2ba8-b1db-4343-bcc3-f957c9d158e5"
+                        }
+                      ],
+                      "createdAt": "2026-10-22T02:58:46.000Z",
+                      "updatedAt": "2026-10-22T02:58:46.000Z",
+                      "uid": "35240-e8776fe9-b6fe-4b11-a028-c88b71105910"
+                    }
+                  ],
+                  "id": "bcd71cb6-cda1-4247-a4ef-d12c070defe5",
+                  "createdAt": "2026-10-22T02:58:46.000Z",
+                  "updatedAt": "2026-10-22T02:58:46.000Z",
+                  "uid": "35240-bcd71cb6-cda1-4247-a4ef-d12c070defe5"
+                }
+              ],
+              "id": "c81f5c43-8a1e-4a94-958a-677e430f8ca6",
+              "createdAt": "2026-10-22T02:58:46.000Z",
+              "updatedAt": "2026-10-22T02:58:46.000Z",
+              "uid": "35240-c81f5c43-8a1e-4a94-958a-677e430f8ca6"
+            }
+          ],
+          "id": "8b04011a-0845-4ef2-9f0d-066c12d38714",
+          "createdAt": "2026-10-22T02:58:46.000Z",
+          "updatedAt": "2026-10-22T02:58:46.000Z",
+          "uid": "35240-8b04011a-0845-4ef2-9f0d-066c12d38714"
+        }
+      ],
+      "id": "7a159260-a8f7-45fe-b08e-e205989336d3",
+      "createdAt": "2026-10-22T02:58:46.000Z",
+      "updatedAt": "2026-10-22T02:58:46.000Z",
+      "uid": "35240-7a159260-a8f7-45fe-b08e-e205989336d3"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "registry",
+      "value": "myregistry"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{registry}}.azurecr.io"
+    }
+  ]
+}

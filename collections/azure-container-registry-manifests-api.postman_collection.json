@@ -1,0 +1,374 @@
+{
+  "info": {
+    "_postman_id": "5917d1d5-f992-4cd0-a3f7-d6813f4408ba",
+    "name": "Azure Container Registry REST Blobs Manifests API",
+    "description": "Azure Container Registry data plane API implements the OCI Distribution Specification for managing container images and artifacts. Operations include listing repositories, tags, manifests, and blobs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:58:51.000Z",
+    "updatedAt": "2026-10-22T02:58:51.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5917d1d5-f992-4cd0-a3f7-d6813f4408ba"
+  },
+  "item": [
+    {
+      "name": "v2",
+      "item": [
+        {
+          "name": "{name}",
+          "item": [
+            {
+              "name": "manifests",
+              "item": [
+                {
+                  "name": "{reference}",
+                  "item": [
+                    {
+                      "name": "ACR Get manifest",
+                      "id": "b13a6dd9-8761-4a24-b289-c71d8819af1b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/vnd.docker.distribution.manifest.v2+json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/:name/manifests/:reference",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            ":name",
+                            "manifests",
+                            ":reference"
+                          ],
+                          "variable": [
+                            {
+                              "id": "e59c2a60-739a-4c05-a7ce-84ab75eb92f7",
+                              "key": "name",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "c1b63a64-3fdf-41d6-ae6a-771fd6873fb8",
+                              "key": "reference",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Gets a manifest by tag or digest."
+                      },
+                      "response": [
+                        {
+                          "id": "12da5429-5ca4-4ada-9283-a66ae5dd3549",
+                          "name": "Manifest",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/vnd.docker.distribution.manifest.v2+json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/:name/manifests/:reference",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                ":name",
+                                "manifests",
+                                ":reference"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                },
+                                {
+                                  "key": "reference"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/vnd.docker.distribution.manifest.v2+json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-10-22T02:58:51.000Z",
+                          "updatedAt": "2026-10-22T02:58:51.000Z",
+                          "uid": "35240-12da5429-5ca4-4ada-9283-a66ae5dd3549"
+                        }
+                      ],
+                      "createdAt": "2026-10-22T02:58:51.000Z",
+                      "updatedAt": "2026-10-22T02:58:51.000Z",
+                      "uid": "35240-b13a6dd9-8761-4a24-b289-c71d8819af1b"
+                    },
+                    {
+                      "name": "ACR Put manifest",
+                      "id": "6ffdebd0-1154-4516-b227-29ec517a1843",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/vnd.docker.distribution.manifest.v2+json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/:name/manifests/:reference",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            ":name",
+                            "manifests",
+                            ":reference"
+                          ],
+                          "variable": [
+                            {
+                              "id": "e785349b-f9dd-4ca2-9900-62dc15d61e69",
+                              "key": "name",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "10898019-fb09-40b0-8322-d676ac35c17b",
+                              "key": "reference",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Pushes a manifest."
+                      },
+                      "response": [
+                        {
+                          "id": "ba225860-10b2-47b7-b873-c2531ef36c17",
+                          "name": "Manifest stored",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/vnd.docker.distribution.manifest.v2+json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/:name/manifests/:reference",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                ":name",
+                                "manifests",
+                                ":reference"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                },
+                                {
+                                  "key": "reference"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-10-22T02:58:51.000Z",
+                          "updatedAt": "2026-10-22T02:58:51.000Z",
+                          "uid": "35240-ba225860-10b2-47b7-b873-c2531ef36c17"
+                        }
+                      ],
+                      "createdAt": "2026-10-22T02:58:51.000Z",
+                      "updatedAt": "2026-10-22T02:58:51.000Z",
+                      "uid": "35240-6ffdebd0-1154-4516-b227-29ec517a1843"
+                    },
+                    {
+                      "name": "ACR Delete manifest",
+                      "id": "f081b6a2-0adb-4678-bd62-40260a0f948c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/:name/manifests/:reference",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            ":name",
+                            "manifests",
+                            ":reference"
+                          ],
+                          "variable": [
+                            {
+                              "id": "f43cae71-509e-4ba1-8fc3-e30b8fcaed50",
+                              "key": "name",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "c1366e24-a333-41c3-ad15-725acae70988",
+                              "key": "reference",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Deletes a manifest."
+                      },
+                      "response": [
+                        {
+                          "id": "14c4b08a-6c65-497f-ac4d-678802df9194",
+                          "name": "Deleted",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/:name/manifests/:reference",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                ":name",
+                                "manifests",
+                                ":reference"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                },
+                                {
+                                  "key": "reference"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Accepted",
+                          "code": 202,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-10-22T02:58:51.000Z",
+                          "updatedAt": "2026-10-22T02:58:51.000Z",
+                          "uid": "35240-14c4b08a-6c65-497f-ac4d-678802df9194"
+                        }
+                      ],
+                      "createdAt": "2026-10-22T02:58:51.000Z",
+                      "updatedAt": "2026-10-22T02:58:51.000Z",
+                      "uid": "35240-f081b6a2-0adb-4678-bd62-40260a0f948c"
+                    }
+                  ],
+                  "id": "d71b9e02-44d3-4fb8-b63e-af7dc2790234",
+                  "createdAt": "2026-10-22T02:58:51.000Z",
+                  "updatedAt": "2026-10-22T02:58:51.000Z",
+                  "uid": "35240-d71b9e02-44d3-4fb8-b63e-af7dc2790234"
+                }
+              ],
+              "id": "ec8bf068-22be-4928-8328-6ad4dc67b8fe",
+              "createdAt": "2026-10-22T02:58:51.000Z",
+              "updatedAt": "2026-10-22T02:58:51.000Z",
+              "uid": "35240-ec8bf068-22be-4928-8328-6ad4dc67b8fe"
+            }
+          ],
+          "id": "65288db8-6f37-47c7-8d07-3bc29fe1e1bc",
+          "createdAt": "2026-10-22T02:58:51.000Z",
+          "updatedAt": "2026-10-22T02:58:51.000Z",
+          "uid": "35240-65288db8-6f37-47c7-8d07-3bc29fe1e1bc"
+        }
+      ],
+      "id": "e459b838-54d5-4482-9112-c306b0e78b03",
+      "createdAt": "2026-10-22T02:58:51.000Z",
+      "updatedAt": "2026-10-22T02:58:51.000Z",
+      "uid": "35240-e459b838-54d5-4482-9112-c306b0e78b03"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "registry",
+      "value": "myregistry"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{registry}}.azurecr.io"
+    }
+  ]
+}

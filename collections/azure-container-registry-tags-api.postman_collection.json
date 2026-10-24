@@ -1,0 +1,162 @@
+{
+  "info": {
+    "_postman_id": "e4666237-1aea-48e5-a8e1-2947376e5a73",
+    "name": "Azure Container Registry REST Blobs Tags API",
+    "description": "Azure Container Registry data plane API implements the OCI Distribution Specification for managing container images and artifacts. Operations include listing repositories, tags, manifests, and blobs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:59:02.000Z",
+    "updatedAt": "2026-10-22T02:59:03.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e4666237-1aea-48e5-a8e1-2947376e5a73"
+  },
+  "item": [
+    {
+      "name": "v2",
+      "item": [
+        {
+          "name": "{name}",
+          "item": [
+            {
+              "name": "tags",
+              "item": [
+                {
+                  "name": "list",
+                  "item": [
+                    {
+                      "name": "ACR List tags",
+                      "id": "8b099c86-7762-437b-b8b4-d0316cc42ae5",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/:name/tags/list",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            ":name",
+                            "tags",
+                            "list"
+                          ],
+                          "variable": [
+                            {
+                              "id": "ba447ed0-d61d-4db6-a209-5f9be583e02b",
+                              "key": "name",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Lists tags for a repository."
+                      },
+                      "response": [
+                        {
+                          "id": "3e845c43-591f-466c-a2f6-a58576d717ef",
+                          "name": "Tag list",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/:name/tags/list",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                ":name",
+                                "tags",
+                                "list"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-10-22T02:59:03.000Z",
+                          "updatedAt": "2026-10-22T02:59:03.000Z",
+                          "uid": "35240-3e845c43-591f-466c-a2f6-a58576d717ef"
+                        }
+                      ],
+                      "createdAt": "2026-10-22T02:59:03.000Z",
+                      "updatedAt": "2026-10-22T02:59:03.000Z",
+                      "uid": "35240-8b099c86-7762-437b-b8b4-d0316cc42ae5"
+                    }
+                  ],
+                  "id": "bec6be50-948b-40bd-bebf-2b9a1a38a97e",
+                  "createdAt": "2026-10-22T02:59:03.000Z",
+                  "updatedAt": "2026-10-22T02:59:03.000Z",
+                  "uid": "35240-bec6be50-948b-40bd-bebf-2b9a1a38a97e"
+                }
+              ],
+              "id": "e3743bbe-060a-40d9-80dd-d1a7ebae9b4b",
+              "createdAt": "2026-10-22T02:59:03.000Z",
+              "updatedAt": "2026-10-22T02:59:03.000Z",
+              "uid": "35240-e3743bbe-060a-40d9-80dd-d1a7ebae9b4b"
+            }
+          ],
+          "id": "b6355491-14c3-44b7-9048-823344ad6a28",
+          "createdAt": "2026-10-22T02:59:03.000Z",
+          "updatedAt": "2026-10-22T02:59:03.000Z",
+          "uid": "35240-b6355491-14c3-44b7-9048-823344ad6a28"
+        }
+      ],
+      "id": "23a8d3c3-1e8a-4db3-8cde-4b7b61baaf9d",
+      "createdAt": "2026-10-22T02:59:03.000Z",
+      "updatedAt": "2026-10-22T02:59:03.000Z",
+      "uid": "35240-23a8d3c3-1e8a-4db3-8cde-4b7b61baaf9d"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "registry",
+      "value": "myregistry"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{registry}}.azurecr.io"
+    }
+  ]
+}

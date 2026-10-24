@@ -1,252 +1,312 @@
 {
+  "info": {
+    "_postman_id": "d7a349c0-27b7-4ab7-9333-6d2c5cece3ec",
+    "name": "ContainerRegistryManagementClient Operation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:58:23.000Z",
+    "updatedAt": "2026-10-22T02:58:23.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d7a349c0-27b7-4ab7-9333-6d2c5cece3ec"
+  },
   "item": [
     {
-      "id": "6afb9116-3eb8-45dd-8ed7-e484b5f1b369",
-      "name": "Operation",
-      "description": {
-        "content": "",
-        "type": "text/plain"
-      },
+      "name": "providers",
       "item": [
         {
-          "id": "74371626-4fe7-46ea-86c1-0241f3d1ce5a",
-          "name": "Azure Container Registry Operations_ List",
-          "request": {
-            "name": "Azure Container Registry Operations_ List",
-            "description": {
-              "content": "Lists all of the available Azure Container Registry REST API operations.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "operations"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "Microsoft.ContainerRegistry",
+          "item": [
             {
-              "id": "3606f57c-cf2d-4f69-873f-bc26a8120b81",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "operations"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
+              "name": "operations",
+              "item": [
+                {
+                  "name": "Azure Container Registry Operations_ List",
+                  "id": "96f74d4b-c1a0-4d1a-9612-f937c9cc4e91",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/providers/Microsoft.ContainerRegistry/operations?api-version=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "providers",
+                        "Microsoft.ContainerRegistry",
+                        "operations"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The client API version.",
+                          "key": "api-version",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Lists all of the available Azure Container Registry REST API operations."
+                  },
+                  "response": [
                     {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
+                      "id": "8a2c8eca-8400-408f-962b-0a295c699f49",
+                      "name": "The request was successful; the request was well-formed and received properly.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/providers/Microsoft.ContainerRegistry/operations?api-version=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "providers",
+                            "Microsoft.ContainerRegistry",
+                            "operations"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The client API version.",
+                              "key": "api-version",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"nextLink\": \"<string>\",\n  \"value\": [\n    {\n      \"display\": {\n        \"description\": \"<string>\",\n        \"operation\": \"<string>\",\n        \"provider\": \"<string>\",\n        \"resource\": \"<string>\"\n      },\n      \"name\": \"<string>\",\n      \"origin\": \"<string>\",\n      \"properties\": {\n        \"serviceSpecification\": {\n          \"metricSpecifications\": [\n            {\n              \"aggregationType\": \"<string>\",\n              \"displayDescription\": \"<string>\",\n              \"displayName\": \"<string>\",\n              \"internalMetricName\": \"<string>\",\n              \"name\": \"<string>\",\n              \"unit\": \"<string>\"\n            },\n            {\n              \"aggregationType\": \"<string>\",\n              \"displayDescription\": \"<string>\",\n              \"displayName\": \"<string>\",\n              \"internalMetricName\": \"<string>\",\n              \"name\": \"<string>\",\n              \"unit\": \"<string>\"\n            }\n          ]\n        }\n      }\n    },\n    {\n      \"display\": {\n        \"description\": \"<string>\",\n        \"operation\": \"<string>\",\n        \"provider\": \"<string>\",\n        \"resource\": \"<string>\"\n      },\n      \"name\": \"<string>\",\n      \"origin\": \"<string>\",\n      \"properties\": {\n        \"serviceSpecification\": {\n          \"metricSpecifications\": [\n            {\n              \"aggregationType\": \"<string>\",\n              \"displayDescription\": \"<string>\",\n              \"displayName\": \"<string>\",\n              \"internalMetricName\": \"<string>\",\n              \"name\": \"<string>\",\n              \"unit\": \"<string>\"\n            },\n            {\n              \"aggregationType\": \"<string>\",\n              \"displayDescription\": \"<string>\",\n              \"displayName\": \"<string>\",\n              \"internalMetricName\": \"<string>\",\n              \"name\": \"<string>\",\n              \"unit\": \"<string>\"\n            }\n          ]\n        }\n      }\n    }\n  ]\n}",
+                      "createdAt": "2026-10-22T02:58:23.000Z",
+                      "updatedAt": "2026-10-22T02:58:23.000Z",
+                      "uid": "35240-8a2c8eca-8400-408f-962b-0a295c699f49"
                     }
                   ],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "createdAt": "2026-10-22T02:58:23.000Z",
+                  "updatedAt": "2026-10-22T02:58:23.000Z",
+                  "uid": "35240-96f74d4b-c1a0-4d1a-9612-f937c9cc4e91"
                 }
               ],
-              "body": "{\n  \"nextLink\": \"string\",\n  \"value\": [\n    {\n      \"display\": {\n        \"description\": \"string\",\n        \"operation\": \"string\",\n        \"provider\": \"string\",\n        \"resource\": \"string\"\n      },\n      \"name\": \"string\",\n      \"origin\": \"string\",\n      \"properties\": {\n        \"serviceSpecification\": {\n          \"metricSpecifications\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    },\n    {\n      \"display\": {\n        \"description\": \"string\",\n        \"operation\": \"string\",\n        \"provider\": \"string\",\n        \"resource\": \"string\"\n      },\n      \"name\": \"string\",\n      \"origin\": \"string\",\n      \"properties\": {\n        \"serviceSpecification\": {\n          \"metricSpecifications\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      }\n    }\n  ]\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "id": "a1410345-0c2b-4db7-93c9-91b133d23866",
+              "createdAt": "2026-10-22T02:58:23.000Z",
+              "updatedAt": "2026-10-22T02:58:23.000Z",
+              "uid": "35240-a1410345-0c2b-4db7-93c9-91b133d23866"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "9f15b618-f8cd-463c-93d6-439f649a29fa",
-          "name": "Azure Container Registry Registries_ Check Name Availability",
-          "request": {
-            "name": "Azure Container Registry Registries_ Check Name Availability",
-            "description": {
-              "content": "Checks whether the container registry name is available for use. The name must contain only alphanumeric characters, be globally unique, and between 5 and 50 characters in length.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "checkNameAvailability"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "bbe4a15a-62ab-46c1-a78a-9afffb39387f",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "checkNameAvailability"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"nameAvailable\": true\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "4877d3bf-43c9-48ff-ab8c-6525cc2557c0",
+          "createdAt": "2026-10-22T02:58:23.000Z",
+          "updatedAt": "2026-10-22T02:58:23.000Z",
+          "uid": "35240-4877d3bf-43c9-48ff-ab8c-6525cc2557c0"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
+      "id": "48c7640b-ea69-40c5-803e-7b7f59dcae04",
+      "createdAt": "2026-10-22T02:58:23.000Z",
+      "updatedAt": "2026-10-22T02:58:23.000Z",
+      "uid": "35240-48c7640b-ea69-40c5-803e-7b7f59dcae04"
+    },
     {
-      "type": "string",
-      "value": "https://management.azure.com",
-      "key": "baseUrl"
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "providers",
+              "item": [
+                {
+                  "name": "Microsoft.ContainerRegistry",
+                  "item": [
+                    {
+                      "name": "checkNameAvailability",
+                      "item": [
+                        {
+                          "name": "Azure Container Registry Registries_ Check Name Availability",
+                          "id": "bcfea82c-5765-47cb-b17b-f7c7e12608df",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"        \",\n  \"type\": \"Microsoft.ContainerRegistry/registries\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.ContainerRegistry/checkNameAvailability?api-version=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "subscriptions",
+                                ":subscriptionId",
+                                "providers",
+                                "Microsoft.ContainerRegistry",
+                                "checkNameAvailability"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) The client API version.",
+                                  "key": "api-version",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "3edb37d2-7ab5-4ffc-8e28-5c7afd58e333",
+                                  "key": "subscriptionId",
+                                  "value": "<string>",
+                                  "description": "(Required) The Microsoft Azure subscription ID."
+                                }
+                              ]
+                            },
+                            "description": "Checks whether the container registry name is available for use. The name must contain only alphanumeric characters, be globally unique, and between 5 and 50 characters in length."
+                          },
+                          "response": [
+                            {
+                              "id": "ffb47258-58a2-48fa-b7df-a67c9cf7630e",
+                              "name": "The request was successful; the request was well-formed and received properly.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"        \",\n  \"type\": \"Microsoft.ContainerRegistry/registries\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.ContainerRegistry/checkNameAvailability?api-version=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "subscriptions",
+                                    ":subscriptionId",
+                                    "providers",
+                                    "Microsoft.ContainerRegistry",
+                                    "checkNameAvailability"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) The client API version.",
+                                      "key": "api-version",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "subscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"message\": \"<string>\",\n  \"nameAvailable\": \"<boolean>\",\n  \"reason\": \"<string>\"\n}",
+                              "createdAt": "2026-10-22T02:58:23.000Z",
+                              "updatedAt": "2026-10-22T02:58:23.000Z",
+                              "uid": "35240-ffb47258-58a2-48fa-b7df-a67c9cf7630e"
+                            }
+                          ],
+                          "createdAt": "2026-10-22T02:58:23.000Z",
+                          "updatedAt": "2026-10-22T02:58:23.000Z",
+                          "uid": "35240-bcfea82c-5765-47cb-b17b-f7c7e12608df"
+                        }
+                      ],
+                      "id": "cdafed5c-3673-4aab-9c77-eb9d978b10b1",
+                      "createdAt": "2026-10-22T02:58:23.000Z",
+                      "updatedAt": "2026-10-22T02:58:23.000Z",
+                      "uid": "35240-cdafed5c-3673-4aab-9c77-eb9d978b10b1"
+                    }
+                  ],
+                  "id": "5b39dc73-02f7-480a-ba80-e93b3c80e445",
+                  "createdAt": "2026-10-22T02:58:23.000Z",
+                  "updatedAt": "2026-10-22T02:58:23.000Z",
+                  "uid": "35240-5b39dc73-02f7-480a-ba80-e93b3c80e445"
+                }
+              ],
+              "id": "11a0b18e-5bae-4089-870d-8cef912cc7ce",
+              "createdAt": "2026-10-22T02:58:23.000Z",
+              "updatedAt": "2026-10-22T02:58:23.000Z",
+              "uid": "35240-11a0b18e-5bae-4089-870d-8cef912cc7ce"
+            }
+          ],
+          "id": "ce996565-dbca-42fa-b821-f5896b4da27d",
+          "createdAt": "2026-10-22T02:58:23.000Z",
+          "updatedAt": "2026-10-22T02:58:23.000Z",
+          "uid": "35240-ce996565-dbca-42fa-b821-f5896b4da27d"
+        }
+      ],
+      "id": "8fe4ae90-ac14-4cfd-9f4a-e9fea8126a25",
+      "createdAt": "2026-10-22T02:58:23.000Z",
+      "updatedAt": "2026-10-22T02:58:23.000Z",
+      "uid": "35240-8fe4ae90-ac14-4cfd-9f4a-e9fea8126a25"
     }
   ],
   "auth": {
@@ -254,25 +314,25 @@
     "oauth2": [
       {
         "key": "scope",
-        "value": "user_impersonation"
+        "value": "user_impersonation",
+        "type": "string"
       },
       {
         "key": "authUrl",
-        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
       },
       {
         "key": "grant_type",
-        "value": "implicit"
+        "value": "implicit",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "3892687b-8498-4fd7-9e59-dffeaeddd3aa",
-    "name": "ContainerRegistryManagementClient Operation API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
     }
-  }
+  ]
 }

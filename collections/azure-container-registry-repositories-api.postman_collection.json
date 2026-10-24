@@ -1,0 +1,127 @@
+{
+  "info": {
+    "_postman_id": "b435350c-b061-49b2-9d7d-39c3704c9d1a",
+    "name": "Azure Container Registry REST Blobs Repositories API",
+    "description": "Azure Container Registry data plane API implements the OCI Distribution Specification for managing container images and artifacts. Operations include listing repositories, tags, manifests, and blobs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:58:57.000Z",
+    "updatedAt": "2026-10-22T02:58:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b435350c-b061-49b2-9d7d-39c3704c9d1a"
+  },
+  "item": [
+    {
+      "name": "v2",
+      "item": [
+        {
+          "name": "_catalog",
+          "item": [
+            {
+              "name": "ACR List repositories",
+              "id": "b62fa04f-4514-4c5c-83f6-748cc7745885",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v2/_catalog",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "_catalog"
+                  ]
+                },
+                "description": "Lists repositories in the registry."
+              },
+              "response": [
+                {
+                  "id": "0a232ae4-3f3d-44c2-bab2-b76e9da821e4",
+                  "name": "Repository list",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v2/_catalog",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v2",
+                        "_catalog"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"repositories\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "createdAt": "2026-10-22T02:58:57.000Z",
+                  "updatedAt": "2026-10-22T02:58:57.000Z",
+                  "uid": "35240-0a232ae4-3f3d-44c2-bab2-b76e9da821e4"
+                }
+              ],
+              "createdAt": "2026-10-22T02:58:57.000Z",
+              "updatedAt": "2026-10-22T02:58:57.000Z",
+              "uid": "35240-b62fa04f-4514-4c5c-83f6-748cc7745885"
+            }
+          ],
+          "id": "c853405a-afa3-4362-9ba3-0932c1af0c05",
+          "createdAt": "2026-10-22T02:58:57.000Z",
+          "updatedAt": "2026-10-22T02:58:57.000Z",
+          "uid": "35240-c853405a-afa3-4362-9ba3-0932c1af0c05"
+        }
+      ],
+      "id": "a2b60472-8e57-4315-b332-bbbfb9c7a378",
+      "createdAt": "2026-10-22T02:58:57.000Z",
+      "updatedAt": "2026-10-22T02:58:57.000Z",
+      "uid": "35240-a2b60472-8e57-4315-b332-bbbfb9c7a378"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "registry",
+      "value": "myregistry"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{registry}}.azurecr.io"
+    }
+  ]
+}

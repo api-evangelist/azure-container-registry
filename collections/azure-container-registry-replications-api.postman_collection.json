@@ -1,1221 +1,1157 @@
 {
+  "info": {
+    "_postman_id": "fcc823c4-f4ff-4b81-bab1-00a17da55370",
+    "name": "ContainerRegistryManagementClient Replications API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:58:35.000Z",
+    "updatedAt": "2026-10-22T02:58:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-fcc823c4-f4ff-4b81-bab1-00a17da55370"
+  },
   "item": [
     {
-      "id": "7df73d4b-5bd9-466b-88c8-278c96024e8e",
-      "name": "Replications",
-      "description": {
-        "content": "",
-        "type": "text/plain"
-      },
+      "name": "subscriptions",
       "item": [
         {
-          "id": "c2816698-4c85-40ca-969d-80a0061f1227",
-          "name": "Azure Container Registry Replications_ List",
-          "request": {
-            "name": "Azure Container Registry Replications_ List",
-            "description": {
-              "content": "Lists all the replications for the specified container registry.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "resourceGroups",
-                ":resourceGroupName",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "registries",
-                ":registryName",
-                "replications"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "resourceGroupName",
-                  "description": "(Required) The name of the resource group to which the container registry belongs."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "registryName",
-                  "description": "(Required) The name of the container registry."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "{subscriptionId}",
+          "item": [
             {
-              "id": "cd69fce0-4bb7-45ea-994c-9763bed4747a",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "replications"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "name": "resourceGroups",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.ContainerRegistry",
+                          "item": [
+                            {
+                              "name": "registries",
+                              "item": [
+                                {
+                                  "name": "{registryName}",
+                                  "item": [
+                                    {
+                                      "name": "replications",
+                                      "item": [
+                                        {
+                                          "name": "{replicationName}",
+                                          "item": [
+                                            {
+                                              "name": "Azure Container Registry Replications_ Delete",
+                                              "id": "d39c22be-860e-4fb7-8aa0-58c10a4a7574",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "DELETE",
+                                                "header": [],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications/:replicationName?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.ContainerRegistry",
+                                                    "registries",
+                                                    ":registryName",
+                                                    "replications",
+                                                    ":replicationName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) The client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "8a40de91-0533-4428-8898-841fb89cf36c",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The Microsoft Azure subscription ID."
+                                                    },
+                                                    {
+                                                      "id": "17a4f945-cc97-417c-9348-52001d94597c",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                                                    },
+                                                    {
+                                                      "id": "d36bc268-3716-4ff0-b47e-70c85181e5e7",
+                                                      "key": "registryName",
+                                                      "value": "zHSGF2bn1",
+                                                      "description": "(Required) The name of the container registry."
+                                                    },
+                                                    {
+                                                      "id": "fa2db8be-6559-4383-9d17-74d64b62d395",
+                                                      "key": "replicationName",
+                                                      "value": "zHSGF2bn1",
+                                                      "description": "(Required) The name of the replication."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Deletes a replication from a container registry."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "32fe7fc8-21e1-4f00-81a2-013ce8245090",
+                                                  "name": "The request was successful; the request was well-formed and received properly.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications/:replicationName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "replications",
+                                                        ":replicationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "replicationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-10-22T02:58:36.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:36.000Z",
+                                                  "uid": "35240-32fe7fc8-21e1-4f00-81a2-013ce8245090"
+                                                },
+                                                {
+                                                  "id": "dd8ad8b3-39b6-4767-94cc-2c6a8fbdcbb0",
+                                                  "name": "The request was successful; the operation will complete asynchronously.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications/:replicationName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "replications",
+                                                        ":replicationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "replicationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Accepted",
+                                                  "code": 202,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-10-22T02:58:36.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:36.000Z",
+                                                  "uid": "35240-dd8ad8b3-39b6-4767-94cc-2c6a8fbdcbb0"
+                                                },
+                                                {
+                                                  "id": "4acc0d27-beca-41ed-8d74-bf872b668fab",
+                                                  "name": "The replication does not exist in the subscription.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications/:replicationName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "replications",
+                                                        ":replicationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "replicationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "No Content",
+                                                  "code": 204,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-10-22T02:58:36.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:36.000Z",
+                                                  "uid": "35240-4acc0d27-beca-41ed-8d74-bf872b668fab"
+                                                }
+                                              ],
+                                              "createdAt": "2026-10-22T02:58:36.000Z",
+                                              "updatedAt": "2026-10-22T02:58:36.000Z",
+                                              "uid": "35240-d39c22be-860e-4fb7-8aa0-58c10a4a7574"
+                                            },
+                                            {
+                                              "name": "Azure Container Registry Replications_ Get",
+                                              "id": "dea86018-0671-4bb3-8c58-b06a37e3a96c",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications/:replicationName?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.ContainerRegistry",
+                                                    "registries",
+                                                    ":registryName",
+                                                    "replications",
+                                                    ":replicationName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) The client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "1be7de6d-a99e-400b-a580-75b87604fcc4",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The Microsoft Azure subscription ID."
+                                                    },
+                                                    {
+                                                      "id": "16c09d8f-85be-439e-9078-12e763b3b19d",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                                                    },
+                                                    {
+                                                      "id": "1766f98c-a52d-4fc6-bd02-7a2546c482a7",
+                                                      "key": "registryName",
+                                                      "value": "zHSGF2bn1",
+                                                      "description": "(Required) The name of the container registry."
+                                                    },
+                                                    {
+                                                      "id": "18cdfad5-7b35-4214-ba05-12402546b0e3",
+                                                      "key": "replicationName",
+                                                      "value": "zHSGF2bn1",
+                                                      "description": "(Required) The name of the replication."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Gets the properties of the specified replication."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "1969a9a6-2e63-4973-af0c-718314f2a345",
+                                                  "name": "The request was successful; the request was well-formed and received properly.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications/:replicationName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "replications",
+                                                        ":replicationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "replicationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"description\": \"The properties of the replication.\",\n    \"x-ms-client-flatten\": true\n  },\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"reprehenderitc\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                                  "createdAt": "2026-10-22T02:58:36.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:36.000Z",
+                                                  "uid": "35240-1969a9a6-2e63-4973-af0c-718314f2a345"
+                                                }
+                                              ],
+                                              "createdAt": "2026-10-22T02:58:36.000Z",
+                                              "updatedAt": "2026-10-22T02:58:36.000Z",
+                                              "uid": "35240-dea86018-0671-4bb3-8c58-b06a37e3a96c"
+                                            },
+                                            {
+                                              "name": "Azure Container Registry Replications_ Update",
+                                              "id": "13bef5fd-b24f-4608-8817-9a508c50f9d2",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "PATCH",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"tags\": {\n    \"ipsum_9f3\": \"<string>\",\n    \"quis_\": \"<string>\",\n    \"cillum1\": \"<string>\",\n    \"quis_d\": \"<string>\"\n  }\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications/:replicationName?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.ContainerRegistry",
+                                                    "registries",
+                                                    ":registryName",
+                                                    "replications",
+                                                    ":replicationName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) The client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "656e5540-50dc-420a-a2e8-2adde57f1928",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The Microsoft Azure subscription ID."
+                                                    },
+                                                    {
+                                                      "id": "96b9fcb8-c043-46d3-99e0-4d7c2399b94a",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                                                    },
+                                                    {
+                                                      "id": "c03bd01c-fe07-4d8a-8232-1a40dbccf741",
+                                                      "key": "registryName",
+                                                      "value": "zHSGF2bn1",
+                                                      "description": "(Required) The name of the container registry."
+                                                    },
+                                                    {
+                                                      "id": "1b68be50-ad9d-4a6d-b90c-60d55cc2f7ef",
+                                                      "key": "replicationName",
+                                                      "value": "zHSGF2bn1",
+                                                      "description": "(Required) The name of the replication."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Updates a replication for a container registry with the specified parameters."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "4b44ff0a-d37b-4b86-a2f1-73eff942bd1b",
+                                                  "name": "The request was successful; the request was well-formed and received properly.",
+                                                  "originalRequest": {
+                                                    "method": "PATCH",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"tags\": {\n    \"ipsum_9f3\": \"<string>\",\n    \"quis_\": \"<string>\",\n    \"cillum1\": \"<string>\",\n    \"quis_d\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications/:replicationName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "replications",
+                                                        ":replicationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "replicationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"description\": \"The properties of the replication.\",\n    \"x-ms-client-flatten\": true\n  },\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"reprehenderitc\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                                  "createdAt": "2026-10-22T02:58:36.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:36.000Z",
+                                                  "uid": "35240-4b44ff0a-d37b-4b86-a2f1-73eff942bd1b"
+                                                },
+                                                {
+                                                  "id": "7dd5285a-8f69-4e08-984d-be78fa44a2bb",
+                                                  "name": "The request was successful; the operation will complete asynchronously.",
+                                                  "originalRequest": {
+                                                    "method": "PATCH",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"tags\": {\n    \"ipsum_9f3\": \"<string>\",\n    \"quis_\": \"<string>\",\n    \"cillum1\": \"<string>\",\n    \"quis_d\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications/:replicationName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "replications",
+                                                        ":replicationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "replicationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Created",
+                                                  "code": 201,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"description\": \"The properties of the replication.\",\n    \"x-ms-client-flatten\": true\n  },\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"reprehenderitc\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                                  "createdAt": "2026-10-22T02:58:36.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:36.000Z",
+                                                  "uid": "35240-7dd5285a-8f69-4e08-984d-be78fa44a2bb"
+                                                }
+                                              ],
+                                              "createdAt": "2026-10-22T02:58:36.000Z",
+                                              "updatedAt": "2026-10-22T02:58:36.000Z",
+                                              "uid": "35240-13bef5fd-b24f-4608-8817-9a508c50f9d2"
+                                            },
+                                            {
+                                              "name": "Azure Container Registry Replications_ Create",
+                                              "id": "09d18e3f-6939-4e50-b520-665526ce972c",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "PUT",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"description\": \"The properties of the replication.\",\n    \"x-ms-client-flatten\": true\n  },\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"reprehenderitc\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications/:replicationName?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.ContainerRegistry",
+                                                    "registries",
+                                                    ":registryName",
+                                                    "replications",
+                                                    ":replicationName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) The client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "4ffe84f0-4289-4d8b-a866-887ce275c66d",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The Microsoft Azure subscription ID."
+                                                    },
+                                                    {
+                                                      "id": "ba55e785-c92c-4818-b80a-a8325194c014",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                                                    },
+                                                    {
+                                                      "id": "6198f982-a4b4-420f-a995-596c0b74c0cc",
+                                                      "key": "registryName",
+                                                      "value": "zHSGF2bn1",
+                                                      "description": "(Required) The name of the container registry."
+                                                    },
+                                                    {
+                                                      "id": "66fdcdc6-654f-4a31-ab03-4b6d89227be8",
+                                                      "key": "replicationName",
+                                                      "value": "zHSGF2bn1",
+                                                      "description": "(Required) The name of the replication."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Creates a replication for a container registry with the specified parameters."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "03109b0a-3944-47b1-b658-b9a9f40dec81",
+                                                  "name": "The request was successful; the request was well-formed and received properly.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"description\": \"The properties of the replication.\",\n    \"x-ms-client-flatten\": true\n  },\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"reprehenderitc\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications/:replicationName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "replications",
+                                                        ":replicationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "replicationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"description\": \"The properties of the replication.\",\n    \"x-ms-client-flatten\": true\n  },\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"reprehenderitc\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                                  "createdAt": "2026-10-22T02:58:36.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:36.000Z",
+                                                  "uid": "35240-03109b0a-3944-47b1-b658-b9a9f40dec81"
+                                                },
+                                                {
+                                                  "id": "39b871a9-909b-4a0a-97ae-26e536a12d33",
+                                                  "name": "The request was successful; the operation will complete asynchronously.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"description\": \"The properties of the replication.\",\n    \"x-ms-client-flatten\": true\n  },\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"reprehenderitc\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications/:replicationName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "replications",
+                                                        ":replicationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "replicationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Created",
+                                                  "code": 201,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"description\": \"The properties of the replication.\",\n    \"x-ms-client-flatten\": true\n  },\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"reprehenderitc\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                                  "createdAt": "2026-10-22T02:58:36.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:36.000Z",
+                                                  "uid": "35240-39b871a9-909b-4a0a-97ae-26e536a12d33"
+                                                }
+                                              ],
+                                              "createdAt": "2026-10-22T02:58:36.000Z",
+                                              "updatedAt": "2026-10-22T02:58:36.000Z",
+                                              "uid": "35240-09d18e3f-6939-4e50-b520-665526ce972c"
+                                            }
+                                          ],
+                                          "id": "821ad448-6c7f-4b3b-b488-06ebd50ec26b",
+                                          "createdAt": "2026-10-22T02:58:36.000Z",
+                                          "updatedAt": "2026-10-22T02:58:36.000Z",
+                                          "uid": "35240-821ad448-6c7f-4b3b-b488-06ebd50ec26b"
+                                        },
+                                        {
+                                          "name": "Azure Container Registry Replications_ List",
+                                          "id": "466cbef8-69ee-47b9-aa2b-fa0097b79418",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.ContainerRegistry",
+                                                "registries",
+                                                ":registryName",
+                                                "replications"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) The client API version.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "c215da37-ca6f-4b84-ac6a-9be57425da27",
+                                                  "key": "subscriptionId",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The Microsoft Azure subscription ID."
+                                                },
+                                                {
+                                                  "id": "562b4ed7-6bfc-478d-97b3-aa371a0a0eef",
+                                                  "key": "resourceGroupName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The name of the resource group to which the container registry belongs."
+                                                },
+                                                {
+                                                  "id": "95863f36-449c-4bce-b1fc-92cea3dfe591",
+                                                  "key": "registryName",
+                                                  "value": "zHSGF2bn1",
+                                                  "description": "(Required) The name of the container registry."
+                                                }
+                                              ]
+                                            },
+                                            "description": "Lists all the replications for the specified container registry."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "6ba91d45-45d8-4f92-b2be-ddb4b6375262",
+                                              "name": "The request was successful; the request was well-formed and received properly.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/replications?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.ContainerRegistry",
+                                                    "registries",
+                                                    ":registryName",
+                                                    "replications"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) The client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "registryName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"nextLink\": \"<string>\",\n  \"value\": [\n    {\n      \"location\": \"<string>\",\n      \"properties\": {\n        \"description\": \"The properties of the replication.\",\n        \"x-ms-client-flatten\": true\n      },\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tags\": {\n        \"consequat9d8\": \"<string>\",\n        \"officia73f\": \"<string>\",\n        \"sunt_fe6\": \"<string>\",\n        \"dolore_d6\": \"<string>\"\n      },\n      \"type\": \"<string>\"\n    },\n    {\n      \"location\": \"<string>\",\n      \"properties\": {\n        \"description\": \"The properties of the replication.\",\n        \"x-ms-client-flatten\": true\n      },\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tags\": {\n        \"nostrud6b\": \"<string>\",\n        \"velit_5\": \"<string>\",\n        \"nulla_b_a\": \"<string>\",\n        \"proident_ff\": \"<string>\"\n      },\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                                              "createdAt": "2026-10-22T02:58:36.000Z",
+                                              "updatedAt": "2026-10-22T02:58:36.000Z",
+                                              "uid": "35240-6ba91d45-45d8-4f92-b2be-ddb4b6375262"
+                                            }
+                                          ],
+                                          "createdAt": "2026-10-22T02:58:36.000Z",
+                                          "updatedAt": "2026-10-22T02:58:36.000Z",
+                                          "uid": "35240-466cbef8-69ee-47b9-aa2b-fa0097b79418"
+                                        }
+                                      ],
+                                      "id": "1047780d-8829-4862-92e8-d986924cea87",
+                                      "createdAt": "2026-10-22T02:58:36.000Z",
+                                      "updatedAt": "2026-10-22T02:58:36.000Z",
+                                      "uid": "35240-1047780d-8829-4862-92e8-d986924cea87"
+                                    }
+                                  ],
+                                  "id": "30d9296f-b1bd-4406-bd71-52eb0da682f0",
+                                  "createdAt": "2026-10-22T02:58:36.000Z",
+                                  "updatedAt": "2026-10-22T02:58:36.000Z",
+                                  "uid": "35240-30d9296f-b1bd-4406-bd71-52eb0da682f0"
+                                }
+                              ],
+                              "id": "9d99c436-6f7b-4c81-a7ef-81fbb39cd80a",
+                              "createdAt": "2026-10-22T02:58:36.000Z",
+                              "updatedAt": "2026-10-22T02:58:36.000Z",
+                              "uid": "35240-9d99c436-6f7b-4c81-a7ef-81fbb39cd80a"
+                            }
+                          ],
+                          "id": "6f2a7817-c720-4ffd-81fb-d365a9dc6124",
+                          "createdAt": "2026-10-22T02:58:36.000Z",
+                          "updatedAt": "2026-10-22T02:58:36.000Z",
+                          "uid": "35240-6f2a7817-c720-4ffd-81fb-d365a9dc6124"
+                        }
+                      ],
+                      "id": "a2fe7182-52da-421c-83ed-f6833ae6acc6",
+                      "createdAt": "2026-10-22T02:58:36.000Z",
+                      "updatedAt": "2026-10-22T02:58:36.000Z",
+                      "uid": "35240-a2fe7182-52da-421c-83ed-f6833ae6acc6"
+                    }
+                  ],
+                  "id": "74b4c238-1824-49fb-823b-8f2f5842999a",
+                  "createdAt": "2026-10-22T02:58:36.000Z",
+                  "updatedAt": "2026-10-22T02:58:36.000Z",
+                  "uid": "35240-74b4c238-1824-49fb-823b-8f2f5842999a"
                 }
               ],
-              "body": "{\n  \"value\": [\n    {\n      \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication\",\n      \"location\": \"eastus\",\n      \"name\": \"myReplication\",\n      \"properties\": {\n        \"provisioningState\": \"Succeeded\",\n        \"status\": {\n          \"displayStatus\": \"Ready\",\n          \"message\": \"The replication is ready.\",\n          \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\n        }\n      },\n      \"tags\": {\n        \"key\": \"value\"\n      },\n      \"type\": \"Microsoft.ContainerRegistry/registries/replications\"\n    }\n  ]\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "id": "ca272680-0286-470d-a09b-1ee69d96592b",
+              "createdAt": "2026-10-22T02:58:36.000Z",
+              "updatedAt": "2026-10-22T02:58:36.000Z",
+              "uid": "35240-ca272680-0286-470d-a09b-1ee69d96592b"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "97f77ecf-b309-48c7-9e72-861588fb7036",
-          "name": "Azure Container Registry Replications_ Delete",
-          "request": {
-            "name": "Azure Container Registry Replications_ Delete",
-            "description": {
-              "content": "Deletes a replication from a container registry.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "resourceGroups",
-                ":resourceGroupName",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "registries",
-                ":registryName",
-                "replications",
-                ":replicationName"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "resourceGroupName",
-                  "description": "(Required) The name of the resource group to which the container registry belongs."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "registryName",
-                  "description": "(Required) The name of the container registry."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "replicationName",
-                  "description": "(Required) The name of the replication."
-                }
-              ]
-            },
-            "method": "DELETE",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "577ecdbb-1f21-4fba-8847-ebc79a68bc32",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "replications",
-                    ":replicationName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "replicationName",
-                      "description": "(Required) The name of the replication."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  }
-                ],
-                "method": "DELETE",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            },
-            {
-              "id": "f15a37cb-61d5-4723-9e4e-3d8f709f1ef7",
-              "name": "The request was successful; the operation will complete asynchronously.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "replications",
-                    ":replicationName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "replicationName",
-                      "description": "(Required) The name of the replication."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  }
-                ],
-                "method": "DELETE",
-                "body": {}
-              },
-              "status": "Accepted",
-              "code": 202,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            },
-            {
-              "id": "31520df7-eafe-4f9c-a246-e22fc3ac9f1c",
-              "name": "The replication does not exist in the subscription.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "replications",
-                    ":replicationName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "replicationName",
-                      "description": "(Required) The name of the replication."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  }
-                ],
-                "method": "DELETE",
-                "body": {}
-              },
-              "status": "No Content",
-              "code": 204,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "855ec9e7-f07a-4444-80a9-357831a015d6",
-          "name": "Azure Container Registry Replications_ Get",
-          "request": {
-            "name": "Azure Container Registry Replications_ Get",
-            "description": {
-              "content": "Gets the properties of the specified replication.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "resourceGroups",
-                ":resourceGroupName",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "registries",
-                ":registryName",
-                "replications",
-                ":replicationName"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "resourceGroupName",
-                  "description": "(Required) The name of the resource group to which the container registry belongs."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "registryName",
-                  "description": "(Required) The name of the container registry."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "replicationName",
-                  "description": "(Required) The name of the replication."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "c3ecb926-6db6-4246-86ab-b1d52c234640",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "replications",
-                    ":replicationName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "replicationName",
-                      "description": "(Required) The name of the replication."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication\",\n  \"location\": \"eastus\",\n  \"name\": \"myReplication\",\n  \"properties\": {\n    \"provisioningState\": \"Succeeded\",\n    \"status\": {\n      \"displayStatus\": \"Ready\",\n      \"message\": \"The replication is ready.\",\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\n    }\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries/replications\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "0fc8a3a7-a422-4f85-a1cb-034c9004c761",
-          "name": "Azure Container Registry Replications_ Update",
-          "request": {
-            "name": "Azure Container Registry Replications_ Update",
-            "description": {
-              "content": "Updates a replication for a container registry with the specified parameters.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "resourceGroups",
-                ":resourceGroupName",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "registries",
-                ":registryName",
-                "replications",
-                ":replicationName"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "resourceGroupName",
-                  "description": "(Required) The name of the resource group to which the container registry belongs."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "registryName",
-                  "description": "(Required) The name of the container registry."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "replicationName",
-                  "description": "(Required) The name of the replication."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "PATCH",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "47032053-9108-46d1-bba6-fa44649044ed",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "replications",
-                    ":replicationName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "replicationName",
-                      "description": "(Required) The name of the replication."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "PATCH",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication\",\n  \"location\": \"eastus\",\n  \"name\": \"myReplication\",\n  \"properties\": {\n    \"provisioningState\": \"Updating\",\n    \"status\": {\n      \"displayStatus\": \"Provisioning\",\n      \"message\": \"The replication is provisioning.\",\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\n    }\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries/replications\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "eb7b9894-0ff1-4168-8446-f3f247d277c7",
-              "name": "The request was successful; the operation will complete asynchronously.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "replications",
-                    ":replicationName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "replicationName",
-                      "description": "(Required) The name of the replication."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "PATCH",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Created",
-              "code": 201,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication\",\n  \"location\": \"eastus\",\n  \"name\": \"myReplication\",\n  \"properties\": {\n    \"provisioningState\": \"Updating\",\n    \"status\": {\n      \"displayStatus\": \"Provisioning\",\n      \"message\": \"The replication is provisioning.\",\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\n    }\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries/replications\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "25973773-eeb0-4ee8-9f77-a5fdee196c09",
-          "name": "Azure Container Registry Replications_ Create",
-          "request": {
-            "name": "Azure Container Registry Replications_ Create",
-            "description": {
-              "content": "Creates a replication for a container registry with the specified parameters.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "resourceGroups",
-                ":resourceGroupName",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "registries",
-                ":registryName",
-                "replications",
-                ":replicationName"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "resourceGroupName",
-                  "description": "(Required) The name of the resource group to which the container registry belongs."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "registryName",
-                  "description": "(Required) The name of the container registry."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "replicationName",
-                  "description": "(Required) The name of the replication."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "PUT",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"status\": {}\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "96223230-623e-429b-ac97-137e52032d05",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "replications",
-                    ":replicationName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "replicationName",
-                      "description": "(Required) The name of the replication."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "PUT",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"status\": {}\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication\",\n  \"location\": \"eastus\",\n  \"name\": \"myReplication\",\n  \"properties\": {\n    \"provisioningState\": \"Creating\",\n    \"status\": {\n      \"displayStatus\": \"Provisioning\",\n      \"message\": \"The replication is provisioning.\",\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\n    }\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries/replications\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "060cd2e3-1544-4701-9638-000a266dc039",
-              "name": "The request was successful; the operation will complete asynchronously.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "replications",
-                    ":replicationName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "replicationName",
-                      "description": "(Required) The name of the replication."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "PUT",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"status\": {}\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Created",
-              "code": 201,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/replications/myReplication\",\n  \"location\": \"eastus\",\n  \"name\": \"myReplication\",\n  \"properties\": {\n    \"provisioningState\": \"Creating\",\n    \"status\": {\n      \"displayStatus\": \"Provisioning\",\n      \"message\": \"The replication is provisioning.\",\n      \"timestamp\": \"2017-03-01T23:15:37.0707808Z\"\n    }\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries/replications\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "1086af82-cbc1-4502-b38a-154199c2acb6",
+          "createdAt": "2026-10-22T02:58:36.000Z",
+          "updatedAt": "2026-10-22T02:58:36.000Z",
+          "uid": "35240-1086af82-cbc1-4502-b38a-154199c2acb6"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://management.azure.com",
-      "key": "baseUrl"
+      "id": "49c71914-b9ce-4a84-b29e-531fcdca4b0c",
+      "createdAt": "2026-10-22T02:58:36.000Z",
+      "updatedAt": "2026-10-22T02:58:36.000Z",
+      "uid": "35240-49c71914-b9ce-4a84-b29e-531fcdca4b0c"
     }
   ],
   "auth": {
@@ -1223,25 +1159,25 @@
     "oauth2": [
       {
         "key": "scope",
-        "value": "user_impersonation"
+        "value": "user_impersonation",
+        "type": "string"
       },
       {
         "key": "authUrl",
-        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
       },
       {
         "key": "grant_type",
-        "value": "implicit"
+        "value": "implicit",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "56eb9680-c3f9-4a60-867d-672a3dc5e17e",
-    "name": "ContainerRegistryManagementClient Operation Replications API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
     }
-  }
+  ]
 }

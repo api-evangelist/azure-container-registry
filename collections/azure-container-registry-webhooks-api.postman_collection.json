@@ -1,1725 +1,1625 @@
 {
+  "info": {
+    "_postman_id": "f34c051d-5581-417e-a6e9-238412dd9cac",
+    "name": "ContainerRegistryManagementClient Webhooks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:58:42.000Z",
+    "updatedAt": "2026-10-22T02:58:42.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f34c051d-5581-417e-a6e9-238412dd9cac"
+  },
   "item": [
     {
-      "id": "8b800f09-8c0a-4915-8b64-0859fe103bcc",
-      "name": "Webhooks",
-      "description": {
-        "content": "",
-        "type": "text/plain"
-      },
+      "name": "subscriptions",
       "item": [
         {
-          "id": "7d3ddcab-d4b7-42b1-9c14-fd204a3fd462",
-          "name": "Azure Container Registry Webhooks_ List",
-          "request": {
-            "name": "Azure Container Registry Webhooks_ List",
-            "description": {
-              "content": "Lists all the webhooks for the specified container registry.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "resourceGroups",
-                ":resourceGroupName",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "registries",
-                ":registryName",
-                "webhooks"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "resourceGroupName",
-                  "description": "(Required) The name of the resource group to which the container registry belongs."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "registryName",
-                  "description": "(Required) The name of the container registry."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "{subscriptionId}",
+          "item": [
             {
-              "id": "f11b7b45-af8a-4b60-894d-4ff25f107f3a",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "webhooks"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "name": "resourceGroups",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.ContainerRegistry",
+                          "item": [
+                            {
+                              "name": "registries",
+                              "item": [
+                                {
+                                  "name": "{registryName}",
+                                  "item": [
+                                    {
+                                      "name": "webhooks",
+                                      "item": [
+                                        {
+                                          "name": "{webhookName}",
+                                          "item": [
+                                            {
+                                              "name": "getCallbackConfig",
+                                              "item": [
+                                                {
+                                                  "name": "Azure Container Registry Webhooks_ Get Callback Config",
+                                                  "id": "ff7fee1f-d012-483f-af9b-9ff1ee6a38d4",
+                                                  "protocolProfileBehavior": {
+                                                    "disableBodyPruning": true
+                                                  },
+                                                  "request": {
+                                                    "method": "POST",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName/getCallbackConfig?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "webhooks",
+                                                        ":webhookName",
+                                                        "getCallbackConfig"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "id": "49166236-d34b-4961-b067-f9478824f643",
+                                                          "key": "subscriptionId",
+                                                          "value": "<string>",
+                                                          "description": "(Required) The Microsoft Azure subscription ID."
+                                                        },
+                                                        {
+                                                          "id": "f677cc90-e66a-4a88-a32f-de93fea1569e",
+                                                          "key": "resourceGroupName",
+                                                          "value": "<string>",
+                                                          "description": "(Required) The name of the resource group to which the container registry belongs."
+                                                        },
+                                                        {
+                                                          "id": "8ddcbb5e-389c-4d42-8633-d6c99a3a0d98",
+                                                          "key": "registryName",
+                                                          "value": "6DtVGRj",
+                                                          "description": "(Required) The name of the container registry."
+                                                        },
+                                                        {
+                                                          "id": "46c0795a-9e8f-46cd-b096-7568f1e4fd06",
+                                                          "key": "webhookName",
+                                                          "value": "6DtVGRj",
+                                                          "description": "(Required) The name of the webhook."
+                                                        }
+                                                      ]
+                                                    },
+                                                    "description": "Gets the configuration of service URI and custom headers for the webhook."
+                                                  },
+                                                  "response": [
+                                                    {
+                                                      "id": "5e03c82a-08e6-4e7c-ba9a-951c77bde790",
+                                                      "name": "The request was successful; the request was well-formed and received properly.",
+                                                      "originalRequest": {
+                                                        "method": "POST",
+                                                        "header": [
+                                                          {
+                                                            "key": "Accept",
+                                                            "value": "application/json"
+                                                          },
+                                                          {
+                                                            "description": "Added as a part of security scheme: oauth2",
+                                                            "key": "Authorization",
+                                                            "value": "<token>"
+                                                          }
+                                                        ],
+                                                        "url": {
+                                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName/getCallbackConfig?api-version=<string>",
+                                                          "host": [
+                                                            "{{baseUrl}}"
+                                                          ],
+                                                          "path": [
+                                                            "subscriptions",
+                                                            ":subscriptionId",
+                                                            "resourceGroups",
+                                                            ":resourceGroupName",
+                                                            "providers",
+                                                            "Microsoft.ContainerRegistry",
+                                                            "registries",
+                                                            ":registryName",
+                                                            "webhooks",
+                                                            ":webhookName",
+                                                            "getCallbackConfig"
+                                                          ],
+                                                          "query": [
+                                                            {
+                                                              "description": "(Required) The client API version.",
+                                                              "key": "api-version",
+                                                              "value": "<string>"
+                                                            }
+                                                          ],
+                                                          "variable": [
+                                                            {
+                                                              "key": "subscriptionId"
+                                                            },
+                                                            {
+                                                              "key": "resourceGroupName"
+                                                            },
+                                                            {
+                                                              "key": "registryName"
+                                                            },
+                                                            {
+                                                              "key": "webhookName"
+                                                            }
+                                                          ]
+                                                        }
+                                                      },
+                                                      "status": "OK",
+                                                      "code": 200,
+                                                      "_postman_previewlanguage": "json",
+                                                      "header": [
+                                                        {
+                                                          "key": "Content-Type",
+                                                          "value": "application/json"
+                                                        }
+                                                      ],
+                                                      "cookie": [],
+                                                      "responseTime": null,
+                                                      "body": "{\n  \"serviceUri\": \"<string>\",\n  \"customHeaders\": {\n    \"Excepteur_c7\": \"<string>\",\n    \"reprehenderite\": \"<string>\"\n  }\n}",
+                                                      "createdAt": "2026-10-22T02:58:42.000Z",
+                                                      "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                      "uid": "35240-5e03c82a-08e6-4e7c-ba9a-951c77bde790"
+                                                    }
+                                                  ],
+                                                  "createdAt": "2026-10-22T02:58:42.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                  "uid": "35240-ff7fee1f-d012-483f-af9b-9ff1ee6a38d4"
+                                                }
+                                              ],
+                                              "id": "2bea57ab-1d16-4014-8ef1-d8e38890ab02",
+                                              "createdAt": "2026-10-22T02:58:42.000Z",
+                                              "updatedAt": "2026-10-22T02:58:42.000Z",
+                                              "uid": "35240-2bea57ab-1d16-4014-8ef1-d8e38890ab02"
+                                            },
+                                            {
+                                              "name": "listEvents",
+                                              "item": [
+                                                {
+                                                  "name": "Azure Container Registry Webhooks_ List Events",
+                                                  "id": "6090e9b9-c9a2-4309-b8e6-d9437da579c4",
+                                                  "protocolProfileBehavior": {
+                                                    "disableBodyPruning": true
+                                                  },
+                                                  "request": {
+                                                    "method": "POST",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName/listEvents?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "webhooks",
+                                                        ":webhookName",
+                                                        "listEvents"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "id": "5c716fe4-2e7c-44b1-a907-72c4150bc3c9",
+                                                          "key": "subscriptionId",
+                                                          "value": "<string>",
+                                                          "description": "(Required) The Microsoft Azure subscription ID."
+                                                        },
+                                                        {
+                                                          "id": "f1204058-8a51-4ea8-9c41-a92e21d917af",
+                                                          "key": "resourceGroupName",
+                                                          "value": "<string>",
+                                                          "description": "(Required) The name of the resource group to which the container registry belongs."
+                                                        },
+                                                        {
+                                                          "id": "dcd6d54a-e648-4381-b97b-bf81a8800a41",
+                                                          "key": "registryName",
+                                                          "value": "6DtVGRj",
+                                                          "description": "(Required) The name of the container registry."
+                                                        },
+                                                        {
+                                                          "id": "5582faac-dd1b-4123-a37d-20db0aa190f1",
+                                                          "key": "webhookName",
+                                                          "value": "6DtVGRj",
+                                                          "description": "(Required) The name of the webhook."
+                                                        }
+                                                      ]
+                                                    },
+                                                    "description": "Lists recent events for the specified webhook."
+                                                  },
+                                                  "response": [
+                                                    {
+                                                      "id": "de73cdfc-36a0-4ad0-b4f6-8fc6d1368e00",
+                                                      "name": "The request was successful; the request was well-formed and received properly.",
+                                                      "originalRequest": {
+                                                        "method": "POST",
+                                                        "header": [
+                                                          {
+                                                            "key": "Accept",
+                                                            "value": "application/json"
+                                                          },
+                                                          {
+                                                            "description": "Added as a part of security scheme: oauth2",
+                                                            "key": "Authorization",
+                                                            "value": "<token>"
+                                                          }
+                                                        ],
+                                                        "url": {
+                                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName/listEvents?api-version=<string>",
+                                                          "host": [
+                                                            "{{baseUrl}}"
+                                                          ],
+                                                          "path": [
+                                                            "subscriptions",
+                                                            ":subscriptionId",
+                                                            "resourceGroups",
+                                                            ":resourceGroupName",
+                                                            "providers",
+                                                            "Microsoft.ContainerRegistry",
+                                                            "registries",
+                                                            ":registryName",
+                                                            "webhooks",
+                                                            ":webhookName",
+                                                            "listEvents"
+                                                          ],
+                                                          "query": [
+                                                            {
+                                                              "description": "(Required) The client API version.",
+                                                              "key": "api-version",
+                                                              "value": "<string>"
+                                                            }
+                                                          ],
+                                                          "variable": [
+                                                            {
+                                                              "key": "subscriptionId"
+                                                            },
+                                                            {
+                                                              "key": "resourceGroupName"
+                                                            },
+                                                            {
+                                                              "key": "registryName"
+                                                            },
+                                                            {
+                                                              "key": "webhookName"
+                                                            }
+                                                          ]
+                                                        }
+                                                      },
+                                                      "status": "OK",
+                                                      "code": 200,
+                                                      "_postman_previewlanguage": "json",
+                                                      "header": [
+                                                        {
+                                                          "key": "Content-Type",
+                                                          "value": "application/json"
+                                                        }
+                                                      ],
+                                                      "cookie": [],
+                                                      "responseTime": null,
+                                                      "body": "{\n  \"nextLink\": \"<string>\",\n  \"value\": [\n    {\n      \"eventRequestMessage\": {\n        \"description\": \"The event request message sent to the service URI.\"\n      },\n      \"eventResponseMessage\": {\n        \"description\": \"The event response message received from the service URI.\"\n      },\n      \"id\": \"<string>\"\n    },\n    {\n      \"eventRequestMessage\": {\n        \"description\": \"The event request message sent to the service URI.\"\n      },\n      \"eventResponseMessage\": {\n        \"description\": \"The event response message received from the service URI.\"\n      },\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+                                                      "createdAt": "2026-10-22T02:58:42.000Z",
+                                                      "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                      "uid": "35240-de73cdfc-36a0-4ad0-b4f6-8fc6d1368e00"
+                                                    }
+                                                  ],
+                                                  "createdAt": "2026-10-22T02:58:42.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                  "uid": "35240-6090e9b9-c9a2-4309-b8e6-d9437da579c4"
+                                                }
+                                              ],
+                                              "id": "d0f927da-5ce9-4bdf-9687-7fe850f80964",
+                                              "createdAt": "2026-10-22T02:58:42.000Z",
+                                              "updatedAt": "2026-10-22T02:58:42.000Z",
+                                              "uid": "35240-d0f927da-5ce9-4bdf-9687-7fe850f80964"
+                                            },
+                                            {
+                                              "name": "ping",
+                                              "item": [
+                                                {
+                                                  "name": "Azure Container Registry Webhooks_ Ping",
+                                                  "id": "3430e125-2300-4213-b86d-157a57201b86",
+                                                  "protocolProfileBehavior": {
+                                                    "disableBodyPruning": true
+                                                  },
+                                                  "request": {
+                                                    "method": "POST",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName/ping?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "webhooks",
+                                                        ":webhookName",
+                                                        "ping"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "id": "9da240f4-5adf-4528-a4e1-82c138c17600",
+                                                          "key": "subscriptionId",
+                                                          "value": "<string>",
+                                                          "description": "(Required) The Microsoft Azure subscription ID."
+                                                        },
+                                                        {
+                                                          "id": "9905eafa-0821-4db4-9200-31fb72ef260e",
+                                                          "key": "resourceGroupName",
+                                                          "value": "<string>",
+                                                          "description": "(Required) The name of the resource group to which the container registry belongs."
+                                                        },
+                                                        {
+                                                          "id": "0ee1548d-3737-4579-abab-5751f46110ff",
+                                                          "key": "registryName",
+                                                          "value": "6DtVGRj",
+                                                          "description": "(Required) The name of the container registry."
+                                                        },
+                                                        {
+                                                          "id": "6e9a0012-fbd7-4cbf-9128-47dfe9cf5b71",
+                                                          "key": "webhookName",
+                                                          "value": "6DtVGRj",
+                                                          "description": "(Required) The name of the webhook."
+                                                        }
+                                                      ]
+                                                    },
+                                                    "description": "Triggers a ping event to be sent to the webhook."
+                                                  },
+                                                  "response": [
+                                                    {
+                                                      "id": "a0e6e6fe-593f-4e98-881d-b0d276508ad7",
+                                                      "name": "The request was successful; the request was well-formed and received properly.",
+                                                      "originalRequest": {
+                                                        "method": "POST",
+                                                        "header": [
+                                                          {
+                                                            "key": "Accept",
+                                                            "value": "application/json"
+                                                          },
+                                                          {
+                                                            "description": "Added as a part of security scheme: oauth2",
+                                                            "key": "Authorization",
+                                                            "value": "<token>"
+                                                          }
+                                                        ],
+                                                        "url": {
+                                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName/ping?api-version=<string>",
+                                                          "host": [
+                                                            "{{baseUrl}}"
+                                                          ],
+                                                          "path": [
+                                                            "subscriptions",
+                                                            ":subscriptionId",
+                                                            "resourceGroups",
+                                                            ":resourceGroupName",
+                                                            "providers",
+                                                            "Microsoft.ContainerRegistry",
+                                                            "registries",
+                                                            ":registryName",
+                                                            "webhooks",
+                                                            ":webhookName",
+                                                            "ping"
+                                                          ],
+                                                          "query": [
+                                                            {
+                                                              "description": "(Required) The client API version.",
+                                                              "key": "api-version",
+                                                              "value": "<string>"
+                                                            }
+                                                          ],
+                                                          "variable": [
+                                                            {
+                                                              "key": "subscriptionId"
+                                                            },
+                                                            {
+                                                              "key": "resourceGroupName"
+                                                            },
+                                                            {
+                                                              "key": "registryName"
+                                                            },
+                                                            {
+                                                              "key": "webhookName"
+                                                            }
+                                                          ]
+                                                        }
+                                                      },
+                                                      "status": "OK",
+                                                      "code": 200,
+                                                      "_postman_previewlanguage": "json",
+                                                      "header": [
+                                                        {
+                                                          "key": "Content-Type",
+                                                          "value": "application/json"
+                                                        }
+                                                      ],
+                                                      "cookie": [],
+                                                      "responseTime": null,
+                                                      "body": "{\n  \"id\": \"<string>\"\n}",
+                                                      "createdAt": "2026-10-22T02:58:42.000Z",
+                                                      "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                      "uid": "35240-a0e6e6fe-593f-4e98-881d-b0d276508ad7"
+                                                    }
+                                                  ],
+                                                  "createdAt": "2026-10-22T02:58:42.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                  "uid": "35240-3430e125-2300-4213-b86d-157a57201b86"
+                                                }
+                                              ],
+                                              "id": "ef293532-38ff-497b-bdd2-4ca9a6763dc8",
+                                              "createdAt": "2026-10-22T02:58:42.000Z",
+                                              "updatedAt": "2026-10-22T02:58:42.000Z",
+                                              "uid": "35240-ef293532-38ff-497b-bdd2-4ca9a6763dc8"
+                                            },
+                                            {
+                                              "name": "Azure Container Registry Webhooks_ Delete",
+                                              "id": "3bb17e15-919a-4173-ab76-d79bb6ba939f",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "DELETE",
+                                                "header": [],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.ContainerRegistry",
+                                                    "registries",
+                                                    ":registryName",
+                                                    "webhooks",
+                                                    ":webhookName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) The client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "910ec72d-a5cc-444d-980f-d9f2b3728550",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The Microsoft Azure subscription ID."
+                                                    },
+                                                    {
+                                                      "id": "6f8d3a24-fba5-4787-88e4-eed00c9ed742",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                                                    },
+                                                    {
+                                                      "id": "a5de367d-247f-4ea6-b7e8-db9eea672079",
+                                                      "key": "registryName",
+                                                      "value": "6DtVGRj",
+                                                      "description": "(Required) The name of the container registry."
+                                                    },
+                                                    {
+                                                      "id": "15f14979-c69f-4bf1-a7e2-ea7e6e7f39b7",
+                                                      "key": "webhookName",
+                                                      "value": "6DtVGRj",
+                                                      "description": "(Required) The name of the webhook."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Deletes a webhook from a container registry."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "07a1e998-2667-49cf-85eb-c2ffd648fb28",
+                                                  "name": "The request was successful; the request was well-formed and received properly.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "webhooks",
+                                                        ":webhookName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "webhookName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-10-22T02:58:42.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                  "uid": "35240-07a1e998-2667-49cf-85eb-c2ffd648fb28"
+                                                },
+                                                {
+                                                  "id": "0a8d7348-12bc-45e4-8c3e-8ba4794f7c41",
+                                                  "name": "The request was successful; the operation will complete asynchronously.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "webhooks",
+                                                        ":webhookName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "webhookName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Accepted",
+                                                  "code": 202,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-10-22T02:58:42.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                  "uid": "35240-0a8d7348-12bc-45e4-8c3e-8ba4794f7c41"
+                                                },
+                                                {
+                                                  "id": "aaf644d7-f216-49b0-b72b-dd75253ae9d1",
+                                                  "name": "The webhook does not exist in the subscription.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "webhooks",
+                                                        ":webhookName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "webhookName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "No Content",
+                                                  "code": 204,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-10-22T02:58:42.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                  "uid": "35240-aaf644d7-f216-49b0-b72b-dd75253ae9d1"
+                                                }
+                                              ],
+                                              "createdAt": "2026-10-22T02:58:42.000Z",
+                                              "updatedAt": "2026-10-22T02:58:42.000Z",
+                                              "uid": "35240-3bb17e15-919a-4173-ab76-d79bb6ba939f"
+                                            },
+                                            {
+                                              "name": "Azure Container Registry Webhooks_ Get",
+                                              "id": "30d862b8-4399-4a5f-9692-577b81eac3c7",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.ContainerRegistry",
+                                                    "registries",
+                                                    ":registryName",
+                                                    "webhooks",
+                                                    ":webhookName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) The client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "2c99e601-5e03-42b1-bb46-851e98776a30",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The Microsoft Azure subscription ID."
+                                                    },
+                                                    {
+                                                      "id": "570e900c-5b07-412e-98c7-8fd971907d80",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                                                    },
+                                                    {
+                                                      "id": "710fd4c9-a87b-43d3-9118-c76dfd85a737",
+                                                      "key": "registryName",
+                                                      "value": "6DtVGRj",
+                                                      "description": "(Required) The name of the container registry."
+                                                    },
+                                                    {
+                                                      "id": "6ed7524b-7fdc-422b-a5d1-85694b2e187b",
+                                                      "key": "webhookName",
+                                                      "value": "6DtVGRj",
+                                                      "description": "(Required) The name of the webhook."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Gets the properties of the specified webhook."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "609762a0-311e-4ef5-9e62-9a41336f9b6b",
+                                                  "name": "The request was successful; the request was well-formed and received properly.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "webhooks",
+                                                        ":webhookName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "webhookName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"description\": \"The properties of the webhook.\",\n    \"x-ms-client-flatten\": true\n  },\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"aute7\": \"<string>\",\n    \"pariatur53\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                                  "createdAt": "2026-10-22T02:58:42.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                  "uid": "35240-609762a0-311e-4ef5-9e62-9a41336f9b6b"
+                                                }
+                                              ],
+                                              "createdAt": "2026-10-22T02:58:42.000Z",
+                                              "updatedAt": "2026-10-22T02:58:42.000Z",
+                                              "uid": "35240-30d862b8-4399-4a5f-9692-577b81eac3c7"
+                                            },
+                                            {
+                                              "name": "Azure Container Registry Webhooks_ Update",
+                                              "id": "67d8918a-9814-43d3-babd-d07df3358011",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "PATCH",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"properties\": {\n    \"actions\": [\n      \"chart_delete\",\n      \"push\"\n    ],\n    \"customHeaders\": {\n      \"enim_d6\": \"<string>\"\n    },\n    \"scope\": \"<string>\",\n    \"serviceUri\": \"<string>\",\n    \"status\": \"enabled\"\n  },\n  \"tags\": {\n    \"dolor_5\": \"<string>\",\n    \"ad_5\": \"<string>\",\n    \"quise5\": \"<string>\"\n  }\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.ContainerRegistry",
+                                                    "registries",
+                                                    ":registryName",
+                                                    "webhooks",
+                                                    ":webhookName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) The client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "6139d962-a88d-4c7c-8592-0d98e298d3f8",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The Microsoft Azure subscription ID."
+                                                    },
+                                                    {
+                                                      "id": "ecbd7d2a-a87a-4bca-98df-f8df222732f5",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                                                    },
+                                                    {
+                                                      "id": "c023bc70-9dde-433e-9f5b-2cdbf7ee06a4",
+                                                      "key": "registryName",
+                                                      "value": "6DtVGRj",
+                                                      "description": "(Required) The name of the container registry."
+                                                    },
+                                                    {
+                                                      "id": "825a2ab3-7ea1-41e9-98c7-08d40e95828e",
+                                                      "key": "webhookName",
+                                                      "value": "6DtVGRj",
+                                                      "description": "(Required) The name of the webhook."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Updates a webhook with the specified parameters."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "708c74d7-2e8a-4eb5-b808-a7824e2a039a",
+                                                  "name": "The request was successful; the request was well-formed and received properly.",
+                                                  "originalRequest": {
+                                                    "method": "PATCH",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"properties\": {\n    \"actions\": [\n      \"chart_delete\",\n      \"push\"\n    ],\n    \"customHeaders\": {\n      \"enim_d6\": \"<string>\"\n    },\n    \"scope\": \"<string>\",\n    \"serviceUri\": \"<string>\",\n    \"status\": \"enabled\"\n  },\n  \"tags\": {\n    \"dolor_5\": \"<string>\",\n    \"ad_5\": \"<string>\",\n    \"quise5\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "webhooks",
+                                                        ":webhookName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "webhookName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"description\": \"The properties of the webhook.\",\n    \"x-ms-client-flatten\": true\n  },\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"aute7\": \"<string>\",\n    \"pariatur53\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                                  "createdAt": "2026-10-22T02:58:42.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                  "uid": "35240-708c74d7-2e8a-4eb5-b808-a7824e2a039a"
+                                                },
+                                                {
+                                                  "id": "0f94c07e-87f9-4f8a-b28d-7092dd4adaa9",
+                                                  "name": "The request was successful; the operation will complete asynchronously.",
+                                                  "originalRequest": {
+                                                    "method": "PATCH",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"properties\": {\n    \"actions\": [\n      \"chart_delete\",\n      \"push\"\n    ],\n    \"customHeaders\": {\n      \"enim_d6\": \"<string>\"\n    },\n    \"scope\": \"<string>\",\n    \"serviceUri\": \"<string>\",\n    \"status\": \"enabled\"\n  },\n  \"tags\": {\n    \"dolor_5\": \"<string>\",\n    \"ad_5\": \"<string>\",\n    \"quise5\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "webhooks",
+                                                        ":webhookName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "webhookName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Created",
+                                                  "code": 201,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"description\": \"The properties of the webhook.\",\n    \"x-ms-client-flatten\": true\n  },\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"aute7\": \"<string>\",\n    \"pariatur53\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                                  "createdAt": "2026-10-22T02:58:42.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                  "uid": "35240-0f94c07e-87f9-4f8a-b28d-7092dd4adaa9"
+                                                }
+                                              ],
+                                              "createdAt": "2026-10-22T02:58:42.000Z",
+                                              "updatedAt": "2026-10-22T02:58:42.000Z",
+                                              "uid": "35240-67d8918a-9814-43d3-babd-d07df3358011"
+                                            },
+                                            {
+                                              "name": "Azure Container Registry Webhooks_ Create",
+                                              "id": "4581a3df-ffbe-44ba-9a52-5ecc94282764",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "PUT",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"serviceUri\": \"<string>\",\n    \"actions\": [\n      \"quarantine\",\n      \"chart_delete\"\n    ],\n    \"customHeaders\": {\n      \"ut_1\": \"<string>\",\n      \"laborum_5dd\": \"<string>\",\n      \"dolor108\": \"<string>\",\n      \"aliqua_d\": \"<string>\"\n    },\n    \"scope\": \"<string>\",\n    \"status\": \"enabled\"\n  },\n  \"tags\": {\n    \"in4a\": \"<string>\"\n  }\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.ContainerRegistry",
+                                                    "registries",
+                                                    ":registryName",
+                                                    "webhooks",
+                                                    ":webhookName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) The client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "5c851024-881e-4c5d-a1fc-93f362844d4e",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The Microsoft Azure subscription ID."
+                                                    },
+                                                    {
+                                                      "id": "25e18c2f-29a5-4827-af0b-39e6e1c86e97",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group to which the container registry belongs."
+                                                    },
+                                                    {
+                                                      "id": "e1f0b5f7-2d54-4d80-b445-9113abe071e0",
+                                                      "key": "registryName",
+                                                      "value": "6DtVGRj",
+                                                      "description": "(Required) The name of the container registry."
+                                                    },
+                                                    {
+                                                      "id": "910d2107-c766-47b0-8d9d-58395dbc4f9b",
+                                                      "key": "webhookName",
+                                                      "value": "6DtVGRj",
+                                                      "description": "(Required) The name of the webhook."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Creates a webhook for a container registry with the specified parameters."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "e0cdd77a-a07e-403f-81eb-deeb7bd530b8",
+                                                  "name": "The request was successful; the request was well-formed and received properly.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"serviceUri\": \"<string>\",\n    \"actions\": [\n      \"quarantine\",\n      \"chart_delete\"\n    ],\n    \"customHeaders\": {\n      \"ut_1\": \"<string>\",\n      \"laborum_5dd\": \"<string>\",\n      \"dolor108\": \"<string>\",\n      \"aliqua_d\": \"<string>\"\n    },\n    \"scope\": \"<string>\",\n    \"status\": \"enabled\"\n  },\n  \"tags\": {\n    \"in4a\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "webhooks",
+                                                        ":webhookName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "webhookName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"description\": \"The properties of the webhook.\",\n    \"x-ms-client-flatten\": true\n  },\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"aute7\": \"<string>\",\n    \"pariatur53\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                                  "createdAt": "2026-10-22T02:58:42.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                  "uid": "35240-e0cdd77a-a07e-403f-81eb-deeb7bd530b8"
+                                                },
+                                                {
+                                                  "id": "53896bce-f15c-4a57-b012-b9b5597de3ba",
+                                                  "name": "The request was successful; the operation will complete asynchronously.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"serviceUri\": \"<string>\",\n    \"actions\": [\n      \"quarantine\",\n      \"chart_delete\"\n    ],\n    \"customHeaders\": {\n      \"ut_1\": \"<string>\",\n      \"laborum_5dd\": \"<string>\",\n      \"dolor108\": \"<string>\",\n      \"aliqua_d\": \"<string>\"\n    },\n    \"scope\": \"<string>\",\n    \"status\": \"enabled\"\n  },\n  \"tags\": {\n    \"in4a\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks/:webhookName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.ContainerRegistry",
+                                                        "registries",
+                                                        ":registryName",
+                                                        "webhooks",
+                                                        ":webhookName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) The client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "registryName"
+                                                        },
+                                                        {
+                                                          "key": "webhookName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Created",
+                                                  "code": 201,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"description\": \"The properties of the webhook.\",\n    \"x-ms-client-flatten\": true\n  },\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"aute7\": \"<string>\",\n    \"pariatur53\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                                  "createdAt": "2026-10-22T02:58:42.000Z",
+                                                  "updatedAt": "2026-10-22T02:58:42.000Z",
+                                                  "uid": "35240-53896bce-f15c-4a57-b012-b9b5597de3ba"
+                                                }
+                                              ],
+                                              "createdAt": "2026-10-22T02:58:42.000Z",
+                                              "updatedAt": "2026-10-22T02:58:42.000Z",
+                                              "uid": "35240-4581a3df-ffbe-44ba-9a52-5ecc94282764"
+                                            }
+                                          ],
+                                          "id": "03035a6b-e589-43ce-a387-d80fa1f2da64",
+                                          "createdAt": "2026-10-22T02:58:42.000Z",
+                                          "updatedAt": "2026-10-22T02:58:42.000Z",
+                                          "uid": "35240-03035a6b-e589-43ce-a387-d80fa1f2da64"
+                                        },
+                                        {
+                                          "name": "Azure Container Registry Webhooks_ List",
+                                          "id": "060abc6f-8009-4244-88cc-679396ecc9aa",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.ContainerRegistry",
+                                                "registries",
+                                                ":registryName",
+                                                "webhooks"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) The client API version.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "b976cd05-4791-4713-9d95-00d8dbdc137d",
+                                                  "key": "subscriptionId",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The Microsoft Azure subscription ID."
+                                                },
+                                                {
+                                                  "id": "cb85214f-ae1e-4c23-a397-26df34b56d64",
+                                                  "key": "resourceGroupName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The name of the resource group to which the container registry belongs."
+                                                },
+                                                {
+                                                  "id": "e5b2f1a0-4d12-4f89-9cf7-c31bc335e756",
+                                                  "key": "registryName",
+                                                  "value": "6DtVGRj",
+                                                  "description": "(Required) The name of the container registry."
+                                                }
+                                              ]
+                                            },
+                                            "description": "Lists all the webhooks for the specified container registry."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "f42410aa-c181-44d6-b4d4-414b78026208",
+                                              "name": "The request was successful; the request was well-formed and received properly.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ContainerRegistry/registries/:registryName/webhooks?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.ContainerRegistry",
+                                                    "registries",
+                                                    ":registryName",
+                                                    "webhooks"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) The client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "registryName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"nextLink\": \"<string>\",\n  \"value\": [\n    {\n      \"location\": \"<string>\",\n      \"properties\": {\n        \"description\": \"The properties of the webhook.\",\n        \"x-ms-client-flatten\": true\n      },\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tags\": {\n        \"amet_34\": \"<string>\",\n        \"suntd62\": \"<string>\",\n        \"minim9\": \"<string>\",\n        \"magna_dc\": \"<string>\"\n      },\n      \"type\": \"<string>\"\n    },\n    {\n      \"location\": \"<string>\",\n      \"properties\": {\n        \"description\": \"The properties of the webhook.\",\n        \"x-ms-client-flatten\": true\n      },\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tags\": {\n        \"voluptate_0\": \"<string>\",\n        \"pariaturc\": \"<string>\"\n      },\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                                              "createdAt": "2026-10-22T02:58:42.000Z",
+                                              "updatedAt": "2026-10-22T02:58:42.000Z",
+                                              "uid": "35240-f42410aa-c181-44d6-b4d4-414b78026208"
+                                            }
+                                          ],
+                                          "createdAt": "2026-10-22T02:58:42.000Z",
+                                          "updatedAt": "2026-10-22T02:58:42.000Z",
+                                          "uid": "35240-060abc6f-8009-4244-88cc-679396ecc9aa"
+                                        }
+                                      ],
+                                      "id": "9ddb2c9b-4dee-48f6-aebb-43d529151222",
+                                      "createdAt": "2026-10-22T02:58:42.000Z",
+                                      "updatedAt": "2026-10-22T02:58:42.000Z",
+                                      "uid": "35240-9ddb2c9b-4dee-48f6-aebb-43d529151222"
+                                    }
+                                  ],
+                                  "id": "aefd0883-e02e-43d8-b93b-86866b9edd27",
+                                  "createdAt": "2026-10-22T02:58:42.000Z",
+                                  "updatedAt": "2026-10-22T02:58:42.000Z",
+                                  "uid": "35240-aefd0883-e02e-43d8-b93b-86866b9edd27"
+                                }
+                              ],
+                              "id": "7f9cad9b-4311-4a7d-9081-b7e833d738c1",
+                              "createdAt": "2026-10-22T02:58:42.000Z",
+                              "updatedAt": "2026-10-22T02:58:42.000Z",
+                              "uid": "35240-7f9cad9b-4311-4a7d-9081-b7e833d738c1"
+                            }
+                          ],
+                          "id": "8683c29d-2fba-4356-88d0-225287a55f9a",
+                          "createdAt": "2026-10-22T02:58:42.000Z",
+                          "updatedAt": "2026-10-22T02:58:42.000Z",
+                          "uid": "35240-8683c29d-2fba-4356-88d0-225287a55f9a"
+                        }
+                      ],
+                      "id": "d6981d7f-b394-4bdc-870e-cf8e741b5b54",
+                      "createdAt": "2026-10-22T02:58:42.000Z",
+                      "updatedAt": "2026-10-22T02:58:42.000Z",
+                      "uid": "35240-d6981d7f-b394-4bdc-870e-cf8e741b5b54"
+                    }
+                  ],
+                  "id": "2ffbee01-625e-4032-87f2-047f48e0030e",
+                  "createdAt": "2026-10-22T02:58:42.000Z",
+                  "updatedAt": "2026-10-22T02:58:42.000Z",
+                  "uid": "35240-2ffbee01-625e-4032-87f2-047f48e0030e"
                 }
               ],
-              "body": "{\n  \"value\": [\n    {\n      \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook\",\n      \"location\": \"westus\",\n      \"name\": \"myWebhook\",\n      \"properties\": {\n        \"actions\": [\n          \"push\"\n        ],\n        \"provisioningState\": \"Succeeded\",\n        \"scope\": \"myRepository\",\n        \"status\": \"enabled\"\n      },\n      \"tags\": {\n        \"key\": \"value\"\n      },\n      \"type\": \"Microsoft.ContainerRegistry/registries/webhooks\"\n    }\n  ]\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "id": "3ab36a20-6c23-47e0-8771-cee27455cf17",
+              "createdAt": "2026-10-22T02:58:42.000Z",
+              "updatedAt": "2026-10-22T02:58:42.000Z",
+              "uid": "35240-3ab36a20-6c23-47e0-8771-cee27455cf17"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "3cdf4bd5-5237-48a7-8308-567268cbd649",
-          "name": "Azure Container Registry Webhooks_ Delete",
-          "request": {
-            "name": "Azure Container Registry Webhooks_ Delete",
-            "description": {
-              "content": "Deletes a webhook from a container registry.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "resourceGroups",
-                ":resourceGroupName",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "registries",
-                ":registryName",
-                "webhooks",
-                ":webhookName"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "resourceGroupName",
-                  "description": "(Required) The name of the resource group to which the container registry belongs."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "registryName",
-                  "description": "(Required) The name of the container registry."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "webhookName",
-                  "description": "(Required) The name of the webhook."
-                }
-              ]
-            },
-            "method": "DELETE",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "5be88be8-6576-4d9e-98d4-a222a981d6e7",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "webhooks",
-                    ":webhookName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "webhookName",
-                      "description": "(Required) The name of the webhook."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  }
-                ],
-                "method": "DELETE",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            },
-            {
-              "id": "0a12ffc6-be50-412e-8cac-454fb26ce291",
-              "name": "The request was successful; the operation will complete asynchronously.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "webhooks",
-                    ":webhookName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "webhookName",
-                      "description": "(Required) The name of the webhook."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  }
-                ],
-                "method": "DELETE",
-                "body": {}
-              },
-              "status": "Accepted",
-              "code": 202,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            },
-            {
-              "id": "a7d40f8b-d170-46e7-8ff4-b003335d3b4a",
-              "name": "The webhook does not exist in the subscription.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "webhooks",
-                    ":webhookName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "webhookName",
-                      "description": "(Required) The name of the webhook."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  }
-                ],
-                "method": "DELETE",
-                "body": {}
-              },
-              "status": "No Content",
-              "code": 204,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "563b75e2-8a87-47b6-9cf6-ec3e97c27404",
-          "name": "Azure Container Registry Webhooks_ Get",
-          "request": {
-            "name": "Azure Container Registry Webhooks_ Get",
-            "description": {
-              "content": "Gets the properties of the specified webhook.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "resourceGroups",
-                ":resourceGroupName",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "registries",
-                ":registryName",
-                "webhooks",
-                ":webhookName"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "resourceGroupName",
-                  "description": "(Required) The name of the resource group to which the container registry belongs."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "registryName",
-                  "description": "(Required) The name of the container registry."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "webhookName",
-                  "description": "(Required) The name of the webhook."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "31385bd3-93b6-4c2a-a00d-65d19006c23f",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "webhooks",
-                    ":webhookName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "webhookName",
-                      "description": "(Required) The name of the webhook."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook\",\n  \"location\": \"westus\",\n  \"name\": \"myWebhook\",\n  \"properties\": {\n    \"actions\": [\n      \"push\"\n    ],\n    \"provisioningState\": \"Succeeded\",\n    \"scope\": \"myRepository\",\n    \"status\": \"enabled\"\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries/webhooks\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "01b10a4e-e18a-4212-8d6b-2ff77047dba4",
-          "name": "Azure Container Registry Webhooks_ Update",
-          "request": {
-            "name": "Azure Container Registry Webhooks_ Update",
-            "description": {
-              "content": "Updates a webhook with the specified parameters.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "resourceGroups",
-                ":resourceGroupName",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "registries",
-                ":registryName",
-                "webhooks",
-                ":webhookName"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "resourceGroupName",
-                  "description": "(Required) The name of the resource group to which the container registry belongs."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "registryName",
-                  "description": "(Required) The name of the container registry."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "webhookName",
-                  "description": "(Required) The name of the webhook."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "PATCH",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"properties\": {\n    \"actions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"customHeaders\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\"\n    },\n    \"scope\": \"<string>\",\n    \"serviceUri\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\"\n  }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "d2da9982-83ac-49e1-8709-95bebe58c891",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "webhooks",
-                    ":webhookName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "webhookName",
-                      "description": "(Required) The name of the webhook."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "PATCH",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"properties\": {\n    \"actions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"customHeaders\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\",\n      \"key_3\": \"<string>\"\n    },\n    \"scope\": \"<string>\",\n    \"serviceUri\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook\",\n  \"location\": \"westus\",\n  \"name\": \"myWebhook\",\n  \"properties\": {\n    \"actions\": [\n      \"push\"\n    ],\n    \"provisioningState\": \"Updating\",\n    \"scope\": \"myRepository\",\n    \"status\": \"enabled\"\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries/webhooks\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "1e95f06b-2c80-4ea7-84fc-50c77edc8fc4",
-              "name": "The request was successful; the operation will complete asynchronously.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "webhooks",
-                    ":webhookName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "webhookName",
-                      "description": "(Required) The name of the webhook."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "PATCH",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"properties\": {\n    \"actions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"customHeaders\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\",\n      \"key_3\": \"<string>\"\n    },\n    \"scope\": \"<string>\",\n    \"serviceUri\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Created",
-              "code": 201,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook\",\n  \"location\": \"westus\",\n  \"name\": \"myWebhook\",\n  \"properties\": {\n    \"actions\": [\n      \"push\"\n    ],\n    \"provisioningState\": \"Updating\",\n    \"scope\": \"myRepository\",\n    \"status\": \"enabled\"\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries/webhooks\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "f56f116e-72db-424b-9153-34d22c1aea00",
-          "name": "Azure Container Registry Webhooks_ Create",
-          "request": {
-            "name": "Azure Container Registry Webhooks_ Create",
-            "description": {
-              "content": "Creates a webhook for a container registry with the specified parameters.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "resourceGroups",
-                ":resourceGroupName",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "registries",
-                ":registryName",
-                "webhooks",
-                ":webhookName"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "resourceGroupName",
-                  "description": "(Required) The name of the resource group to which the container registry belongs."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "registryName",
-                  "description": "(Required) The name of the container registry."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "webhookName",
-                  "description": "(Required) The name of the webhook."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "PUT",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"serviceUri\": \"<string>\",\n    \"actions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"customHeaders\": {\n      \"key_0\": \"<string>\"\n    },\n    \"scope\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "10bca6de-2ebf-41da-80ba-9f5fac5a8af5",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "webhooks",
-                    ":webhookName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "webhookName",
-                      "description": "(Required) The name of the webhook."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "PUT",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"serviceUri\": \"<string>\",\n    \"actions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"customHeaders\": {\n      \"key_0\": \"<string>\"\n    },\n    \"scope\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  }\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook\",\n  \"location\": \"westus\",\n  \"name\": \"myWebhook\",\n  \"properties\": {\n    \"actions\": [\n      \"push\"\n    ],\n    \"provisioningState\": \"Creating\",\n    \"scope\": \"myRepository\",\n    \"status\": \"enabled\"\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries/webhooks\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "7db589f2-f6d9-4b85-b9e7-ffbe32f53be9",
-              "name": "The request was successful; the operation will complete asynchronously.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "webhooks",
-                    ":webhookName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "webhookName",
-                      "description": "(Required) The name of the webhook."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "PUT",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"location\": \"<string>\",\n  \"properties\": {\n    \"serviceUri\": \"<string>\",\n    \"actions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"customHeaders\": {\n      \"key_0\": \"<string>\"\n    },\n    \"scope\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  }\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Created",
-              "code": 201,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"id\": \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry/webhooks/myWebhook\",\n  \"location\": \"westus\",\n  \"name\": \"myWebhook\",\n  \"properties\": {\n    \"actions\": [\n      \"push\"\n    ],\n    \"provisioningState\": \"Creating\",\n    \"scope\": \"myRepository\",\n    \"status\": \"enabled\"\n  },\n  \"tags\": {\n    \"key\": \"value\"\n  },\n  \"type\": \"Microsoft.ContainerRegistry/registries/webhooks\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "f5650e78-74ed-4f9d-a374-37c3e43b6bdb",
-          "name": "Azure Container Registry Webhooks_ Get Callback Config",
-          "request": {
-            "name": "Azure Container Registry Webhooks_ Get Callback Config",
-            "description": {
-              "content": "Gets the configuration of service URI and custom headers for the webhook.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "resourceGroups",
-                ":resourceGroupName",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "registries",
-                ":registryName",
-                "webhooks",
-                ":webhookName",
-                "getCallbackConfig"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "resourceGroupName",
-                  "description": "(Required) The name of the resource group to which the container registry belongs."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "registryName",
-                  "description": "(Required) The name of the container registry."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "webhookName",
-                  "description": "(Required) The name of the webhook."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "5e213b27-c1ac-4ae0-b5fd-ae779243ac70",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "webhooks",
-                    ":webhookName",
-                    "getCallbackConfig"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "webhookName",
-                      "description": "(Required) The name of the webhook."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"customHeaders\": {\n    \"Authorization\": \"Basic 000000000000000000000000000000000000000000000000000\"\n  },\n  \"serviceUri\": \"http://myservice.com\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "bb363055-92b5-4bba-8f1a-2a92497e6b67",
-          "name": "Azure Container Registry Webhooks_ List Events",
-          "request": {
-            "name": "Azure Container Registry Webhooks_ List Events",
-            "description": {
-              "content": "Lists recent events for the specified webhook.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "resourceGroups",
-                ":resourceGroupName",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "registries",
-                ":registryName",
-                "webhooks",
-                ":webhookName",
-                "listEvents"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "resourceGroupName",
-                  "description": "(Required) The name of the resource group to which the container registry belongs."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "registryName",
-                  "description": "(Required) The name of the container registry."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "webhookName",
-                  "description": "(Required) The name of the webhook."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "201fd8f4-3d47-4509-81a1-a5f4ab9068dc",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "webhooks",
-                    ":webhookName",
-                    "listEvents"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "webhookName",
-                      "description": "(Required) The name of the webhook."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"value\": [\n    {\n      \"eventRequestMessage\": {\n        \"content\": {\n          \"action\": \"push\",\n          \"actor\": {},\n          \"id\": \"00000000-0000-0000-0000-000000000000\",\n          \"request\": {\n            \"addr\": \"192.168.64.11:42961\",\n            \"host\": \"192.168.100.227:5000\",\n            \"id\": \"00000000-0000-0000-0000-000000000000\",\n            \"method\": \"GET\",\n            \"useragent\": \"curl/7.38.0\"\n          },\n          \"source\": {\n            \"addr\": \"xtal.local:5000\",\n            \"instanceID\": \"00000000-0000-0000-0000-000000000000\"\n          },\n          \"target\": {\n            \"digest\": \"sha256:fea8895f450959fa676bcc1df0611ea93823a735a01205fd8622846041d0c7cf\",\n            \"length\": 708,\n            \"mediaType\": \"application/vnd.docker.distribution.manifest.v2+json\",\n            \"repository\": \"hello-world\",\n            \"size\": 708,\n            \"tag\": \"latest\",\n            \"url\": \"http://192.168.100.227:5000/v2/hello-world/manifests/sha256:fea8895f450959fa676bcc1df0611ea93823a735a01205fd8622846041d0c7cf\"\n          },\n          \"timestamp\": \"2017-03-01T23:14:37.0707808Z\"\n        },\n        \"headers\": {\n          \"Authorization\": \"******\",\n          \"Content-Length\": \"719\",\n          \"Content-Type\": \"application/json\"\n        },\n        \"method\": \"POST\",\n        \"requestUri\": \"http://myservice.com\",\n        \"version\": \"1.1\"\n      },\n      \"eventResponseMessage\": {\n        \"headers\": {\n          \"Content-Length\": \"0\"\n        },\n        \"statusCode\": \"200\",\n        \"version\": \"1.1\"\n      },\n      \"id\": \"00000000-0000-0000-0000-000000000000\"\n    }\n  ]\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "2559087e-a154-4fa5-b07d-f221fbb5e592",
-          "name": "Azure Container Registry Webhooks_ Ping",
-          "request": {
-            "name": "Azure Container Registry Webhooks_ Ping",
-            "description": {
-              "content": "Triggers a ping event to be sent to the webhook.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "subscriptions",
-                ":subscriptionId",
-                "resourceGroups",
-                ":resourceGroupName",
-                "providers",
-                "Microsoft.ContainerRegistry",
-                "registries",
-                ":registryName",
-                "webhooks",
-                ":webhookName",
-                "ping"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "api-version",
-                  "value": "<string>",
-                  "description": "(Required) The client API version."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "subscriptionId",
-                  "description": "(Required) The Microsoft Azure subscription ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "resourceGroupName",
-                  "description": "(Required) The name of the resource group to which the container registry belongs."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "registryName",
-                  "description": "(Required) The name of the container registry."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "webhookName",
-                  "description": "(Required) The name of the webhook."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "75f6b220-f375-460b-9311-fc42bc69ed38",
-              "name": "The request was successful; the request was well-formed and received properly.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "subscriptions",
-                    ":subscriptionId",
-                    "resourceGroups",
-                    ":resourceGroupName",
-                    "providers",
-                    "Microsoft.ContainerRegistry",
-                    "registries",
-                    ":registryName",
-                    "webhooks",
-                    ":webhookName",
-                    "ping"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "api-version",
-                      "value": "2019-12-01-preview"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "subscriptionId",
-                      "description": "(Required) The Microsoft Azure subscription ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "resourceGroupName",
-                      "description": "(Required) The name of the resource group to which the container registry belongs."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "registryName",
-                      "description": "(Required) The name of the container registry."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "webhookName",
-                      "description": "(Required) The name of the webhook."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"id\": \"00000000-0000-0000-0000-000000000000\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "68a203ba-d4e5-46a6-8545-e4f541fa0141",
+          "createdAt": "2026-10-22T02:58:42.000Z",
+          "updatedAt": "2026-10-22T02:58:42.000Z",
+          "uid": "35240-68a203ba-d4e5-46a6-8545-e4f541fa0141"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://management.azure.com",
-      "key": "baseUrl"
+      "id": "91c7c708-7717-464d-a241-4474d5e8ccba",
+      "createdAt": "2026-10-22T02:58:42.000Z",
+      "updatedAt": "2026-10-22T02:58:42.000Z",
+      "uid": "35240-91c7c708-7717-464d-a241-4474d5e8ccba"
     }
   ],
   "auth": {
@@ -1727,25 +1627,25 @@
     "oauth2": [
       {
         "key": "scope",
-        "value": "user_impersonation"
+        "value": "user_impersonation",
+        "type": "string"
       },
       {
         "key": "authUrl",
-        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
       },
       {
         "key": "grant_type",
-        "value": "implicit"
+        "value": "implicit",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "6a3211ef-6025-4cc2-8b33-2a040f4a08f0",
-    "name": "ContainerRegistryManagementClient Operation Webhooks API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
     }
-  }
+  ]
 }
