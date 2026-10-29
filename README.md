@@ -1,4 +1,4 @@
-# Azure Container Registry (azure-container-registry)
+# Azure Container Registry
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,89 +64,254 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Azure Container Registry is a managed Docker registry service for storing and managing private container images with support for automated builds, geo-replication, and Azure deployment integration.
+Azure Container Registry is a managed Docker registry service based on the open-source Docker Registry for storing and managing private container images and artifacts. It supports automated container image builds, geo-replication, and integrates with Azure Kubernetes Service and other Azure deployment targets.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/azure-container-registry/refs/heads/main/apis.yml)
+**Areas:** Microsoft Azure · Container Images · Containers · Docker · Registry
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Azure Container Registry on APIs.io
 
-## Tags:
+Everything profiled for Azure Container Registry is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/azure-container-registry/](https://apis.io/providers/azure-container-registry/)** — or go straight to one of the APIs or properties below.
 
- - Azure, Container Images, Containers, Docker, Registry
+### APIs (8)
 
-## Timestamps
+- [Azure Container Registry Operation API](https://apis.io/apis/azure-container-registry/azure-container-registry-operation-api/) — The Operation API from Azure Container Registry — 2 operation(s) for operation.
+- [Azure Container Registry Registries API](https://apis.io/apis/azure-container-registry/azure-container-registry-registries-api/) — The Registries API from Azure Container Registry — 7 operation(s) for registries.
+- [Azure Container Registry Replications API](https://apis.io/apis/azure-container-registry/azure-container-registry-replications-api/) — The Replications API from Azure Container Registry — 2 operation(s) for replications.
+- [Azure Container Registry Webhooks API](https://apis.io/apis/azure-container-registry/azure-container-registry-webhooks-api/) — The Webhooks API from Azure Container Registry — 5 operation(s) for webhooks.
+- [Azure Container Registry Blobs API](https://apis.io/apis/azure-container-registry/microsoft-azure-container-registry-blobs-api/) — The Blobs API from microsoft-azure-container-registry — 1 operation(s) for blobs.
+- [Azure Container Registry Manifests API](https://apis.io/apis/azure-container-registry/microsoft-azure-container-registry-manifests-api/) — The Manifests API from microsoft-azure-container-registry — 1 operation(s) for manifests.
+- [Azure Container Registry Repositories API](https://apis.io/apis/azure-container-registry/microsoft-azure-container-registry-repositories-api/) — The Repositories API from microsoft-azure-container-registry — 1 operation(s) for repositories.
+- [Azure Container Registry Tags API](https://apis.io/apis/azure-container-registry/microsoft-azure-container-registry-tags-api/) — The Tags API from microsoft-azure-container-registry — 1 operation(s) for tags.
 
-- **Created:** 2026-03-26
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Azure Container Registry
-Azure Container Registry is a managed Docker registry service for storing and managing private container images with support for automated builds, geo-replication, and Azure deployment integration.
+#### Agentic access (1)
 
-**Human URL:** [https://azure.microsoft.com/en-us/products/container-registry](https://azure.microsoft.com/en-us/products/container-registry)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Azure Container Registry Agentic Access](https://apis.io/agentic-access/azure-container-registry/azure-container-registry-agentic-access/)
 
- - Container Images, Containers, Docker, Registry
+#### JSON Schema (29)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://azure.microsoft.com/en-us/products/container-registry)
-- [OpenAPI](openapi/azure-container-registry-openapi.yaml)
+- [Actor](https://apis.io/schemas/azure-container-registry/azure-container-registry-actor/)
+- [CallbackConfig](https://apis.io/schemas/azure-container-registry/azure-container-registry-callback-config/)
+- [EncryptionProperty](https://apis.io/schemas/azure-container-registry/azure-container-registry-encryption-property/)
+- [Event](https://apis.io/schemas/azure-container-registry/azure-container-registry-event/)
+- [EventContent](https://apis.io/schemas/azure-container-registry/azure-container-registry-event-content/)
+- [EventInfo](https://apis.io/schemas/azure-container-registry/azure-container-registry-event-info/)
+- [EventListResult](https://apis.io/schemas/azure-container-registry/azure-container-registry-event-list-result/)
+- [EventRequestMessage](https://apis.io/schemas/azure-container-registry/azure-container-registry-event-request-message/)
+- [EventResponseMessage](https://apis.io/schemas/azure-container-registry/azure-container-registry-event-response-message/)
+- [IdentityProperties](https://apis.io/schemas/azure-container-registry/azure-container-registry-identity-properties/)
+- [ImportImageParameters](https://apis.io/schemas/azure-container-registry/azure-container-registry-import-image-parameters/)
+- [ImportSource](https://apis.io/schemas/azure-container-registry/azure-container-registry-import-source/)
+- [ImportSourceCredentials](https://apis.io/schemas/azure-container-registry/azure-container-registry-import-source-credentials/)
+- [IPRule](https://apis.io/schemas/azure-container-registry/azure-container-registry-ip-rule/)
+- [KeyVaultProperties](https://apis.io/schemas/azure-container-registry/azure-container-registry-key-vault-properties/)
+- [NetworkRuleSet](https://apis.io/schemas/azure-container-registry/azure-container-registry-network-rule-set/)
+- [OperationDefinition](https://apis.io/schemas/azure-container-registry/azure-container-registry-operation-definition/)
+- [OperationDisplayDefinition](https://apis.io/schemas/azure-container-registry/azure-container-registry-operation-display-definition/)
+- [OperationMetricSpecificationDefinition](https://apis.io/schemas/azure-container-registry/azure-container-registry-operation-metric-specification-definition/)
+- [OperationPropertiesDefinition](https://apis.io/schemas/azure-container-registry/azure-container-registry-operation-properties-definition/)
+- [OperationServiceSpecificationDefinition](https://apis.io/schemas/azure-container-registry/azure-container-registry-operation-service-specification-definition/)
+- [Policies](https://apis.io/schemas/azure-container-registry/azure-container-registry-policies/)
+- [QuarantinePolicy](https://apis.io/schemas/azure-container-registry/azure-container-registry-quarantine-policy/)
+- [RegenerateCredentialParameters](https://apis.io/schemas/azure-container-registry/azure-container-registry-regenerate-credential-parameters/)
+- [Registry](https://apis.io/schemas/azure-container-registry/azure-container-registry-registry/)
+- …and 4 more published on APIs.io
 
-## Common Properties
+#### JSON Structure (29)
 
+Data models expressed in JSON Structure.
 
-## Artifacts
+- [Azure Container Registry Actor Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-actor-structure/)
+- [Azure Container Registry Callback Config Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-callback-config-structure/)
+- [Azure Container Registry Encryption Property Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-encryption-property-structure/)
+- [Azure Container Registry Event Content Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-event-content-structure/)
+- [Azure Container Registry Event Info Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-event-info-structure/)
+- [Azure Container Registry Event List Result Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-event-list-result-structure/)
+- [Azure Container Registry Event Request Message Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-event-request-message-structure/)
+- [Azure Container Registry Event Response Message Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-event-response-message-structure/)
+- [Azure Container Registry Event Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-event-structure/)
+- [Azure Container Registry Identity Properties Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-identity-properties-structure/)
+- [Azure Container Registry Import Image Parameters Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-import-image-parameters-structure/)
+- [Azure Container Registry Import Source Credentials Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-import-source-credentials-structure/)
+- [Azure Container Registry Import Source Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-import-source-structure/)
+- [Azure Container Registry Ip Rule Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-ip-rule-structure/)
+- [Azure Container Registry Key Vault Properties Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-key-vault-properties-structure/)
+- [Azure Container Registry Network Rule Set Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-network-rule-set-structure/)
+- [Azure Container Registry Operation Definition Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-operation-definition-structure/)
+- [Azure Container Registry Operation Display Definition Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-operation-display-definition-structure/)
+- [Azure Container Registry Operation Metric Specification Definition Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-operation-metric-specification-definition-structure/)
+- [Azure Container Registry Operation Properties Definition Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-operation-properties-definition-structure/)
+- [Azure Container Registry Operation Service Specification Definition Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-operation-service-specification-definition-structure/)
+- [Azure Container Registry Policies Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-policies-structure/)
+- [Azure Container Registry Quarantine Policy Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-quarantine-policy-structure/)
+- [Azure Container Registry Regenerate Credential Parameters Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-regenerate-credential-parameters-structure/)
+- [Azure Container Registry Registry List Credentials Result Structure](https://apis.io/json-structure/azure-container-registry/azure-container-registry-registry-list-credentials-result-structure/)
+- …and 4 more published on APIs.io
 
-Machine-readable API specifications organized by format.
+#### JSON-LD (1)
 
-### OpenAPI
+Linked-data contexts for the provider's vocabulary.
 
-- [Azure Container Registry](openapi/azure-container-registry-openapi.yaml)
+- [Azure Container Registry Context](https://apis.io/jsonld/azure-container-registry/azure-container-registry-context/)
 
-### JSON Schema
+#### Vocabulary (1)
 
-- [Event](json-schema/azure-container-registry-event-schema.json)
-- [Operation Display Definition](json-schema/azure-container-registry-operation-display-definition-schema.json)
-- [Event List Result](json-schema/azure-container-registry-event-list-result-schema.json)
-- [Policies](json-schema/azure-container-registry-policies-schema.json)
-- [Actor](json-schema/azure-container-registry-actor-schema.json)
-- [Quarantine Policy](json-schema/azure-container-registry-quarantine-policy-schema.json)
-- [Registry Name Status](json-schema/azure-container-registry-registry-name-status-schema.json)
-- [Registry Name Check Request](json-schema/azure-container-registry-registry-name-check-request-schema.json)
-- [Event Content](json-schema/azure-container-registry-event-content-schema.json)
-- [Operation Service Specification Definition](json-schema/azure-container-registry-operation-service-specification-definition-schema.json)
+The provider's domain terms, defined.
 
-### JSON-LD
+- [Azure Container Registry Vocabulary](https://apis.io/vocabularies/azure-container-registry/azure-container-registry-vocabulary/)
 
-- [Azure Container Registry Context](json-ld/azure-container-registry-context.jsonld)
+#### Examples (29)
 
-## Capabilities
+Example requests and responses.
 
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
+- [Azure Container Registry Actor Example](https://apis.io/examples/azure-container-registry/azure-container-registry-actor-example/)
+- [Azure Container Registry Callback Config Example](https://apis.io/examples/azure-container-registry/azure-container-registry-callback-config-example/)
+- [Azure Container Registry Encryption Property Example](https://apis.io/examples/azure-container-registry/azure-container-registry-encryption-property-example/)
+- [Azure Container Registry Event Content Example](https://apis.io/examples/azure-container-registry/azure-container-registry-event-content-example/)
+- [Azure Container Registry Event Example](https://apis.io/examples/azure-container-registry/azure-container-registry-event-example/)
+- [Azure Container Registry Event Info Example](https://apis.io/examples/azure-container-registry/azure-container-registry-event-info-example/)
+- [Azure Container Registry Event List Result Example](https://apis.io/examples/azure-container-registry/azure-container-registry-event-list-result-example/)
+- [Azure Container Registry Event Request Message Example](https://apis.io/examples/azure-container-registry/azure-container-registry-event-request-message-example/)
+- [Azure Container Registry Event Response Message Example](https://apis.io/examples/azure-container-registry/azure-container-registry-event-response-message-example/)
+- [Azure Container Registry Identity Properties Example](https://apis.io/examples/azure-container-registry/azure-container-registry-identity-properties-example/)
+- [Azure Container Registry Import Image Parameters Example](https://apis.io/examples/azure-container-registry/azure-container-registry-import-image-parameters-example/)
+- [Azure Container Registry Import Source Credentials Example](https://apis.io/examples/azure-container-registry/azure-container-registry-import-source-credentials-example/)
+- [Azure Container Registry Import Source Example](https://apis.io/examples/azure-container-registry/azure-container-registry-import-source-example/)
+- [Azure Container Registry Ip Rule Example](https://apis.io/examples/azure-container-registry/azure-container-registry-ip-rule-example/)
+- [Azure Container Registry Key Vault Properties Example](https://apis.io/examples/azure-container-registry/azure-container-registry-key-vault-properties-example/)
+- [Azure Container Registry Network Rule Set Example](https://apis.io/examples/azure-container-registry/azure-container-registry-network-rule-set-example/)
+- [Azure Container Registry Operation Definition Example](https://apis.io/examples/azure-container-registry/azure-container-registry-operation-definition-example/)
+- [Azure Container Registry Operation Display Definition Example](https://apis.io/examples/azure-container-registry/azure-container-registry-operation-display-definition-example/)
+- [Azure Container Registry Operation Metric Specification Definition Example](https://apis.io/examples/azure-container-registry/azure-container-registry-operation-metric-specification-definition-example/)
+- [Azure Container Registry Operation Properties Definition Example](https://apis.io/examples/azure-container-registry/azure-container-registry-operation-properties-definition-example/)
+- [Azure Container Registry Operation Service Specification Definition Example](https://apis.io/examples/azure-container-registry/azure-container-registry-operation-service-specification-definition-example/)
+- [Azure Container Registry Policies Example](https://apis.io/examples/azure-container-registry/azure-container-registry-policies-example/)
+- [Azure Container Registry Quarantine Policy Example](https://apis.io/examples/azure-container-registry/azure-container-registry-quarantine-policy-example/)
+- [Azure Container Registry Regenerate Credential Parameters Example](https://apis.io/examples/azure-container-registry/azure-container-registry-regenerate-credential-parameters-example/)
+- [Azure Container Registry Registry Example](https://apis.io/examples/azure-container-registry/azure-container-registry-registry-example/)
+- …and 4 more published on APIs.io
 
-### Shared Per-API Definitions
+#### Collections (4)
 
-- [Azure Container Registry](capabilities/shared/azure-container-registry.yaml)
+Postman and Open Collection request collections.
 
-### Workflow Capabilities
+- [ContainerRegistryManagementClient Operation API](https://apis.io/collections/azure-container-registry/open-azure-container-registry-operation-api/)
+- [ContainerRegistryManagementClient Operation Registries API](https://apis.io/collections/azure-container-registry/open-azure-container-registry-registries-api/)
+- [ContainerRegistryManagementClient Operation Replications API](https://apis.io/collections/azure-container-registry/open-azure-container-registry-replications-api/)
+- [ContainerRegistryManagementClient Operation Webhooks API](https://apis.io/collections/azure-container-registry/open-azure-container-registry-webhooks-api/)
 
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|----------|
-| [Azure Container Registry Management](capabilities/azure-container-registry-management.yaml) | Azure Container Registry | 5 | Cloud Engineer |
+#### Governance rules (2)
 
-## Vocabulary
+Spectral rulesets for the provider's contracts.
 
-- [Azure Container Registry Vocabulary](vocabulary/azure-container-registry-vocabulary.yaml)
+- [Azure Container Registry — jsonschema rules](https://apis.io/rules/azure-container-registry/azure-container-registry-jsonschema-spectral-rules/)
+- [Azure Container Registry API Rules](https://apis.io/rules/azure-container-registry/azure-container-registry-spectral-rules/)
 
-## Rules
+#### Security (3)
 
-- [Azure Container Registry Spectral Rules](rules/azure-container-registry-spectral-rules.yml) — 15 rules enforcing Azure Container Registry API conventions
+Authentication, trust centre, and vulnerability disclosure.
 
-## Maintainers
+- [Azure Container Registry Authentication](https://apis.io/security/azure-container-registry/azure-container-registry-authentication/)
+- [Azure Container Registry Domain Security](https://apis.io/security/azure-container-registry/azure-container-registry-domain-security/)
+- [Azure Container Registry Vulnerability Disclosure](https://apis.io/security/azure-container-registry/azure-container-registry-vulnerability-disclosure/)
 
-**FN:** Kin Lane
+#### OAuth scopes (1)
 
-**Email:** kin@apievangelist.com
+The permissions the API asks for.
+
+- [Azure Container Registry Scopes](https://apis.io/scopes/azure-container-registry/azure-container-registry-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Azure Container Registry Plans Pricing](https://apis.io/plans/azure-container-registry/azure-container-registry-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Azure Container Registry Rate Limits](https://apis.io/rate-limits/azure-container-registry/azure-container-registry-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Azure Container Registry Finops](https://apis.io/finops/azure-container-registry/azure-container-registry-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://azure.microsoft.com/en-us/products/container-registry)
+- [Documentation](https://learn.microsoft.com/en-us/azure/container-registry/)
+- [Getting started](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal)
+- [Pricing](https://azure.microsoft.com/en-us/pricing/details/container-registry/)
+- [Support](https://support.microsoft.com/)
+- [Blog](https://azure.microsoft.com/en-us/blog/)
+- [Terms of service](https://www.microsoft.com/en-us/legal/terms-of-use)
+- [Privacy policy](https://privacy.microsoft.com/en-us/privacystatement)
+- [GitHub](https://github.com/Azure)
+- [Status](https://status.azure.com/)
+
+## API Evangelist rating
+
+**Kin Score 50.7** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 50.6 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 50.0 |
+| Access clarity | 52.6 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/azure-container-registry/](https://apis.io/providers/azure-container-registry/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Azure Container Registry: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/azure-container-registry/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
